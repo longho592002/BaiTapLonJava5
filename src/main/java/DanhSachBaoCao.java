@@ -19,25 +19,36 @@ public class DanhSachBaoCao {
 
 
 
-    public void them() throws ParseException {
-        int n;
-        System.out.println("Nhập số báo cáo cần thêm: ");
-        n = Integer.parseInt(input.nextLine());
-        for (int i=0;i<n;i++) {
-            System.out.printf("Nhap bao cao thu %d\n", i + 1);
-            BaoCao b = new BaoCao();
-            b.nhap();
-            if (!getBaoCaos().contains(b.maBaoCao)) {
-                getBaoCaos().add(b);
-                System.out.println("Them thanh cong\n");
-            }
-        }
-    }
+//    public void them() throws ParseException {
+//        int n;
+//        System.out.println("Nhập số báo cáo cần thêm: ");
+//        n = Integer.parseInt(input.nextLine());
+//        for (int i=0;i<n;i++) {
+//            System.out.printf("Nhap bao cao thu %d\n", i + 1);
+//            BaoCao b = new BaoCao();
+//            b.nhap();
+//            if (!getBaoCaos().contains(b.maBaoCao)) {
+//                getBaoCaos().add(b);
+//                System.out.println("Them thanh cong\n");
+//            }
+//        }
+//    }
 
     public void showList() {
-        for (BaoCao b: this.getBaoCaos())
-            b.xuat();
-        System.out.println();
+        System.out.println("Hai chữ cái đầu tiên của mã báo cáo là viết tắt tên loại báo cáo");
+        System.out.println("Ví dụ muốn xem danh sách đồ án ta nhập 2 chữ cái \"DA\"");
+        System.out.print("Nhập loại báo cáo muốn xem: ");
+        String s = input.nextLine();
+        for (BaoCao b: this.getBaoCaos() ){
+            if (b.maBaoCao.startsWith(s)){
+                b.xuat();
+            }
+            if(!b.maBaoCao.startsWith(s)) {
+                System.out.println("Nhập sai tên loại báo cáo");
+                break;
+            }
+
+        }
     }
 
 //    public void suaMaBaoCao() {

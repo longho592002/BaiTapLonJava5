@@ -5,13 +5,13 @@ import java.util.Scanner;
 
 public class BaoCao {
 
-    public String maBaoCao;
-    public String tenBaoCao;
-    public String linkBaoCao;
-    public Date ngayBaoCao;
-    public String dsSinhVien;
-    public String tenGiangVien;
-    public double diemBaoCao;
+    protected String maBaoCao;
+    protected String tenBaoCao;
+    protected String linkBaoCao;
+    protected Date ngayBaoCao;
+    protected String dsSinhVien;
+    protected String tenGiangVien;
+    protected double diemBaoCao;
 
     public static SimpleDateFormat F = new SimpleDateFormat("dd-MM-yyyy");
     public Scanner scan = new Scanner(System.in);
@@ -40,19 +40,19 @@ public class BaoCao {
     public void nhap() throws ParseException {
         System.out.println("Mã báo cáo theo dạng gồm 5 chữ số, 2 chữ số đầu là tên loại báo cáo");
         System.out.println("Ví dụ nhập báo cáo thực tập: \"TT001\"");
-        System.out.println("Nhập mã báo cáo(): ");
+        System.out.print("Nhập mã báo cáo(): ");
         maBaoCao = scan.nextLine();
-        System.out.println("Nhập tên báo cáo: ");
+        System.out.print("Nhập tên báo cáo: ");
         tenBaoCao = scan.nextLine();
-        System.out.println("Nhập link báo cáo: ");
+        System.out.print("Nhập link báo cáo: ");
         linkBaoCao = scan.nextLine();
-        System.out.println("Nhập ngày báo cáo(dd-MM-YYYY): ");
+        System.out.print("Nhập ngày báo cáo(dd-MM-YYYY): ");
         ngayBaoCao = F.parse(scan.nextLine());
-        System.out.println("Nhập danh sách sinh viên thực hiện: ");
+        System.out.print("Nhập danh sách sinh viên thực hiện: ");
         dsSinhVien = scan.nextLine();
-        System.out.println("Nhập tên giảng viên: ");
+        System.out.print("Nhập tên giảng viên: ");
         tenGiangVien = scan.nextLine();
-        System.out.println("Nhập điểm: ");
+        System.out.print("Nhập điểm: ");
         diemBaoCao = scan.nextDouble();
     }
 

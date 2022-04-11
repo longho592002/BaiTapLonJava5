@@ -21,12 +21,19 @@ public class BaoCaoThucTap extends BaoCao {
 
     @Override
     public void nhap() throws ParseException {
-        System.out.println("");
+        super.nhap();
         System.out.println("Nhap thong tin danh gia: ");
         Scanner s = new Scanner(System.in);
         thongTinDanhGia = s.nextLine();
-        super.nhap();
     }
+
+    @Override
+    public void xuat() {
+        super.xuat();
+        System.out.printf("Thông tin đánh giá đạo văn: %s", this.thongTinDanhGia);
+    }
+
+
 
     public String getThongTinDanhGia() {
         return thongTinDanhGia;

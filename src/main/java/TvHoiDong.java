@@ -20,15 +20,15 @@ public class TvHoiDong extends HoiDong {
         this.diem = diem;
     }
     public void nhapThanhVienHoiDon() {
-        System.out.println("Nhập họ và tên: ");
+        System.out.print("Nhập họ và tên: ");
         hoTen = S.nextLine();
-        System.out.println("Nhập học hàm: ");
+        System.out.print("Nhập học hàm: ");
         hocHam = S.nextLine();
-        System.out.println("Nhập học vị: ");
+        System.out.print("Nhập học vị: ");
         hocVi = S.nextLine();
-        System.out.println("Nhập nhiệm vụ");
+        System.out.print("Nhập nhiệm vụ");
         nhiemVu = S.nextLine();
-        System.out.println("Nhập điểm: ");
+        System.out.print("Nhập điểm: ");
         diem = S.nextDouble();
     }
     public void  xuatThanhVienHoiDong() {
