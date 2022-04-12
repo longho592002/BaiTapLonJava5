@@ -2,7 +2,7 @@ import java.text.ParseException;
 import java.util.Scanner;
 
 public class BaoCaoDoAn extends BaoCao {
-    private double tyLeDaoVan;
+    protected double tyLeDaoVan;
 
     public BaoCaoDoAn() {
 

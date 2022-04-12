@@ -33,7 +33,6 @@ public class DanhSachBaoCao {
 //            }
 //        }
 //    }
-
     public void showList() {
         System.out.println("Hai chữ cái đầu tiên của mã báo cáo là viết tắt tên loại báo cáo");
         System.out.println("Ví dụ muốn xem danh sách đồ án ta nhập 2 chữ cái \"DA\"");
@@ -46,36 +45,144 @@ public class DanhSachBaoCao {
         }
     }
 
-//    public void suaMaBaoCao() {
-//        BaoCao index;
-//        for (BaoCao b: this.getBaoCaos()){
-////             index = baoCaos.get(Integer.parseInt(b.maBaoCao));
-////            System.out.println(index);
-//
-//        }
 
+    public void suaThongTinKhoaLuan() throws ParseException {
+        BaoCaoKhoaLuan tam = null;
+        tam = (BaoCaoKhoaLuan) timBaoCao();
+        if(tam != null) {
+            Main.showMenuSuaBaoCao();
+            System.out.print("Nhập thông tin muốn sửa: ");
+            String a = input.nextLine();
+            switch (a) {
+                case "1" -> {
+                    System.out.print("Nhập mã báo cáo: ");
+                    tam.maBaoCao = input.nextLine();
+                }
+                case "2" -> {
+                    System.out.print("Nhập tên báo cáo: ");
+                    tam.tenBaoCao = input.nextLine();
+                }
+                case "3" -> {
+                    System.out.print("Nhập link báo cáo: ");
+                    tam.linkBaoCao = input.nextLine();
+                }
+                case "4" -> {
+                    System.out.print("Nhập ngày báo cáo: ");
+                    tam.ngayBaoCao = F.parse(input.nextLine());
+                }
+                case "5" -> {
+                    System.out.print("Nhập danh sách sinh viên thực hiện báo cáo: ");
+                    tam.dsSinhVien = input.nextLine();
+                }
+                case "6" -> {
+                    System.out.print("Nhập tên giảng viên: ");
+                    tam.tenGiangVien = input.nextLine();
+                }
+                case "7" -> {
+                    System.out.print("Nhập điểm báo cáo: ");
+                    tam.diemBaoCao = input.nextDouble();
+                }
+                case "8" -> {
+                    System.out.println("Nhập tỷ lệ đạo văn: ");
+                    tam.tyLeDaoVan = input.nextDouble();
+                }
+            }
+        } else {
+            System.out.println("Không tìm thấy báo cáo để sửa");
+        }
+    }
+    public void suaThongTinDoAn() throws ParseException {
+        BaoCaoDoAn tam = null;
+        tam = (BaoCaoDoAn) timBaoCao();
+        if(tam != null) {
+            Main.showMenuSuaBaoCao();
+            System.out.print("Nhập thông tin muốn sửa: ");
+            String a = input.nextLine();
+            switch (a) {
+                case "1" -> {
+                    System.out.print("Nhập mã báo cáo: ");
+                    tam.maBaoCao = input.nextLine();
+                }
+                case "2" -> {
+                    System.out.print("Nhập tên báo cáo: ");
+                    tam.tenBaoCao = input.nextLine();
+                }
+                case "3" -> {
+                    System.out.print("Nhập link báo cáo: ");
+                    tam.linkBaoCao = input.nextLine();
+                }
+                case "4" -> {
+                    System.out.print("Nhập ngày báo cáo: ");
+                    tam.ngayBaoCao = F.parse(input.nextLine());
+                }
+                case "5" -> {
+                    System.out.print("Nhập danh sách sinh viên thực hiện báo cáo: ");
+                    tam.dsSinhVien = input.nextLine();
+                }
+                case "6" -> {
+                    System.out.print("Nhập tên giảng viên: ");
+                    tam.tenGiangVien = input.nextLine();
+                }
+                case "7" -> {
+                    System.out.print("Nhập điểm báo cáo: ");
+                    tam.diemBaoCao = input.nextDouble();
+                }
+                case "8" -> {
+                    System.out.println("Nhập tỷ lệ đạo văn: ");
+                    tam.tyLeDaoVan = input.nextDouble();
+                }
+            }
+        } else {
+            System.out.println("Không tìm thấy báo cáo để sửa");
+        }
+    }
+    public void suaThongTinThucTap() throws ParseException {
+        BaoCaoThucTap tam = null;
+        tam = (BaoCaoThucTap) timBaoCao();
+        if(tam != null) {
+            Main.showMenuSuaBaoCao();
+            System.out.print("Nhập thông tin muốn sửa: ");
+            String a = input.nextLine();
+            switch (a) {
+                case "1" -> {
+                    System.out.print("Nhập mã báo cáo: ");
+                    tam.maBaoCao = input.nextLine();
+                }
+                case "2" -> {
+                    System.out.print("Nhập tên báo cáo: ");
+                    tam.tenBaoCao = input.nextLine();
+                }
+                case "3" -> {
+                    System.out.print("Nhập link báo cáo: ");
+                    tam.linkBaoCao = input.nextLine();
+                }
+                case "4" -> {
+                    System.out.print("Nhập ngày báo cáo: ");
+                    tam.ngayBaoCao = F.parse(input.nextLine());
+                }
+                case "5" -> {
+                    System.out.print("Nhập danh sách sinh viên thực hiện báo cáo: ");
+                    tam.dsSinhVien = input.nextLine();
+                }
+                case "6" -> {
+                    System.out.print("Nhập tên giảng viên: ");
+                    tam.tenGiangVien = input.nextLine();
+                }
+                case "7" -> {
+                    System.out.print("Nhập điểm báo cáo: ");
+                    tam.diemBaoCao = input.nextDouble();
+                }
+                case "8" -> {
+                    System.out.println("Nhập tỷ lệ đạo văn: ");
+                    tam.thongTinDanhGia = input.nextLine();
+                }
+            }
+        } else {
+            System.out.println("Không tìm thấy báo cáo để sửa");
+        }
 
-    //    }
-    public void suaTenBaoCao() {
-        for (BaoCao b: this.getBaoCaos())
-            b.tenBaoCao = input.nextLine();
     }
-    public void suaLinkBaoCao() {
-        for (BaoCao b: this.getBaoCaos())
-            b.linkBaoCao = input.nextLine();
-    }
-    public void suaNgayBaoCao() throws ParseException {
-        for (BaoCao b: this.getBaoCaos())
-            b.ngayBaoCao =  F.parse(input.nextLine());
-    }
-    public void suaDanhSachSinhVienThucHien() {
-        for (BaoCao b: this.getBaoCaos())
-            b.dsSinhVien = input.nextLine();
-    }
-    public void suaTenGiangVien() {
-        for (BaoCao b: this.getBaoCaos())
-            b.tenGiangVien = input.nextLine();
-    }
+
     public void suaDiemBaoCao() {
         for (BaoCao b: this.getBaoCaos())
             b.diemBaoCao = input.nextDouble();
@@ -85,15 +192,25 @@ public class DanhSachBaoCao {
 
         return maBaoCao;
     }
-    // Lấy mã báo cáo để sửa
-//    public Integer getBaoCao() {
-//        String s;
-//        System.out.print("Nhập mã báo cáo muốn sửa: ");
-//        s = input.nextLine();
-//        for (BaoCao b: this.getBaoCaos())
-//            System.out.println(getBaoCaos().get(Integer.parseInt(b.maBaoCao)));
-//        return 0;
-//    }
+//    Tìm báo cáo
+    public BaoCao timBaoCao(){
+        System.out.print("Nhập mã báo cáo cần tìm: ");
+        String ma = input.nextLine();
+        BaoCao tim = null;
+        for(BaoCao b: this.getBaoCaos()) {
+            if(b.maBaoCao.contains(ma)){
+                tim = b;
+                break;
+            }
+        }
+//        if(tim!=null) {
+//            System.out.println("Báo cáo bạn cần tìm: ");
+//            tim.xuat();
+//        } else {
+//            System.out.println("Không tìm thấy báo cáo");
+//        }
+        return tim;
+    }
     // xóa báo cáo
     public void xoaBaoCao() {
         String s;

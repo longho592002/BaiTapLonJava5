@@ -10,7 +10,7 @@ public class BaoCaoKhoaLuan extends BaoCao {
     private double diem;
     private String nhanXet;
     private double diemTongKet;
-    private double tyLeDaoVan;
+    protected double tyLeDaoVan;
     //    public List<BaoCaoKhoaLuan> dsHoiDong = List.copyOf(TvHoiDong)
 
 

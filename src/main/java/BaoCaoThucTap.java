@@ -2,7 +2,7 @@ import java.text.ParseException;
 import java.util.Scanner;
 
 public class BaoCaoThucTap extends BaoCao {
-    private String thongTinDanhGia;
+    protected String thongTinDanhGia;
 
     public BaoCaoThucTap() {
 

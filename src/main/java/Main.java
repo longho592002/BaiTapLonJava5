@@ -67,53 +67,21 @@ public class Main {
                     baoCaos.showList();
                 }
                 case 4 -> {
-                    System.out.println("Sửa thông tin báo cáo");
-//                    System.out.println("Chọn mã báo cáo muốn sửa: ");
-//                    String s = input.nextLine();
-//                    for(BaoCao b: baoCaos.getBaoCaos())
-//                        if(s.equals(baoCaos.getBaoCaos()))
-//                    baoCaos.suaMaBaoCao();
-                    System.out.print("Nhập mã báo cáo muốn sửa: ");
-                    String s = input.nextLine();
-                    System.out.println(baoCaos.getBaoCaos());
-//                    if (baoCaos.getBaoCaos().equals(s)) {
-//                        showMenuSuaBaoCao();
-//                        int a = input.nextInt();
-//                        while(a >= 1 && a <= 9) {
-//                            if (a == 1) {
-//                                System.out.println("Sửa mã báo cáo: ");
-////                                baoCaos.suaMaBaoCao();
-//                                break;
-//                            } else if (a == 2) {
-//                                System.out.println("Sửa tên báo cáo");
-//                                baoCaos.suaTenBaoCao();
-//                                break;
-//                            } else if (a == 3) {
-//                                System.out.println("Sửa link báo cáo");
-//                                baoCaos.suaLinkBaoCao();
-//                                break;
-//                            } else if (a == 4) {
-//                                System.out.println("Sửa ngày báo cáo");
-//                                baoCaos.suaNgayBaoCao();
-//                                break;
-//                            } else if (a == 5) {
-//                                System.out.println("Sửa danh sách sinh viên báo cáo");
-//                                baoCaos.suaDanhSachSinhVienThucHien();
-//                                break;
-//                            } else if (a == 6) {
-//                                System.out.println("Sửa tên giảng viên");
-//                                baoCaos.suaTenGiangVien();
-//                                break;
-//                            } else if (a == 7) {
-//                                System.out.println("Sửa điểm báo cáo");
-//                                baoCaos.suaDiemBaoCao();
-//                                break;
-//                            } else {
-//                                System.out.println("Ban chon thoat");
-//                                break;
-//                            }
-//                        }
-//                    }
+                    showMenuDSBaoCao();
+                    System.out.println("Chọn loại báo cáo muốn sửa: ");
+                    int a = input.nextInt();
+                    switch (a) {
+                        case 1 -> {
+                            baoCaos.suaThongTinDoAn();
+                        }
+                        case 2 -> {
+                            baoCaos.suaThongTinKhoaLuan();
+                        }
+                        case 3 -> {
+                            baoCaos.suaThongTinThucTap();
+                        }
+                    }
+
                 }
                 case 5 -> {
                     System.out.println("Nhập thành viên hội đồng");
@@ -144,11 +112,13 @@ public class Main {
         System.out.println("3. Thêm báo cáo Thực tập");
     }
     static void showMenuDSBaoCao() {
+        System.out.println("========== Menu các loại báo cáo ==========");
         System.out.println("1. Báo cáo Đồ Án");
         System.out.println("2. Báo cáo Khóa Luận");
         System.out.println("3. Báo cáo Thực tập");
     }
     static void showMenuSuaBaoCao() {
+        System.out.println("=========== Menu Sửa Thông Tin Báo Cáo =========");
         System.out.println("1. Sửa mã báo cáo");
         System.out.println("2. Sửa tên báo cáo");
         System.out.println("3. Sửa link báo cáo");

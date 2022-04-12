@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class BaoCao {
 
-    protected String maBaoCao;
+    public String maBaoCao;
     protected String tenBaoCao;
     protected String linkBaoCao;
     protected Date ngayBaoCao;
