@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DanhSachBaoCao {
-    public ArrayList<BaoCao> baoCaos = new ArrayList<BaoCao>();
+    public ArrayList<BaoCao> baoCaos = new ArrayList<>();
     public static SimpleDateFormat F = new SimpleDateFormat("dd-MM-yyyy");
     Scanner input = new Scanner(System.in);
     // getter setter
@@ -43,11 +43,6 @@ public class DanhSachBaoCao {
             if (b.maBaoCao.startsWith(s)){
                 b.xuat();
             }
-            if(!b.maBaoCao.startsWith(s)) {
-                System.out.println("Nhập sai tên loại báo cáo");
-                break;
-            }
-
         }
     }
 
@@ -91,14 +86,14 @@ public class DanhSachBaoCao {
         return maBaoCao;
     }
     // Lấy mã báo cáo để sửa
-    public Integer getBaoCao() {
-        String s;
-        System.out.print("Nhập mã báo cáo muốn sửa: ");
-        s = input.nextLine();
+//    public Integer getBaoCao() {
+//        String s;
+//        System.out.print("Nhập mã báo cáo muốn sửa: ");
+//        s = input.nextLine();
 //        for (BaoCao b: this.getBaoCaos())
 //            System.out.println(getBaoCaos().get(Integer.parseInt(b.maBaoCao)));
-        return 0;
-    }
+//        return 0;
+//    }
     // xóa báo cáo
     public void xoaBaoCao() {
         String s;

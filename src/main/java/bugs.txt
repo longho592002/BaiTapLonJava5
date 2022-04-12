@@ -1,2 +1,2 @@
-1. Khi thêm loại báo cáo thì khi xem lại ko đc
+1. Khi thêm loại báo cáo thì khi xem lại ko đc      ========> Done
 2. Sửa danh sách chưa làm xong

@@ -21,7 +21,7 @@ public class BaoCaoDoAn extends BaoCao {
     @Override
     public void nhap() throws ParseException {
         super.nhap();
-        System.out.println("Nhập tỷ lệ đạo văn: ");
+        System.out.print("Nhập tỷ lệ đạo văn: ");
         Scanner s = new Scanner(System.in);
         tyLeDaoVan = s.nextDouble();
     }
@@ -30,7 +30,7 @@ public class BaoCaoDoAn extends BaoCao {
     @Override
     public void xuat() {
         super.xuat();
-        System.out.printf("Tỷ lệ đạo văn: %d", this.tyLeDaoVan);
+        System.out.printf("Tỷ lệ đạo văn: %s\n", this.tyLeDaoVan);
     }
     public double getTyLeDaoVan() {
         return tyLeDaoVan;

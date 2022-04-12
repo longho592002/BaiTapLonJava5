@@ -12,13 +12,13 @@ public class Main {
         BaoCaoThucTap bctt = new BaoCaoThucTap();
         int chon;
         Scanner input = new Scanner(System.in);
-        BaoCao b1 = new BaoCao("TT001","Thuc Tap 1","abc.com","4-1-2002","Nguyễn Đức Hưng","Dương Hữu Thành",8.5);
-        BaoCao b2 = new BaoCao("TT002","Thuc Tap 2","def.com","5-9-2002","Nguyễn Hồ Long","Dương Hữu Thành",10);
-        BaoCao b3 = new BaoCao("TT003","Thuc Tap 3","ghc.com","30-4-2022","abcdcscds","Dương Hữu Thành",7.5);
-        BaoCao b4 = new BaoCao("DA001", "Do An 1", "ccd.com", "20-6-2022", "owroriw", "Dương Hữu Thành", 5);
-        BaoCao b5 = new BaoCao("DA002", "Do An 2", "oop.com", "9-4-2022", "Mai Thanh Binh", "Dương Hữu Thành", 10);
-        BaoCao b6 = new BaoCao("KL001", "Khoa Luan 1", "uuu.com", "11-3-2022", "Lee Tien Hung", "Dương Hữu Thành", 8);
-        BaoCao b7 = new BaoCao("KL002", "Khoa Luan 2", "qqq.com", "3-5-2020", "Nam", "Dương Hữu Thành", 5);
+        BaoCaoThucTap b1 = new BaoCaoThucTap("TT001","Thuc Tap 1","abc.com","4-1-2002","Nguyễn Đức Hưng","Dương Hữu Thành",8.5, "Amazing");
+        BaoCaoThucTap b2 = new BaoCaoThucTap("TT002","Thuc Tap 2","def.com","5-9-2002","Nguyễn Hồ Long","Dương Hữu Thành",10, "good jobs");
+        BaoCaoThucTap b3 = new BaoCaoThucTap("TT003","Thuc Tap 3","ghc.com","30-4-2022","abcdcscds","Dương Hữu Thành",7.5, "Excelent");
+        BaoCaoDoAn b4 = new BaoCaoDoAn("DA001", "Do An 1", "ccd.com", "20-6-2022", "owroriw", "Dương Hữu Thành", 5, 10);
+        BaoCaoDoAn b5 = new BaoCaoDoAn("DA002", "Do An 2", "oop.com", "9-4-2022", "Mai Thanh Binh", "Dương Hữu Thành", 10,1);
+        BaoCaoKhoaLuan b6 = new BaoCaoKhoaLuan("KL001", "Khoa Luan 1", "uuu.com", "11-3-2022", "Lee Tien Hung", "Dương Hữu Thành", 8, 20);
+        BaoCaoKhoaLuan b7 = new BaoCaoKhoaLuan("KL002", "Khoa Luan 2", "qqq.com", "3-5-2020", "Nam", "Dương Hữu Thành", 5, 20);
         baoCaos.add(b1);
         baoCaos.add(b2);
         baoCaos.add(b3);
@@ -39,16 +39,19 @@ public class Main {
                     int choose = input.nextInt();
                     switch (choose) {
                         case 1 -> {
+                            System.out.println("=========== Thêm báo cáo Đồ Án ===========");
                             bcda.nhap();
                             baoCaos.add(bcda);
                             System.out.println("Thêm thành công");
                         }
                         case 2 -> {
+                            System.out.println("=========== Thêm báo cáo khóa luận ===========");
                             bckl.nhap();
                             baoCaos.add(bckl);
                             System.out.println("Thêm thành công");
                         }
                         case 3 -> {
+                            System.out.println("=========== Thêm báo cáo thực tập ===========");
                             bctt.nhap();
                             baoCaos.add(bctt);
                             System.out.println("Thêm thành công");

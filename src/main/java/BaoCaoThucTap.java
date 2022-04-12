@@ -22,7 +22,7 @@ public class BaoCaoThucTap extends BaoCao {
     @Override
     public void nhap() throws ParseException {
         super.nhap();
-        System.out.println("Nhap thong tin danh gia: ");
+        System.out.print("Nhap thong tin danh gia: ");
         Scanner s = new Scanner(System.in);
         thongTinDanhGia = s.nextLine();
     }

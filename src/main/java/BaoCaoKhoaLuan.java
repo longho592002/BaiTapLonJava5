@@ -14,11 +14,24 @@ public class BaoCaoKhoaLuan extends BaoCao {
     //    public List<BaoCaoKhoaLuan> dsHoiDong = List.copyOf(TvHoiDong)
 
 
+    public BaoCaoKhoaLuan() {
+
+    }
+    public BaoCaoKhoaLuan(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien, double diem, double tyLeDaoVan) throws ParseException {
+        this.maBaoCao = maBaoCao;
+        this.tenBaoCao = tenBaoCao;
+        this.linkBaoCao = linkBaoCao;
+        this.ngayBaoCao = F.parse(ngayBaoCao);
+        this.dsSinhVien = dsSinhVien;
+        this.tenGiangVien = tenGiangVien;
+        this.diemBaoCao = diem;
+        this.tyLeDaoVan = tyLeDaoVan;
+    }
 
     @Override
     public void nhap() throws ParseException {
         super.nhap();
-        System.out.println("Nhập tỷ lệ đạo văn: ");
+        System.out.print("Nhập tỷ lệ đạo văn: ");
         Scanner s = new Scanner(System.in);
         tyLeDaoVan = s.nextDouble();
     }
@@ -27,7 +40,7 @@ public class BaoCaoKhoaLuan extends BaoCao {
     @Override
     public void xuat() {
         super.xuat();
-        System.out.printf("Tỷ lệ đạo văn: %d", this.tyLeDaoVan);
+        System.out.printf("Tỷ lệ đạo văn: %s\n", this.tyLeDaoVan);
     }
 
 
