@@ -1,23 +1,19 @@
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class BaoCaoKhoaLuan extends BaoCao {
     private String danhGiaGV;
-    public List<HoiDong> dsTvHoiDong = new ArrayList<>();
-    private double diem;
-    private String nhanXet;
+    protected double diem;
+    protected ArrayList<String> nhanXet = new ArrayList<>();
     private double diemTongKet;
     protected double tyLeDaoVan;
-    //    public List<BaoCaoKhoaLuan> dsHoiDong = List.copyOf(TvHoiDong)
 
 
     public BaoCaoKhoaLuan() {
 
     }
-    public BaoCaoKhoaLuan(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien, double diem, double tyLeDaoVan) throws ParseException {
+    public BaoCaoKhoaLuan(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien, double diem, double tyLeDaoVan, ArrayList<String> nhanXet) throws ParseException {
         this.maBaoCao = maBaoCao;
         this.tenBaoCao = tenBaoCao;
         this.linkBaoCao = linkBaoCao;
@@ -25,6 +21,16 @@ public class BaoCaoKhoaLuan extends BaoCao {
         this.dsSinhVien = dsSinhVien;
         this.tenGiangVien = tenGiangVien;
         this.diemBaoCao = diem;
+        this.tyLeDaoVan = tyLeDaoVan;
+        this.setNhanXet(nhanXet);
+    }
+    public BaoCaoKhoaLuan(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien, double tyLeDaoVan) throws ParseException {
+        this.maBaoCao = maBaoCao;
+        this.tenBaoCao = tenBaoCao;
+        this.linkBaoCao = linkBaoCao;
+        this.ngayBaoCao = F.parse(ngayBaoCao);
+        this.dsSinhVien = dsSinhVien;
+        this.tenGiangVien = tenGiangVien;
         this.tyLeDaoVan = tyLeDaoVan;
     }
 
@@ -41,6 +47,9 @@ public class BaoCaoKhoaLuan extends BaoCao {
     public void xuat() {
         super.xuat();
         System.out.printf("Tỷ lệ đạo văn: %s\n", this.tyLeDaoVan);
+        nhanXet.toArray();
+        System.out.print("Các lời nhận xét: ");
+        System.out.println(nhanXet);
     }
 
 
@@ -52,13 +61,13 @@ public class BaoCaoKhoaLuan extends BaoCao {
         this.danhGiaGV = danhGiaGV;
     }
 
-    public List<HoiDong> getDsTvHoiDong() {
-        return dsTvHoiDong;
-    }
+//    public List<HoiDong> getDsTvHoiDong() {
+//        return dsTvHoiDong;
+//    }
 
-    public void setDsTvHoiDong(HoiDong[] dsTvHoiDong) {
-        this.dsTvHoiDong = Arrays.asList(dsTvHoiDong);
-    }
+//    public void setDsTvHoiDong(HoiDong[] dsTvHoiDong) {
+//        this.dsTvHoiDong = Arrays.asList(dsTvHoiDong);
+//    }
 
     @Override
     public double getDiem() {
@@ -70,13 +79,13 @@ public class BaoCaoKhoaLuan extends BaoCao {
         this.diem = diem;
     }
 
-    public String getNhanXet() {
-        return nhanXet;
-    }
-
-    public void setNhanXet(String nhanXet) {
-        this.nhanXet = nhanXet;
-    }
+//    public ArrayList<String> getNhanXet() {
+//        return nhanXet;
+//    }
+//
+//    public void setNhanXet(ArrayList<String> nhanXet) {
+//        this.nhanXet = nhanXet;
+//    }
 
     public double getDiemTongKet() {
         return diemTongKet;
@@ -92,5 +101,13 @@ public class BaoCaoKhoaLuan extends BaoCao {
 
     public void setTyLeDaoVan(double tyLeDaoVan) {
         this.tyLeDaoVan = tyLeDaoVan;
+    }
+
+    public ArrayList<String> getNhanXet() {
+        return nhanXet;
+    }
+
+    public void setNhanXet(ArrayList<String> nhanXet) {
+        this.nhanXet = nhanXet;
     }
 }

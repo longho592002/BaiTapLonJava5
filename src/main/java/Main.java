@@ -6,7 +6,9 @@ public class Main {
     public static void main(String[] args) throws ParseException {
 
         DanhSachBaoCao baoCaos = new DanhSachBaoCao();
-        HoiDong hoiDongs = new HoiDong();
+        DanhSachHoiDong hoiDongs = new DanhSachHoiDong();
+        DiemCuaHoiDong diems = new DiemCuaHoiDong();
+//        HoiDong hoiDongs = new HoiDong();
         BaoCaoDoAn bcda = new BaoCaoDoAn();
         BaoCaoKhoaLuan bckl = new BaoCaoKhoaLuan();
         BaoCaoThucTap bctt = new BaoCaoThucTap();
@@ -15,10 +17,13 @@ public class Main {
         BaoCaoThucTap b1 = new BaoCaoThucTap("TT001","Thuc Tap 1","abc.com","4-1-2002","Nguyễn Đức Hưng","Dương Hữu Thành",8.5, "Amazing");
         BaoCaoThucTap b2 = new BaoCaoThucTap("TT002","Thuc Tap 2","def.com","5-9-2002","Nguyễn Hồ Long","Dương Hữu Thành",10, "good jobs");
         BaoCaoThucTap b3 = new BaoCaoThucTap("TT003","Thuc Tap 3","ghc.com","30-4-2022","abcdcscds","Dương Hữu Thành",7.5, "Excelent");
-        BaoCaoDoAn b4 = new BaoCaoDoAn("DA001", "Do An 1", "ccd.com", "20-6-2022", "owroriw", "Dương Hữu Thành", 5, 10);
-        BaoCaoDoAn b5 = new BaoCaoDoAn("DA002", "Do An 2", "oop.com", "9-4-2022", "Mai Thanh Binh", "Dương Hữu Thành", 10,1);
-        BaoCaoKhoaLuan b6 = new BaoCaoKhoaLuan("KL001", "Khoa Luan 1", "uuu.com", "11-3-2022", "Lee Tien Hung", "Dương Hữu Thành", 8, 20);
-        BaoCaoKhoaLuan b7 = new BaoCaoKhoaLuan("KL002", "Khoa Luan 2", "qqq.com", "3-5-2020", "Nam", "Dương Hữu Thành", 5, 20);
+        BaoCaoDoAn b4 = new BaoCaoDoAn("DA001", "Do An 1", "ccd.com", "20-6-2022", "owroriw", "Dương Hữu Thành", 10);
+        BaoCaoDoAn b5 = new BaoCaoDoAn("DA002", "Do An 2", "oop.com", "9-4-2022", "Mai Thanh Binh", "Dương Hữu Thành", 1);
+        BaoCaoKhoaLuan b6 = new BaoCaoKhoaLuan("KL001", "Khoa Luan 1", "uuu.com", "11-3-2022", "Lee Tien Hung", "Dương Hữu Thành", 20);
+        BaoCaoKhoaLuan b7 = new BaoCaoKhoaLuan("KL002", "Khoa Luan 2", "qqq.com", "3-5-2020", "Nam", "Dương Hữu Thành", 5);
+        TvHoiDong b8 = new TvHoiDong("Nguyễn Hồ Long", "Giáo Sư", "Tiến Sĩ", "chủ tịch hội đồng");
+        TvHoiDong b9 = new TvHoiDong("Nguyễn Văn Doanh", "acsac", "cdscdsc", "Thư ký");
+        TvHoiDong b10 = new TvHoiDong("Hồ Thị Tuyết", "sdadasda", "dsdasdas", "Thư Ký");
         baoCaos.add(b1);
         baoCaos.add(b2);
         baoCaos.add(b3);
@@ -26,6 +31,10 @@ public class Main {
         baoCaos.add(b5);
         baoCaos.add(b6);
         baoCaos.add(b7);
+        hoiDongs.getHoiDongs().add(b8);
+        hoiDongs.getHoiDongs().add(b9);
+        hoiDongs.getHoiDongs().add(b10);
+
 
         do {
             showMenu();
@@ -84,15 +93,39 @@ public class Main {
 
                 }
                 case 5 -> {
-                    System.out.println("Nhập thành viên hội đồng");
-                    System.out.println(baoCaos.getBaoCaos());
+//                    System.out.println("Nhập thành viên hội đồng");
+                    hoiDongs.themThanhVienHoiDong();
                 }
                 case 6 -> {
-                    System.out.println("Xuất thành viên hội đồng");
-                    hoiDongs.showThanhVienHoiDong();
+                    System.out.println("============ Xuất thành viên hội đồng =============");
+                    hoiDongs.xuatThanhVienHoiDong();
+                }
+                case 7 -> {
+                    System.out.println("=========== Chấm điểm cho báo cáo khóa luận ============");
+                    BaoCaoKhoaLuan a =null;
+                    a = (BaoCaoKhoaLuan) baoCaos.timBaoCao();
+                    if(a!=null) {
+                        int n = 0;
+                        double diemTong = 0, diemTongKet = 0;
+                        for(TvHoiDong b: hoiDongs.getHoiDongs()) {
+                            System.out.printf("========== %s %s =========== ", b.nhiemVu, b.hoTen);
+                            System.out.print("Nhập điểm: ");
+                            b.diem = input.nextDouble();
+                            String y = input.nextLine();
+                            System.out.print("Nhập nhận xét: ");
+                            b.nhanXet = input.nextLine();
+                            a.getNhanXet().add(b.nhanXet);
+                            n = n + 1;
+                            diemTong += b.diem;
+                            diemTongKet = diemTong / n;
+                        }
+                        a.diemBaoCao = diemTongKet;
+                    }   else {
+                        System.out.println("Không tìm thấy báo cáo để chấm điểm");
+                    }
                 }
             }
-        } while (chon >= 1 && chon <=8);
+        } while (chon >= 1 && chon <=12);
 
     }
 
@@ -105,6 +138,7 @@ public class Main {
         System.out.println("4. Sửa báo cáo");
         System.out.println("5. Thêm thành viên hội đồng");
         System.out.println("6. Xuất thành viên hội đồng");
+        System.out.println("7. Chấm điểm báo cáo khóa luận");
     }
     static void showMenuBaoCao() {
         System.out.println("1. Thêm báo cáo Đồ Án");

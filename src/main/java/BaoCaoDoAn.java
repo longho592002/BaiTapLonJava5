@@ -7,6 +7,15 @@ public class BaoCaoDoAn extends BaoCao {
     public BaoCaoDoAn() {
 
     }
+    public BaoCaoDoAn(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien, double tyLeDaoVan) throws ParseException {
+        this.maBaoCao = maBaoCao;
+        this.tenBaoCao = tenBaoCao;
+        this.linkBaoCao = linkBaoCao;
+        this.ngayBaoCao = F.parse(ngayBaoCao);
+        this.dsSinhVien = dsSinhVien;
+        this.tenGiangVien = tenGiangVien;
+        this.tyLeDaoVan = tyLeDaoVan;
+    }
     public BaoCaoDoAn(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien, double diem, double tyLeDaoVan) throws ParseException {
         this.maBaoCao = maBaoCao;
         this.tenBaoCao = tenBaoCao;

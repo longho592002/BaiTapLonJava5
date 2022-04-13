@@ -52,8 +52,8 @@ public class BaoCao {
         dsSinhVien = scan.nextLine();
         System.out.print("Nhập tên giảng viên: ");
         tenGiangVien = scan.nextLine();
-        System.out.print("Nhập điểm: ");
-        diemBaoCao = scan.nextDouble();
+//        System.out.print("Nhập điểm: ");
+//        diemBaoCao = scan.nextDouble();
     }
 
     // so sánh 2 mã báo cáo

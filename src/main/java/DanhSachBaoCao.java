@@ -38,6 +38,7 @@ public class DanhSachBaoCao {
         System.out.println("Ví dụ muốn xem danh sách đồ án ta nhập 2 chữ cái \"DA\"");
         System.out.print("Nhập loại báo cáo muốn xem: ");
         String s = input.nextLine();
+
         for (BaoCao b: this.getBaoCaos() ){
             if (b.maBaoCao.startsWith(s)){
                 b.xuat();
@@ -183,15 +184,9 @@ public class DanhSachBaoCao {
 
     }
 
-    public void suaDiemBaoCao() {
-        for (BaoCao b: this.getBaoCaos())
-            b.diemBaoCao = input.nextDouble();
-    }
 
-    private String input(String maBaoCao) {
 
-        return maBaoCao;
-    }
+
 //    Tìm báo cáo
     public BaoCao timBaoCao(){
         System.out.print("Nhập mã báo cáo cần tìm: ");
@@ -211,6 +206,9 @@ public class DanhSachBaoCao {
 //        }
         return tim;
     }
+
+
+
     // xóa báo cáo
     public void xoaBaoCao() {
         String s;

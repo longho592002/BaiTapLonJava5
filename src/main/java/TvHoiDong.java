@@ -1,39 +1,48 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class TvHoiDong extends HoiDong {
-    private String hoTen;
-    private String hocHam;
-    private String hocVi;
-    private String nhiemVu;
-    private double diem;
+public class TvHoiDong {
+    protected String hoTen;
+    protected String hocHam;
+    protected String hocVi;
+    protected String nhiemVu;
+    protected double diem;
+    protected String nhanXet;
     Scanner S = new Scanner(System.in);
 
 
     public TvHoiDong(){
 
     }
-    public TvHoiDong(String hoTen, String hocHam, String hocVi, String nhiemVu, double diem){
+    public TvHoiDong(String hoTen, String hocHam, String hocVi, String nhiemVu){
+        this.hoTen = hoTen;
+        this.hocHam = hocHam;
+        this.hocVi = hocVi;
+        this.nhiemVu = nhiemVu;
+    }
+    public TvHoiDong(String hoTen, String hocHam, String hocVi, String nhiemVu, double diem, String nhanXet){
         this.hoTen = hoTen;
         this.hocHam = hocHam;
         this.hocVi = hocVi;
         this.nhiemVu = nhiemVu;
         this.diem = diem;
+        this.nhanXet = nhanXet;
     }
-    public void nhapThanhVienHoiDon() {
+    public void nhapThanhVien() {
         System.out.print("Nhập họ và tên: ");
         hoTen = S.nextLine();
         System.out.print("Nhập học hàm: ");
         hocHam = S.nextLine();
         System.out.print("Nhập học vị: ");
         hocVi = S.nextLine();
-        System.out.print("Nhập nhiệm vụ");
+        System.out.print("Nhập nhiệm vụ: ");
         nhiemVu = S.nextLine();
-        System.out.print("Nhập điểm: ");
-        diem = S.nextDouble();
+//        System.out.print("Nhập điểm: ");
+//        diem = S.nextDouble();
     }
-    public void  xuatThanhVienHoiDong() {
-        System.out.printf("Họ và tên: %s\n Học Hàm: %s\n Học Vị: %s\n Nhiệm vụ: %s\n  Điểm: %.2f\n",
-                this.hoTen, this.hocHam, this.hocVi, this.nhiemVu, this.diem);
+    public void  xuatThanhVien() {
+        System.out.printf("Họ và tên: %s\n Học Hàm: %s\n Học Vị: %s\n Nhiệm vụ: %s\n",
+                this.hoTen, this.hocHam, this.hocVi, this.nhiemVu);
     }
     public String getHoTen() {
         return hoTen;
