@@ -9,13 +9,7 @@ public class BaoCaoThucTap extends BaoCao {
     }
 
     public BaoCaoThucTap(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien, double diem, String thongTinDanhGia) throws ParseException {
-        this.maBaoCao = maBaoCao;
-        this.tenBaoCao = tenBaoCao;
-        this.linkBaoCao = linkBaoCao;
-        this.ngayBaoCao = F.parse(ngayBaoCao);
-        this.dsSinhVien = dsSinhVien;
-        this.tenGiangVien = tenGiangVien;
-        this.diemBaoCao = diem;
+        super(maBaoCao, tenBaoCao, linkBaoCao, ngayBaoCao, dsSinhVien, tenGiangVien, diem);
         this.thongTinDanhGia = thongTinDanhGia;
     }
 

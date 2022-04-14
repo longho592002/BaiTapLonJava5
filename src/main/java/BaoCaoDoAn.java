@@ -2,28 +2,16 @@ import java.text.ParseException;
 import java.util.Scanner;
 
 public class BaoCaoDoAn extends BaoCao {
-    protected double tyLeDaoVan;
+    private double tyLeDaoVan;
 
     public BaoCaoDoAn() {
 
     }
     public BaoCaoDoAn(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien, double tyLeDaoVan) throws ParseException {
-        this.maBaoCao = maBaoCao;
-        this.tenBaoCao = tenBaoCao;
-        this.linkBaoCao = linkBaoCao;
-        this.ngayBaoCao = F.parse(ngayBaoCao);
-        this.dsSinhVien = dsSinhVien;
-        this.tenGiangVien = tenGiangVien;
         this.tyLeDaoVan = tyLeDaoVan;
     }
     public BaoCaoDoAn(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien, double diem, double tyLeDaoVan) throws ParseException {
-        this.maBaoCao = maBaoCao;
-        this.tenBaoCao = tenBaoCao;
-        this.linkBaoCao = linkBaoCao;
-        this.ngayBaoCao = F.parse(ngayBaoCao);
-        this.dsSinhVien = dsSinhVien;
-        this.tenGiangVien = tenGiangVien;
-        this.diemBaoCao = diem;
+        super(maBaoCao, tenBaoCao, linkBaoCao, ngayBaoCao, dsSinhVien, tenGiangVien, diem);
         this.tyLeDaoVan = tyLeDaoVan;
     }
 

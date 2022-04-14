@@ -4,14 +4,14 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class BaoCao {
-
-    public String maBaoCao;
-    protected String tenBaoCao;
-    protected String linkBaoCao;
-    protected Date ngayBaoCao;
-    protected String dsSinhVien;
-    protected String tenGiangVien;
-    protected double diemBaoCao;
+    DanhSachBaoCao dsbc = new DanhSachBaoCao();
+    private String maBaoCao;
+    private String tenBaoCao;
+    private String linkBaoCao;
+    private Date ngayBaoCao;
+    private String dsSinhVien;
+    private String tenGiangVien;
+    private double diemBaoCao;
 
     public static SimpleDateFormat F = new SimpleDateFormat("dd-MM-yyyy");
     public Scanner scan = new Scanner(System.in);
@@ -41,27 +41,21 @@ public class BaoCao {
         System.out.println("Mã báo cáo theo dạng gồm 5 chữ số, 2 chữ số đầu là tên loại báo cáo");
         System.out.println("Ví dụ nhập báo cáo thực tập: \"TT001\"");
         System.out.print("Nhập mã báo cáo(): ");
-        maBaoCao = scan.nextLine();
+        this.maBaoCao = scan.nextLine();
         System.out.print("Nhập tên báo cáo: ");
-        tenBaoCao = scan.nextLine();
+        this.tenBaoCao = scan.nextLine();
         System.out.print("Nhập link báo cáo: ");
-        linkBaoCao = scan.nextLine();
+        this.linkBaoCao = scan.nextLine();
         System.out.print("Nhập ngày báo cáo(dd-MM-YYYY): ");
-        ngayBaoCao = F.parse(scan.nextLine());
+        this.ngayBaoCao = F.parse(scan.nextLine());
         System.out.print("Nhập danh sách sinh viên thực hiện: ");
-        dsSinhVien = scan.nextLine();
+        this.dsSinhVien = scan.nextLine();
         System.out.print("Nhập tên giảng viên: ");
-        tenGiangVien = scan.nextLine();
+        this.tenGiangVien = scan.nextLine();
 //        System.out.print("Nhập điểm: ");
 //        diemBaoCao = scan.nextDouble();
     }
 
-    // so sánh 2 mã báo cáo
-//    public int soSanh(String b) {
-//        if (this.getMaBaoCao().equals(b))
-//            return 1;
-//        else return 0;
-//    }
 
     // getter setter
     public String getMaBaoCao() {

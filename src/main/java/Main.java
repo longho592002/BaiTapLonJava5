@@ -50,26 +50,40 @@ public class Main {
                         case 1 -> {
                             System.out.println("=========== Thêm báo cáo Đồ Án ===========");
                             bcda.nhap();
-                            baoCaos.add(bcda);
-                            System.out.println("Thêm thành công");
+                            if(baoCaos.checkMa(bcda.getMaBaoCao()) == 1){
+                                System.out.println("Nhập trùng mã, vui lòng nhập lại");
+                            } else {
+                                baoCaos.add(bcda);
+                                System.out.println("Thêm thành công");
+                            }
                         }
                         case 2 -> {
-                            System.out.println("=========== Thêm báo cáo khóa luận ===========");
-                            bckl.nhap();
-                            baoCaos.add(bckl);
-                            System.out.println("Thêm thành công");
+//                            System.out.println("=========== Thêm báo cáo khóa luận ===========");
+//                            bckl.nhap();
+//                            if(baoCaos.checkMa(bckl.getMaBaoCao()) == 1){
+//                                System.out.println("Nhập trùng mã, vui lòng nhập lại");
+//                            } else {
+//                                baoCaos.add(bckl);
+//                                System.out.println("Thêm thành công");
+//                            }
+                            String a = bckl.getMaBaoCao();
+                            System.out.println(a);
                         }
-                        case 3 -> {
-                            System.out.println("=========== Thêm báo cáo thực tập ===========");
-                            bctt.nhap();
-                            baoCaos.add(bctt);
-                            System.out.println("Thêm thành công");
-                        }
+//                        case 3 -> {
+//                            System.out.println("=========== Thêm báo cáo thực tập ===========");
+//                            bctt.nhap();
+//                            if(baoCaos.checkMa(bctt.maBaoCao) == 1){
+//                                System.out.println("Nhập trùng mã, vui lòng nhập lại");
+//                            } else {
+//                                baoCaos.add(bctt);
+//                                System.out.println("Thêm thành công");
+//                            }
+//                        }
                     }
                 }
                 case 2 -> {
                     System.out.println("Xoa bao cao");
-                    baoCaos.xoaBaoCao();
+//                    baoCaos.xoaBaoCao();
                 }
                 case 3 -> {
                     System.out.println("========== Các loại danh sách báo cáo ==========");
@@ -79,17 +93,17 @@ public class Main {
                     showMenuDSBaoCao();
                     System.out.println("Chọn loại báo cáo muốn sửa: ");
                     int a = input.nextInt();
-                    switch (a) {
-                        case 1 -> {
-                            baoCaos.suaThongTinDoAn();
-                        }
-                        case 2 -> {
-                            baoCaos.suaThongTinKhoaLuan();
-                        }
-                        case 3 -> {
-                            baoCaos.suaThongTinThucTap();
-                        }
-                    }
+//                    switch (a) {
+//                        case 1 -> {
+//                            baoCaos.suaThongTinDoAn();
+//                        }
+//                        case 2 -> {
+//                            baoCaos.suaThongTinKhoaLuan();
+//                        }
+//                        case 3 -> {
+//                            baoCaos.suaThongTinThucTap();
+//                        }
+//                    }
 
                 }
                 case 5 -> {
@@ -103,7 +117,7 @@ public class Main {
                 case 7 -> {
                     System.out.println("=========== Chấm điểm cho báo cáo khóa luận ============");
                     BaoCaoKhoaLuan a =null;
-                    a = (BaoCaoKhoaLuan) baoCaos.timBaoCao();
+//                    a = (BaoCaoKhoaLuan) baoCaos.timBaoCao();
                     if(a!=null) {
                         int n = 0;
                         double diemTong = 0, diemTongKet = 0;
@@ -119,7 +133,7 @@ public class Main {
                             diemTong += b.diem;
                             diemTongKet = diemTong / n;
                         }
-                        a.diemBaoCao = diemTongKet;
+//                        a.diemBaoCao = diemTongKet;
                     }   else {
                         System.out.println("Không tìm thấy báo cáo để chấm điểm");
                     }

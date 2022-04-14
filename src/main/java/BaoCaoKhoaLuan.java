@@ -14,23 +14,10 @@ public class BaoCaoKhoaLuan extends BaoCao {
 
     }
     public BaoCaoKhoaLuan(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien, double diem, double tyLeDaoVan, ArrayList<String> nhanXet) throws ParseException {
-        this.maBaoCao = maBaoCao;
-        this.tenBaoCao = tenBaoCao;
-        this.linkBaoCao = linkBaoCao;
-        this.ngayBaoCao = F.parse(ngayBaoCao);
-        this.dsSinhVien = dsSinhVien;
-        this.tenGiangVien = tenGiangVien;
-        this.diemBaoCao = diem;
-        this.tyLeDaoVan = tyLeDaoVan;
+        super(maBaoCao, tenBaoCao, linkBaoCao, ngayBaoCao, dsSinhVien, tenGiangVien, diem);
         this.setNhanXet(nhanXet);
     }
     public BaoCaoKhoaLuan(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien, double tyLeDaoVan) throws ParseException {
-        this.maBaoCao = maBaoCao;
-        this.tenBaoCao = tenBaoCao;
-        this.linkBaoCao = linkBaoCao;
-        this.ngayBaoCao = F.parse(ngayBaoCao);
-        this.dsSinhVien = dsSinhVien;
-        this.tenGiangVien = tenGiangVien;
         this.tyLeDaoVan = tyLeDaoVan;
     }
 
