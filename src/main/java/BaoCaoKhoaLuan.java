@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BaoCaoKhoaLuan extends BaoCao {
-    private String danhGiaGV;
+    protected String danhGiaGV;
     protected double diem;
     protected ArrayList<String> nhanXet = new ArrayList<>();
     private double diemTongKet;
@@ -56,15 +56,15 @@ public class BaoCaoKhoaLuan extends BaoCao {
 //        this.dsTvHoiDong = Arrays.asList(dsTvHoiDong);
 //    }
 
-    @Override
-    public double getDiem() {
-        return diem;
-    }
-
-    @Override
-    public void setDiem(double diem) {
-        this.diem = diem;
-    }
+//    @Override
+//    public double getDiem() {
+//        return diem;
+//    }
+//
+//    @Override
+//    public void setDiem(double diem) {
+//        this.diem = diem;
+//    }
 
 //    public ArrayList<String> getNhanXet() {
 //        return nhanXet;

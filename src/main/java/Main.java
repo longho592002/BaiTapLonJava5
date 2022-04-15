@@ -1,4 +1,5 @@
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -58,27 +59,29 @@ public class Main {
                             }
                         }
                         case 2 -> {
-//                            System.out.println("=========== Thêm báo cáo khóa luận ===========");
-//                            bckl.nhap();
-//                            if(baoCaos.checkMa(bckl.getMaBaoCao()) == 1){
-//                                System.out.println("Nhập trùng mã, vui lòng nhập lại");
-//                            } else {
-//                                baoCaos.add(bckl);
-//                                System.out.println("Thêm thành công");
-//                            }
-                            String a = bckl.getMaBaoCao();
-                            System.out.println(a);
+                            System.out.println("=========== Thêm báo cáo khóa luận ===========");
+                            bckl.nhap();
+                            if(baoCaos.checkMa(bckl.getMaBaoCao()) == 1){
+                                System.out.println("Nhập trùng mã, vui lòng nhập lại");
+                            } else {
+                                baoCaos.add(bckl);
+                                System.out.println("Thêm thành công");
+                            }
+//                            ArrayList<BaoCao> a = baoCaos.getBaoCaos();
+//                            BaoCao b = new BaoCao();
+//                            String c = b4.getMaBaoCao();
+//                            System.out.println(c);
                         }
-//                        case 3 -> {
-//                            System.out.println("=========== Thêm báo cáo thực tập ===========");
-//                            bctt.nhap();
-//                            if(baoCaos.checkMa(bctt.maBaoCao) == 1){
-//                                System.out.println("Nhập trùng mã, vui lòng nhập lại");
-//                            } else {
-//                                baoCaos.add(bctt);
-//                                System.out.println("Thêm thành công");
-//                            }
-//                        }
+                        case 3 -> {
+                            System.out.println("=========== Thêm báo cáo thực tập ===========");
+                            bctt.nhap();
+                            if(baoCaos.checkMa(bctt.maBaoCao) == 1){
+                                System.out.println("Nhập trùng mã, vui lòng nhập lại");
+                            } else {
+                                baoCaos.add(bctt);
+                                System.out.println("Thêm thành công");
+                            }
+                        }
                     }
                 }
                 case 2 -> {
@@ -93,18 +96,17 @@ public class Main {
                     showMenuDSBaoCao();
                     System.out.println("Chọn loại báo cáo muốn sửa: ");
                     int a = input.nextInt();
-//                    switch (a) {
-//                        case 1 -> {
-//                            baoCaos.suaThongTinDoAn();
-//                        }
-//                        case 2 -> {
-//                            baoCaos.suaThongTinKhoaLuan();
-//                        }
-//                        case 3 -> {
-//                            baoCaos.suaThongTinThucTap();
-//                        }
-//                    }
-
+                    switch (a) {
+                        case 1 -> {
+                            baoCaos.suaThongTinDoAn();
+                        }
+                        case 2 -> {
+                            baoCaos.suaThongTinKhoaLuan();
+                        }
+                        case 3 -> {
+                            baoCaos.suaThongTinThucTap();
+                        }
+                    }
                 }
                 case 5 -> {
 //                    System.out.println("Nhập thành viên hội đồng");
