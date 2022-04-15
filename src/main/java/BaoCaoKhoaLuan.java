@@ -3,21 +3,22 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BaoCaoKhoaLuan extends BaoCao {
-    protected String danhGiaGV;
-    protected double diem;
-    protected ArrayList<String> nhanXet = new ArrayList<>();
+    private String danhGiaGV;
+    private double diem;
+    private ArrayList<String> nhanXet = new ArrayList<>();
     private double diemTongKet;
-    protected double tyLeDaoVan;
+    private double tyLeDaoVan;
 
 
     public BaoCaoKhoaLuan() {
 
     }
-    public BaoCaoKhoaLuan(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien, double diem, double tyLeDaoVan, ArrayList<String> nhanXet) throws ParseException {
+//    public BaoCaoKhoaLuan(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien, double diem, double tyLeDaoVan, ArrayList<String> nhanXet) throws ParseException {
+//        super(maBaoCao, tenBaoCao, linkBaoCao, ngayBaoCao, dsSinhVien, tenGiangVien, diem);
+//        this.setNhanXet(nhanXet);
+//    }
+    public BaoCaoKhoaLuan(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien,double diem, double tyLeDaoVan) throws ParseException {
         super(maBaoCao, tenBaoCao, linkBaoCao, ngayBaoCao, dsSinhVien, tenGiangVien, diem);
-        this.setNhanXet(nhanXet);
-    }
-    public BaoCaoKhoaLuan(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien, double tyLeDaoVan) throws ParseException {
         this.tyLeDaoVan = tyLeDaoVan;
     }
 
@@ -33,7 +34,7 @@ public class BaoCaoKhoaLuan extends BaoCao {
     @Override
     public void xuat() {
         super.xuat();
-        System.out.printf("Tỷ lệ đạo văn: %s\n", this.tyLeDaoVan);
+        System.out.printf("Tỷ lệ đạo văn: %.2f\n", this.tyLeDaoVan);
         nhanXet.toArray();
         System.out.print("Các lời nhận xét: ");
         System.out.println(nhanXet);

@@ -1,21 +1,38 @@
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class DanhSachBaoCao {
-    public ArrayList<BaoCao> baoCaos = new ArrayList<>();
-    public static SimpleDateFormat F = new SimpleDateFormat("dd-MM-yyyy");
-    Scanner input = new Scanner(System.in);
-    // getter setter
-    public ArrayList<BaoCao> getBaoCaos() {
-        return baoCaos;
-    }
+    private List<BaoCao> baoCaos = new ArrayList<>();
 
-    public void add(BaoCao b) {
+    public void themBaoCao(BaoCao b) {
         this.getBaoCaos().add(b);
     }
 
+    public void showList() {
+        System.out.println("Hai chữ cái đầu tiên của mã báo cáo là viết tắt tên loại báo cáo");
+        System.out.println("Ví dụ muốn xem danh sách đồ án ta nhập 2 chữ cái \"DA\"");
+        System.out.print("Nhập loại báo cáo muốn xem: ");
+        String s = BaoCao.s.nextLine();
+        for (BaoCao b: this.getBaoCaos() ){
+            if (b.getMaBaoCao().startsWith(s)){
+                b.xuat();
+            }
+        }
+    }
+
+    public void xoaBaoCao() {
+        System.out.print("Nhập mã báo cáo muốn xóa: ");
+        String str = BaoCao.s.nextLine();
+        for (BaoCao b: this.getBaoCaos())
+            if (str.equals(b.getMaBaoCao())) {
+                this.getBaoCaos().remove(b);
+                System.out.println("Xóa thành công");
+                break;
+            }
+            else {
+                System.out.println("Xóa không thành công");
+            }
+    }
 
 // Kiểm tra trùng lặp mã
     public int checkMa(String a){
@@ -46,18 +63,7 @@ public class DanhSachBaoCao {
 //            }
 //        }
 //    }
-    public void showList() {
-        System.out.println("Hai chữ cái đầu tiên của mã báo cáo là viết tắt tên loại báo cáo");
-        System.out.println("Ví dụ muốn xem danh sách đồ án ta nhập 2 chữ cái \"DA\"");
-        System.out.print("Nhập loại báo cáo muốn xem: ");
-        String s = input.nextLine();
 
-        for (BaoCao b: this.getBaoCaos() ){
-            if (b.getMaBaoCao().startsWith(s)){
-                b.xuat();
-            }
-        }
-    }
 
 
     public void suaThongTinKhoaLuan() throws ParseException {
@@ -66,39 +72,39 @@ public class DanhSachBaoCao {
         if(tam != null) {
             Main.showMenuSuaBaoCao();
             System.out.print("Nhập thông tin muốn sửa: ");
-            String a = input.nextLine();
+            String a = BaoCao.s.nextLine();
             switch (a) {
                 case "1" -> {
                     System.out.print("Nhập mã báo cáo: ");
-                    tam.maBaoCao = input.nextLine();
+                    tam.setMaBaoCao(BaoCao.s.nextLine());
                 }
                 case "2" -> {
                     System.out.print("Nhập tên báo cáo: ");
-                    tam.tenBaoCao = input.nextLine();
+                    tam.setTenBaoCao(BaoCao.s.nextLine());
                 }
                 case "3" -> {
                     System.out.print("Nhập link báo cáo: ");
-                    tam.linkBaoCao = input.nextLine();
+                    tam.setLinkBaoCao(BaoCao.s.nextLine());
                 }
                 case "4" -> {
                     System.out.print("Nhập ngày báo cáo: ");
-                    tam.ngayBaoCao = F.parse(input.nextLine());
+                    tam.setNgayBaoCao(BaoCao.F.parse(BaoCao.s.nextLine()));
                 }
                 case "5" -> {
                     System.out.print("Nhập danh sách sinh viên thực hiện báo cáo: ");
-                    tam.dsSinhVien = input.nextLine();
+                    tam.setDsSinhVien(BaoCao.s.nextLine());
                 }
                 case "6" -> {
                     System.out.print("Nhập tên giảng viên: ");
-                    tam.tenGiangVien = input.nextLine();
+                    tam.setTenGiangVien(BaoCao.s.nextLine());
                 }
                 case "7" -> {
                     System.out.print("Nhập điểm báo cáo: ");
-                    tam.diemBaoCao = input.nextDouble();
+                    tam.setDiemBaoCao(BaoCao.s.nextDouble());
                 }
                 case "8" -> {
                     System.out.println("Nhập tỷ lệ đạo văn: ");
-                    tam.tyLeDaoVan = input.nextDouble();
+                    tam.setTyLeDaoVan(Double.parseDouble(BaoCao.s.nextLine()));
                 }
             }
         } else {
@@ -111,39 +117,39 @@ public class DanhSachBaoCao {
         if(tam != null) {
             Main.showMenuSuaBaoCao();
             System.out.print("Nhập thông tin muốn sửa: ");
-            String a = input.nextLine();
+            String a = BaoCao.s.nextLine();
             switch (a) {
                 case "1" -> {
                     System.out.print("Nhập mã báo cáo: ");
-                    tam.maBaoCao = input.nextLine();
+                    tam.setMaBaoCao(BaoCao.s.nextLine());
                 }
                 case "2" -> {
                     System.out.print("Nhập tên báo cáo: ");
-                    tam.tenBaoCao = input.nextLine();
+                    tam.setTenBaoCao(BaoCao.s.nextLine());
                 }
                 case "3" -> {
                     System.out.print("Nhập link báo cáo: ");
-                    tam.linkBaoCao = input.nextLine();
+                    tam.setLinkBaoCao(BaoCao.s.nextLine());
                 }
                 case "4" -> {
                     System.out.print("Nhập ngày báo cáo: ");
-                    tam.ngayBaoCao = F.parse(input.nextLine());
+                    tam.setNgayBaoCao(BaoCao.F.parse(BaoCao.s.nextLine()));
                 }
                 case "5" -> {
                     System.out.print("Nhập danh sách sinh viên thực hiện báo cáo: ");
-                    tam.dsSinhVien = input.nextLine();
+                    tam.setDsSinhVien(BaoCao.s.nextLine());
                 }
                 case "6" -> {
                     System.out.print("Nhập tên giảng viên: ");
-                    tam.tenGiangVien = input.nextLine();
+                    tam.setTenGiangVien(BaoCao.s.nextLine());
                 }
                 case "7" -> {
                     System.out.print("Nhập điểm báo cáo: ");
-                    tam.diemBaoCao = input.nextDouble();
+                    tam.setDiemBaoCao(Double.parseDouble(BaoCao.s.nextLine()));
                 }
                 case "8" -> {
                     System.out.println("Nhập tỷ lệ đạo văn: ");
-                    tam.tyLeDaoVan = input.nextDouble();
+                    tam.setTyLeDaoVan(Double.parseDouble(BaoCao.s.nextLine()));
                 }
             }
         } else {
@@ -156,39 +162,39 @@ public class DanhSachBaoCao {
         if(tam != null) {
             Main.showMenuSuaBaoCao();
             System.out.print("Nhập thông tin muốn sửa: ");
-            String a = input.nextLine();
+            String a = BaoCao.s.nextLine();
             switch (a) {
                 case "1" -> {
                     System.out.print("Nhập mã báo cáo: ");
-                    tam.maBaoCao = input.nextLine();
+                    tam.setMaBaoCao(BaoCao.s.nextLine());
                 }
                 case "2" -> {
                     System.out.print("Nhập tên báo cáo: ");
-                    tam.tenBaoCao = input.nextLine();
+                    tam.setTenBaoCao(BaoCao.s.nextLine());
                 }
                 case "3" -> {
                     System.out.print("Nhập link báo cáo: ");
-                    tam.linkBaoCao = input.nextLine();
+                    tam.setLinkBaoCao(BaoCao.s.nextLine());
                 }
                 case "4" -> {
                     System.out.print("Nhập ngày báo cáo: ");
-                    tam.ngayBaoCao = F.parse(input.nextLine());
+                    tam.setNgayBaoCao(BaoCao.F.parse(BaoCao.s.nextLine()));
                 }
                 case "5" -> {
                     System.out.print("Nhập danh sách sinh viên thực hiện báo cáo: ");
-                    tam.dsSinhVien = input.nextLine();
+                    tam.setDsSinhVien(BaoCao.s.nextLine());
                 }
                 case "6" -> {
                     System.out.print("Nhập tên giảng viên: ");
-                    tam.tenGiangVien = input.nextLine();
+                    tam.setTenGiangVien(BaoCao.s.nextLine());
                 }
                 case "7" -> {
                     System.out.print("Nhập điểm báo cáo: ");
-                    tam.diemBaoCao = input.nextDouble();
+                    tam.setDiemBaoCao(Double.parseDouble(BaoCao.s.nextLine()));
                 }
                 case "8" -> {
                     System.out.println("Nhập tỷ lệ đạo văn: ");
-                    tam.thongTinDanhGia = input.nextLine();
+                    tam.setThongTinDanhGia(BaoCao.s.nextLine());
                 }
             }
         } else {
@@ -197,16 +203,13 @@ public class DanhSachBaoCao {
 
     }
 
-
-
-
 //    Tìm báo cáo
     public BaoCao timBaoCao(){
         System.out.print("Nhập mã báo cáo cần tìm: ");
-        String ma = input.nextLine();
+        String ma = BaoCao.s.nextLine();
         BaoCao tim = null;
         for(BaoCao b: this.getBaoCaos()) {
-            if(b.maBaoCao.contains(ma)){
+            if(b.getMaBaoCao().contains(ma)){
                 tim = b;
                 break;
             }
@@ -220,25 +223,62 @@ public class DanhSachBaoCao {
         return tim;
     }
 
-
-
-//    // xóa báo cáo
-    public void xoaBaoCao() {
-        String s;
-        System.out.print("Nhập mã báo cáo muốn xóa: ");
-        s = input.nextLine();
-        for (BaoCao b: this.getBaoCaos())
-            if(s.equals(b.getMaBaoCao())) {
-                this.getBaoCaos().remove(b);
-                System.out.println("Xoa thanh cong");
-                break;
+    public void timTheoTen() {
+        System.out.print("Nhập tên báo cáo cần tìm: ");
+        String s = BaoCao.s.nextLine();
+        for (BaoCao b: this.getBaoCaos()) {
+            if (s.equals(b.getTenBaoCao())) {
+                System.out.println("Đã tìm thấy báo cáo");
+                b.xuat();
             }
-            else {
-                System.out.println("Xoa khong thanh cong");
-            }
+        }
     }
 
-    public void setBaoCaos(ArrayList<BaoCao> baoCaos) {
+    public void timTheoNgay() throws ParseException {
+        System.out.print("Nhập ngày báo cáo cần tìm: ");
+        Date d = BaoCao.F.parse(BaoCao.s.nextLine());
+        for (BaoCao b: this.getBaoCaos()) {
+            if (d.compareTo(b.getNgayBaoCao()) == 0) {
+                System.out.println("Đã tìm thấy báo cáo");
+                b.xuat();
+            }
+        }
+    }
+
+    public void sortByName() {
+        Collections.sort(baoCaos, new Comparator<BaoCao>() {
+            @Override
+            public int compare(BaoCao o1, BaoCao o2) {
+                String name1 = o1.getTenBaoCao();
+                String name2 = o2.getTenBaoCao();
+                String n1 = name1.substring(name1.lastIndexOf(" ") + 1);
+                String n2 = name2.substring(name2.lastIndexOf(" ") + 1);
+                int compareName = n1.compareTo(n2);
+                if(compareName == 0) {
+                    String l1 = name1.substring(0, name1.indexOf(" "));
+                    String l2 = name2.substring(0, name2.indexOf(" "));
+                    return l1.compareTo(l2);
+                } else {
+                    return compareName;
+                }
+            }
+        });
+    }
+
+    public void sortByDate() {
+        Collections.sort(baoCaos, new Comparator<BaoCao>() {
+            @Override
+            public int compare(BaoCao o1, BaoCao o2) {
+                return o1.getNgayBaoCao().compareTo(o2.getNgayBaoCao());
+            }
+        });
+    }
+
+    public List<BaoCao> getBaoCaos() {
+        return baoCaos;
+    }
+
+    public void setBaoCaos(List<BaoCao> baoCaos) {
         this.baoCaos = baoCaos;
     }
 }

@@ -4,58 +4,67 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class BaoCao {
-    DanhSachBaoCao dsbc = new DanhSachBaoCao();
-    protected String maBaoCao;
-    protected String tenBaoCao;
-    protected String linkBaoCao;
-    protected Date ngayBaoCao;
-    protected String dsSinhVien;
-    protected String tenGiangVien;
-    protected double diemBaoCao;
+    private String maBaoCao;
+    private String tenBaoCao;
+    private String linkBaoCao;
+    private Date ngayBaoCao;
+    private String dsSinhVien;
+    private String tenGiangVien;
+    private double diemBaoCao;
+
+//    DanhSachBaoCao dsbc = new DanhSachBaoCao();
 
     public static SimpleDateFormat F = new SimpleDateFormat("dd-MM-yyyy");
-    public Scanner scan = new Scanner(System.in);
+    public static Scanner s = new Scanner(System.in);
 
     public BaoCao() {
 
     }
 
-    public BaoCao(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien, double diem) throws ParseException {
-        this.setMaBaoCao(maBaoCao);
-        this.setTenBaoCao(tenBaoCao);
-        this.setLinkBaoCao(linkBaoCao);
-        this.setNgayBaoCao(F.parse(ngayBaoCao));
-        this.setDsSinhVien(dsSinhVien);
-        this.setTenGiangVien(tenGiangVien);
-        this.setDiemBaoCao(diem);
+    public BaoCao(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien, double diemBaoCao) throws ParseException {
+        this.maBaoCao = maBaoCao;
+        this.tenBaoCao = tenBaoCao;
+        this.linkBaoCao = linkBaoCao;
+        this.ngayBaoCao = F.parse(ngayBaoCao);
+        this.dsSinhVien = dsSinhVien;
+        this.tenGiangVien = tenGiangVien;
+        this.diemBaoCao = diemBaoCao;
     }
+
+//    public BaoCao(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien, double diem) throws ParseException {
+//        this.setMaBaoCao(maBaoCao);
+//        this.setTenBaoCao(tenBaoCao);
+//        this.setLinkBaoCao(linkBaoCao);
+//        this.setNgayBaoCao(F.parse(ngayBaoCao));
+//        this.setDsSinhVien(dsSinhVien);
+//        this.setTenGiangVien(tenGiangVien);
+//        this.setDiemBaoCao(diem);
+//    }
 
     // xuất báo cáo
     public void xuat() {
         System.out.printf("== == == == == ==\nMã báo cáo: %s\nTên báo cáo: %s\nLink báo cáo: %s\nNgày báo cáo: %s\nDanh sách sinh viên: %s\nTên giảng viên: %s\nĐiểm: %.2f\n",
-                this.getMaBaoCao(), this.getTenBaoCao(), this.getLinkBaoCao(),F.format(this.getNgayBaoCao()), this.getDsSinhVien(), this.getTenGiangVien(), this.getDiemBaoCao());
+                this.maBaoCao, this.tenBaoCao, this.linkBaoCao,F.format(this.ngayBaoCao), this.dsSinhVien, this.tenGiangVien, this.diemBaoCao);
     }
-
-    // nhập báo cáo
     public void nhap() throws ParseException {
         System.out.println("Mã báo cáo theo dạng gồm 5 chữ số, 2 chữ số đầu là tên loại báo cáo");
         System.out.println("Ví dụ nhập báo cáo thực tập: \"TT001\"");
-        System.out.print("Nhập mã báo cáo(): ");
-        this.setMaBaoCao(scan.nextLine());
-        System.out.print("Nhập tên báo cáo: ");
-        this.setTenBaoCao(scan.nextLine());
-        System.out.print("Nhập link báo cáo: ");
-        this.setLinkBaoCao(scan.nextLine());
-        System.out.print("Nhập ngày báo cáo(dd-MM-YYYY): ");
-        this.setNgayBaoCao(F.parse(scan.nextLine()));
-        System.out.print("Nhập danh sách sinh viên thực hiện: ");
-        this.setDsSinhVien(scan.nextLine());
-        System.out.print("Nhập tên giảng viên: ");
-        this.setTenGiangVien(scan.nextLine());
-//        System.out.print("Nhập điểm: ");
-//        diemBaoCao = scan.nextDouble();
+        System.out.print("Nhap ma bao cao: ");
+        this.maBaoCao = s.nextLine();
+        s.nextLine();
+        System.out.print("Nhap ten bao cao: ");
+        this.tenBaoCao = s.nextLine();
+        System.out.print("Nhap link bao cao: ");
+        this.linkBaoCao = s.nextLine();
+        System.out.print("Nhap ngay bao cao: ");
+        this.ngayBaoCao = F.parse(s.nextLine());
+        System.out.print("Nhap danh sach sinh vien thuc hien: ");
+        this.dsSinhVien = s.nextLine();
+        System.out.print("Nhap ten giang vien: ");
+        this.tenGiangVien = s.nextLine();
+        System.out.print("Nhap diem bao cao: ");
+        this.diemBaoCao = Double.parseDouble(s.nextLine());
     }
-
 
     public String getMaBaoCao() {
         return maBaoCao;
