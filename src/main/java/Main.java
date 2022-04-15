@@ -143,9 +143,11 @@ public class Main {
                     switch (a) {
                         case 1:
                             baoCaos.sortByName();
+                            System.out.println("Đã sắp xếp");
                             break;
                         case 2:
                             baoCaos.sortByDate();
+                            System.out.println("Đã sắp xếp");
                             break;
 //                        case 3:
 //                            showMenuDSBaoCao();
