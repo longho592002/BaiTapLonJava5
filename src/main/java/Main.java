@@ -10,13 +10,13 @@ public class Main {
         BaoCao bckl = new BaoCaoKhoaLuan();
         BaoCao bctt = new BaoCaoThucTap();
 
-        BaoCao b1 = new BaoCaoThucTap("TT001", "Duc Hung", "abc.com", "4-1-2002", "Nguyễn Đức Hưng", "Dương Hữu Thành", 8.5, "Amazing");
-        BaoCao b2 = new BaoCaoThucTap("TT002", "Ho Long", "def.com", "5-9-2002", "Nguyễn Hồ Long", "Dương Hữu Thành", 10, "Good jobs");
-        BaoCao b3 = new BaoCaoThucTap("TT003", "Thanh Binh", "ghc.com", "30-4-2022", "Mai Thanh Bình", "Dương Hữu Thành", 7.5, "Excellent");
-        BaoCao b4 = new BaoCaoDoAn("DA001", "Truong Nguyen", "ccd.com", "20-6-2022", "Nguyễn Trường Nguyên", "Dương Hữu Thành", 5, 10);
-        BaoCao b5 = new BaoCaoDoAn("DA002", "Phu Tuan", "oop.com", "9-4-2022", "Mai Thanh Bình", "Dương Hữu Thành", 5, 50);
-        BaoCao b6 = new BaoCaoKhoaLuan("KL001", "Van An", "uuu.com", "11-3-2022", "Lê Tiến Hưng", "Dương Hữu Thành", 0, 30);
-        BaoCao b7 = new BaoCaoKhoaLuan("KL002", "Cam Giang", "qqq.com", "3-5-2020", "Nguyễn Văn An", "Dương Hữu Thành", 0, 15);
+        BaoCao b1 = new BaoCaoThucTap("TT001", "Thuc tap 01", "abc.com", "4-1-2002", "Nguyễn Đức Hưng", "Dương Hữu Thành", 8.5, "Amazing");
+        BaoCao b2 = new BaoCaoThucTap("TT002", "Thuc tap 02", "def.com", "5-9-2002", "Nguyễn Hồ Long", "Dương Hữu Thành", 10, "Good jobs");
+        BaoCao b3 = new BaoCaoThucTap("TT003", "Thuc tap 03", "ghc.com", "30-4-2022", "Mai Thanh Bình", "Dương Hữu Thành", 7.5, "Excellent");
+        BaoCao b4 = new BaoCaoDoAn("DA001", "Do an 01", "ccd.com", "20-6-2022", "Nguyễn Trường Nguyên", "Dương Hữu Thành", 5, 10);
+        BaoCao b5 = new BaoCaoDoAn("DA002", "Do an 02", "oop.com", "9-4-2022", "Mai Thanh Bình", "Dương Hữu Thành", 5, 50);
+        BaoCao b6 = new BaoCaoKhoaLuan("KL001", "Khoa luan 01", "uuu.com", "11-3-2022", "Lê Tiến Hưng", "Dương Hữu Thành", 0, 30);
+        BaoCao b7 = new BaoCaoKhoaLuan("KL002", "Khoa luan 03", "qqq.com", "3-5-2020", "Nguyễn Văn An", "Dương Hữu Thành", 0, 15);
         TvHoiDong b8 = new TvHoiDong("Nguyễn Hồ Long", "Giáo sư", "Tiến sĩ", "Chủ tịch hội đồng");
         TvHoiDong b9 = new TvHoiDong("Nguyễn Văn Doanh", "acsac", "Thạc sĩ", "Thư ký");
         TvHoiDong b10 = new TvHoiDong("Hồ Thị Tuyết", "sdadasda", "Thạc sĩ", "Thư ký");
@@ -36,13 +36,13 @@ public class Main {
         do {
             showMenu();
             System.out.print("Bạn chọn: ");
-            chon = BaoCao.s.nextInt();
+            chon = Integer.parseInt(BaoCao.s.nextLine());
             switch (chon) {
                 case 1 -> {
                     System.out.println("========= Các loại báo cáo =========");
                     showMenuBaoCao();
                     System.out.print("Chọn loại báo cáo để tạo: ");
-                    int choose = BaoCao.s.nextInt();
+                    int choose = Integer.parseInt(BaoCao.s.nextLine());
                     switch (choose) {
                         case 1 -> {
                             System.out.println("=========== Thêm báo cáo Đồ Án ===========");
@@ -91,7 +91,7 @@ public class Main {
                 case 4 -> {
                     showMenuDSBaoCao();
                     System.out.print("Chọn loại báo cáo muốn sửa: ");
-                    int a = BaoCao.s.nextInt();
+                    int a = Integer.parseInt(BaoCao.s.nextLine());
                     switch (a) {
                         case 1 -> {
                             baoCaos.suaThongTinDoAn();
@@ -136,26 +136,39 @@ public class Main {
                         System.out.println("Không tìm thấy báo cáo để chấm điểm");
                     }
                 }
-//                case 8 -> {
-//                    showMenuSapXep();
-//                    System.out.print("Chọn cách sắp xếp báo cáo: ");
-//                    int a = BaoCao.s.nextInt();
-//                    switch (a) {
-//                        case 1:
-//                            baoCaos.sortByName();
-//                            break;
-//                        case 2:
-//                            baoCaos.sortByDate();
-//                            break;
+                case 8 -> {
+                    showMenuSapXep();
+                    System.out.print("Chọn cách sắp xếp báo cáo: ");
+                    int a = Integer.parseInt(BaoCao.s.nextLine());
+                    switch (a) {
+                        case 1:
+                            baoCaos.sortByName();
+                            break;
+                        case 2:
+                            baoCaos.sortByDate();
+                            break;
 //                        case 3:
 //                            showMenuDSBaoCao();
-//                            int aa = BaoCao.s.nextInt();
+//                            int aa = Integer.parseInt(BaoCao.s.nextLine());
 //                            switch (aa) {
 //                                case 1:
 //
 //                            }
-//                    }
-//                }
+                    }
+                }
+                case 9 -> {
+                    showMenuTimKiem();
+                    System.out.print("Chọn kiểu tìm kiếm: ");
+                    int a = Integer.parseInt(BaoCao.s.nextLine());
+                    switch (a) {
+                        case 1:
+                            baoCaos.timTheoTen();
+                            break;
+                        case 2:
+                            baoCaos.timTheoNgay();
+                            break;
+                    }
+                }
             }
         } while (chon >= 1 && chon <= 12);
     }
@@ -170,6 +183,7 @@ public class Main {
         System.out.println("6. Xuất thành viên hội đồng");
         System.out.println("7. Chấm điểm báo cáo khóa luận");
         System.out.println("8. Sắp xếp danh sách báo cáo");
+        System.out.println("9. Tìm kiếm");
     }
     static void showMenuBaoCao() {
         System.out.println("1. Thêm báo cáo Đồ Án");
@@ -198,5 +212,10 @@ public class Main {
         System.out.println("2. Sắp xếp theo ngày");
         System.out.println("3. Sắp xếp theo tên + lọc");
         System.out.println("4. Sắp xếp theo ngày + lọc");
+    }
+    static void showMenuTimKiem() {
+        System.out.println("=========== Menu tìm kiếm báo cáo ===========");
+        System.out.println("1. Tìm kiếm theo tên");
+        System.out.println("2. Tìm kiếm theo ngày");
     }
 }

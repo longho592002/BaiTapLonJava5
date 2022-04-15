@@ -51,7 +51,6 @@ public class BaoCao {
         System.out.println("Ví dụ nhập báo cáo thực tập: \"TT001\"");
         System.out.print("Nhap ma bao cao: ");
         this.maBaoCao = s.nextLine();
-        s.nextLine();
         System.out.print("Nhap ten bao cao: ");
         this.tenBaoCao = s.nextLine();
         System.out.print("Nhap link bao cao: ");
