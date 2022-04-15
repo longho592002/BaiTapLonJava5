@@ -9,14 +9,15 @@ public class BaoCaoKhoaLuan extends BaoCao {
     private double diemTongKet;
     private double tyLeDaoVan;
 
-
     public BaoCaoKhoaLuan() {
 
     }
+
 //    public BaoCaoKhoaLuan(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien, double diem, double tyLeDaoVan, ArrayList<String> nhanXet) throws ParseException {
 //        super(maBaoCao, tenBaoCao, linkBaoCao, ngayBaoCao, dsSinhVien, tenGiangVien, diem);
 //        this.setNhanXet(nhanXet);
 //    }
+
     public BaoCaoKhoaLuan(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien,double diem, double tyLeDaoVan) throws ParseException {
         super(maBaoCao, tenBaoCao, linkBaoCao, ngayBaoCao, dsSinhVien, tenGiangVien, diem);
         this.tyLeDaoVan = tyLeDaoVan;
@@ -30,7 +31,6 @@ public class BaoCaoKhoaLuan extends BaoCao {
         tyLeDaoVan = s.nextDouble();
     }
 
-
     @Override
     public void xuat() {
         super.xuat();
@@ -39,7 +39,6 @@ public class BaoCaoKhoaLuan extends BaoCao {
         System.out.print("Các lời nhận xét: ");
         System.out.println(nhanXet);
     }
-
 
     public String getDanhGiaGV() {
         return danhGiaGV;

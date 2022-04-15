@@ -24,12 +24,12 @@ public class BaoCaoDoAn extends BaoCao {
         this.tyLeDaoVan = Double.parseDouble(s.nextLine());
     }
 
-
     @Override
     public void xuat() {
         super.xuat();
         System.out.printf("Tỷ lệ đạo văn: %.2f\n", this.tyLeDaoVan);
     }
+
     public double getTyLeDaoVan() {
         return tyLeDaoVan;
     }

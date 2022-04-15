@@ -31,21 +31,11 @@ public class BaoCao {
         this.diemBaoCao = diemBaoCao;
     }
 
-//    public BaoCao(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien, double diem) throws ParseException {
-//        this.setMaBaoCao(maBaoCao);
-//        this.setTenBaoCao(tenBaoCao);
-//        this.setLinkBaoCao(linkBaoCao);
-//        this.setNgayBaoCao(F.parse(ngayBaoCao));
-//        this.setDsSinhVien(dsSinhVien);
-//        this.setTenGiangVien(tenGiangVien);
-//        this.setDiemBaoCao(diem);
-//    }
-
-    // xuất báo cáo
     public void xuat() {
         System.out.printf("== == == == == ==\nMã báo cáo: %s\nTên báo cáo: %s\nLink báo cáo: %s\nNgày báo cáo: %s\nDanh sách sinh viên: %s\nTên giảng viên: %s\nĐiểm: %.2f\n",
                 this.maBaoCao, this.tenBaoCao, this.linkBaoCao,F.format(this.ngayBaoCao), this.dsSinhVien, this.tenGiangVien, this.diemBaoCao);
     }
+
     public void nhap() throws ParseException {
         System.out.println("Mã báo cáo theo dạng gồm 5 chữ số, 2 chữ số đầu là tên loại báo cáo");
         System.out.println("Ví dụ nhập báo cáo thực tập: \"TT001\"");

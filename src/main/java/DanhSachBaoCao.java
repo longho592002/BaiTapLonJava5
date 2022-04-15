@@ -64,8 +64,6 @@ public class DanhSachBaoCao {
 //        }
 //    }
 
-
-
     public void suaThongTinKhoaLuan() throws ParseException {
         BaoCaoKhoaLuan tam = null;
         tam = (BaoCaoKhoaLuan) timBaoCao();
@@ -111,6 +109,7 @@ public class DanhSachBaoCao {
             System.out.println("Không tìm thấy báo cáo để sửa");
         }
     }
+
     public void suaThongTinDoAn() throws ParseException {
         BaoCaoDoAn tam = null;
         tam = (BaoCaoDoAn) timBaoCao();
@@ -156,6 +155,7 @@ public class DanhSachBaoCao {
             System.out.println("Không tìm thấy báo cáo để sửa");
         }
     }
+
     public void suaThongTinThucTap() throws ParseException {
         BaoCaoThucTap tam = null;
         tam = (BaoCaoThucTap) timBaoCao();
