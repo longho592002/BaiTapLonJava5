@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class TvHoiDong {
+public class TvHoiDong  implements  Cloneable{
     protected String hoTen;
     protected String hocHam;
     protected String hocVi;
@@ -9,6 +9,7 @@ public class TvHoiDong {
     protected double diem;
     protected String nhanXet;
     Scanner S = new Scanner(System.in);
+
 
 
     public TvHoiDong(){
@@ -43,6 +44,11 @@ public class TvHoiDong {
     public void  xuatThanhVien() {
         System.out.printf("Họ và tên: %s\n Học Hàm: %s\n Học Vị: %s\n Nhiệm vụ: %s\n",
                 this.hoTen, this.hocHam, this.hocVi, this.nhiemVu);
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
     public String getHoTen() {
         return hoTen;

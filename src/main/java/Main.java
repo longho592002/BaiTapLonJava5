@@ -1,10 +1,12 @@
+import org.w3c.dom.css.Counter;
+
 import java.text.ParseException;
 
 public class Main {
     public static void main(String[] args) throws ParseException {
         DanhSachBaoCao baoCaos = new DanhSachBaoCao();
         DanhSachHoiDong hoiDongs = new DanhSachHoiDong();
-        DiemCuaHoiDong diems = new DiemCuaHoiDong();
+//        DiemCuaHoiDong diems = new DiemCuaHoiDong();
 //        HoiDong hoiDongs = new HoiDong();
         BaoCao bcda = new BaoCaoDoAn();
         BaoCao bckl = new BaoCaoKhoaLuan();
@@ -17,9 +19,9 @@ public class Main {
         BaoCao b5 = new BaoCaoDoAn("DA002", "Do an 02", "oop.com", "9-4-2022", "Mai Thanh Bình", "Dương Hữu Thành", 5, 50);
         BaoCao b6 = new BaoCaoKhoaLuan("KL001", "Khoa luan 01", "uuu.com", "11-3-2022", "Lê Tiến Hưng", "Dương Hữu Thành", 0, 30);
         BaoCao b7 = new BaoCaoKhoaLuan("KL002", "Khoa luan 03", "qqq.com", "3-5-2020", "Nguyễn Văn An", "Dương Hữu Thành", 0, 15);
-        TvHoiDong b8 = new TvHoiDong("Nguyễn Hồ Long", "Giáo sư", "Tiến sĩ", "Chủ tịch hội đồng");
-        TvHoiDong b9 = new TvHoiDong("Nguyễn Văn Doanh", "acsac", "Thạc sĩ", "Thư ký");
-        TvHoiDong b10 = new TvHoiDong("Hồ Thị Tuyết", "sdadasda", "Thạc sĩ", "Thư ký");
+//        TvHoiDong b8 = new TvHoiDong("Nguyễn Hồ Long", "Giáo sư", "Tiến sĩ", "Chủ tịch hội đồng");
+//        TvHoiDong b9 = new TvHoiDong("Nguyễn Văn Doanh", "acsac", "Thạc sĩ", "Thư ký");
+//        TvHoiDong b10 = new TvHoiDong("Hồ Thị Tuyết", "sdadasda", "Thạc sĩ", "Thư ký");
 
         baoCaos.themBaoCao(b1);
         baoCaos.themBaoCao(b2);
@@ -28,15 +30,15 @@ public class Main {
         baoCaos.themBaoCao(b5);
         baoCaos.themBaoCao(b6);
         baoCaos.themBaoCao(b7);
-        hoiDongs.getHoiDongs().add(b8);
-        hoiDongs.getHoiDongs().add(b9);
-        hoiDongs.getHoiDongs().add(b10);
+//        hoiDongs.getHoiDongs().add(b8);
+//        hoiDongs.getHoiDongs().add(b9);
+//        hoiDongs.getHoiDongs().add(b10);
 
         int chon;
         do {
             showMenu();
             System.out.print("Bạn chọn: ");
-            chon = Integer.parseInt(BaoCao.s.nextLine());
+            chon = Integer.parseInt(BaoCao.s.nextLine().trim());
             switch (chon) {
                 case 1 -> {
                     System.out.println("========= Các loại báo cáo =========");
@@ -47,41 +49,37 @@ public class Main {
                         case 1 -> {
                             System.out.println("=========== Thêm báo cáo Đồ Án ===========");
                             bcda.nhap();
-                            if (baoCaos.checkMa(bcda.getMaBaoCao()) == 1) {
-                                System.out.println("Nhập trùng mã, vui lòng nhập lại");
-                            } else {
+                            if (baoCaos.checkMa(bcda.getMaBaoCao()) != 1 && bcda.getMaBaoCao().startsWith("DA")) {
                                 baoCaos.themBaoCao(bcda);
                                 System.out.println("Thêm thành công");
+                            } else {
+                                System.out.println("Bạn đã nhập trùng hoặc nhập không đúng mã báo cáo");
                             }
                         }
                         case 2 -> {
                             System.out.println("=========== Thêm báo cáo khóa luận ===========");
                             bckl.nhap();
-                            if (baoCaos.checkMa(bckl.getMaBaoCao()) == 1) {
-                                System.out.println("Nhập trùng mã, vui lòng nhập lại");
-                            } else {
+                            if (baoCaos.checkMa(bckl.getMaBaoCao()) != 1 && bckl.getMaBaoCao().startsWith("KL")) {
                                 baoCaos.themBaoCao(bckl);
                                 System.out.println("Thêm thành công");
+                            } else {
+                                System.out.println("Bạn đã nhập trùng hoặc nhập không đúng mã báo cáo");
                             }
-//                            ArrayList<BaoCao> a = baoCaos.getBaoCaos();
-//                            BaoCao b = new BaoCao();
-//                            String c = b4.getMaBaoCao();
-//                            System.out.println(c);
                         }
                         case 3 -> {
                             System.out.println("=========== Thêm báo cáo thực tập ===========");
                             bctt.nhap();
-                            if (baoCaos.checkMa(bctt.getMaBaoCao()) == 1) {
-                                System.out.println("Nhập trùng mã, vui lòng nhập lại");
-                            } else {
+                            if(baoCaos.checkMa(bctt.getMaBaoCao()) != 1 && bctt.getMaBaoCao().startsWith("TT")) {
                                 baoCaos.themBaoCao(bctt);
                                 System.out.println("Thêm thành công");
+                            } else {
+                                System.out.println("Bạn đã nhập trùng hoặc nhập không đúng mã báo cáo");
                             }
                         }
                     }
                 }
                 case 2 -> {
-                    System.out.println("Xoa bao cao");
+                    System.out.println("========== Xóa báo cáo =============");
                     baoCaos.xoaBaoCao();
                 }
                 case 3 -> {
@@ -105,8 +103,12 @@ public class Main {
                     }
                 }
                 case 5 -> {
-//                    System.out.println("Nhập thành viên hội đồng");
-                    hoiDongs.themThanhVienHoiDong();
+                    System.out.println("=========== Nhập thành viên hội đồng =============");
+                    if (hoiDongs.getHoiDongs().size() >= 1 || hoiDongs.getHoiDongs().size() <=5) {
+                        hoiDongs.themThanhVienHoiDong();
+                    } else {
+                        System.out.println("Đã thành lập hội đồng");
+                    }
                 }
                 case 6 -> {
                     System.out.println("============ Xuất thành viên hội đồng =============");
@@ -115,10 +117,10 @@ public class Main {
                 case 7 -> {
                     System.out.println("=========== Chấm điểm cho báo cáo khóa luận ============");
                     BaoCaoKhoaLuan a = null;
-//                    a = (BaoCaoKhoaLuan) baoCaos.timBaoCao();
+                    a = (BaoCaoKhoaLuan) baoCaos.timBaoCao();
                     if (a != null) {
                         int n = 0;
-                        double diemTong = 0, diemTongKet = 0;
+                        double diemTong = 0, diemTongKet = 0, avg = 0;
                         for (TvHoiDong b : hoiDongs.getHoiDongs()) {
                             System.out.printf("========== %s %s =========== ", b.nhiemVu, b.hoTen);
                             System.out.print("Nhập điểm: ");
@@ -130,8 +132,11 @@ public class Main {
                             n = n + 1;
                             diemTong += b.diem;
                             diemTongKet = diemTong / n;
+                            avg = diemTongKet;
+                            a.setDiemBaoCao(avg);
+                            a.getTen().add(b.hoTen);
+                            a.getListTV().add(b);
                         }
-//                        a.diemBaoCao = diemTongKet;
                     } else {
                         System.out.println("Không tìm thấy báo cáo để chấm điểm");
                     }
