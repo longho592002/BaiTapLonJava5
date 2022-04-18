@@ -11,9 +11,9 @@ public class DanhSachBaoCao {
     public void showList() {
         System.out.println("Hai chữ cái đầu tiên của mã báo cáo là viết tắt tên loại báo cáo");
         System.out.println("Ví dụ muốn xem danh sách đồ án ta nhập 2 chữ cái \"DA\"");
-        System.out.print("Nhập loại báo cáo muốn xem: ");
+        System.out.print("Nhập loại báo cáo muốn xem(xem tất cả không nhập): ");
         String s = BaoCao.s.nextLine();
-        for (BaoCao b: this.getBaoCaos() ){
+        for (BaoCao b: this.getBaoCaos()) {
             if (b.getMaBaoCao().startsWith(s)){
                 b.xuat();
             }
@@ -116,6 +116,7 @@ public class DanhSachBaoCao {
             System.out.println("Không tìm thấy báo cáo để sửa");
         }
     }
+
     public void suaThongTinDoAn() throws ParseException {
         BaoCaoDoAn tam = null;
         try {
@@ -165,6 +166,7 @@ public class DanhSachBaoCao {
             System.out.println("Không tìm thấy báo cáo để sửa");
         }
     }
+
     public void suaThongTinThucTap() throws ParseException {
         BaoCaoThucTap tam = null;
         try {
