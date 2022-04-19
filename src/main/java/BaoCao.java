@@ -11,6 +11,7 @@ public class BaoCao {
     private String dsSinhVien;
     private String tenGiangVien;
     private double diemBaoCao ;
+    private SinhVien sv= new SinhVien();
 
 //    DanhSachBaoCao dsbc = new DanhSachBaoCao();
 
@@ -63,6 +64,8 @@ public class BaoCao {
         this.linkBaoCao = s.nextLine();
         System.out.print("Nhập ngày báo cáo: ");
         this.ngayBaoCao = F.parse(s.nextLine());
+        System.out.println("Danh sách sinh viên: ");
+//        sv.read();
         System.out.print("Nhập danh sách sinh viên thực hiện: ");
         this.dsSinhVien = s.nextLine();
         System.out.print("Nhập tên giảng viên: ");

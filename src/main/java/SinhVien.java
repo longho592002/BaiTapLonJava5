@@ -1,19 +1,21 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class SinhVien {
     private String mssv;
     private String hoTen;
-    private int khoaHoc;
+    private String khoaHoc;
     private String gioiTinh;
     private int namSinh;
     private String chuyenNganh;
-
+    DanhSachSinhVien sVL = new DanhSachSinhVien();
     public SinhVien() {
     }
 
-    public SinhVien(String mssv, String hoTen, int khoaHoc, String gioiTinh, int namSinh, String chuyenNganh) {
+    public SinhVien(String mssv, String hoTen, String khoaHoc, String gioiTinh, int namSinh, String chuyenNganh) {
         this.mssv = mssv;
         this.hoTen = hoTen;
         this.khoaHoc = khoaHoc;
@@ -22,25 +24,30 @@ public class SinhVien {
         this.chuyenNganh = chuyenNganh;
     }
 
-    public void read() {
-        try  {
-            File f = new File("src/SinhVien.txt");
-            Scanner s = new Scanner(f);
-            while (s.hasNextLine()) {
-                String mssv = s.nextLine();
-                String hoTen = s.nextLine();
-                int khoaHoc = Integer.parseInt(s.nextLine());
-                String gioiTinh = s.nextLine();
-                int namSinh = Integer.parseInt(s.nextLine());
-                String chuyenNganh = s.nextLine();
-                System.out.printf("MSSV: %s\nHo ten: %s\nKhoa hoc: %d\nGioi tinh: %s\nNam sinh: %d\nChuyen nganh: %s\n",mssv,hoTen,khoaHoc,gioiTinh,namSinh,chuyenNganh);
-            }
-            s.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
+//    public void read() {
+//        try  {
+//            File f = new File("src\\main\\java\\SinhVienList.txt");
+//            Scanner s = new Scanner(f);
+//            while (s.hasNextLine()) {
+//                String mssv = s.nextLine();
+//                String hoTen = s.nextLine();
+//                String khoaHoc = s.nextLine();
+//                String gioiTinh = s.nextLine();
+//                int namSinh = Integer.parseInt(s.nextLine());
+//                String chuyenNganh = s.nextLine();
+//                System.out.printf("MSSV: %s\nHo ten: %s\nKhoa hoc: %d\nGioi tinh: %s\nNam sinh: %d\nChuyen nganh: %s\n",mssv,hoTen,khoaHoc,gioiTinh,namSinh,chuyenNganh);
+//            }
+//            s.close();
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
+    public void xuatSVList() {
+            System.out.printf("Mã số: %s\n Họ tên: %s\n Khóa học: %s\n Giới tính: %s\n Năm sinh: %d\n Chuyên ngành: %s\n", this.getMssv(), this.hoTen, this.khoaHoc,
+            this.gioiTinh, this.namSinh, this.chuyenNganh);
+//            System.out.println("Danh sách sinh viên trống");
+    }
 
     public String getMssv() {
         return mssv;
@@ -58,11 +65,11 @@ public class SinhVien {
         this.hoTen = hoTen;
     }
 
-    public int getKhoaHoc() {
+    public String getKhoaHoc() {
         return khoaHoc;
     }
 
-    public void setKhoaHoc(int khoaHoc) {
+    public void setKhoaHoc(String khoaHoc) {
         this.khoaHoc = khoaHoc;
     }
 
@@ -89,4 +96,6 @@ public class SinhVien {
     public void setChuyenNganh(String chuyenNganh) {
         this.chuyenNganh = chuyenNganh;
     }
+
+
 }

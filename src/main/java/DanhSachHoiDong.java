@@ -47,12 +47,14 @@ public class DanhSachHoiDong {
                 System.out.println("Yêu cầu phải có ít nhất một chủ tịch hội đồng và và  một thư ký");
                 hoiDongs.clear();
             }
-            if (fails != 0) {
-                System.out.println("Thêm thất bại");
-            } else {
+            if (fails == 0) {
                 System.out.println("Thêm thành công");
+            } else {
+                System.out.println("Thêm thất bại");
             }
 
+        } else if (temp == 5) {
+            System.out.println("Hội đồng đã đủ thành viên");
         } else {
             System.out.println("Nhập sai số lượng thành viên hội đồng");
         }
@@ -63,7 +65,8 @@ public class DanhSachHoiDong {
             for(TvHoiDong b: this.hoiDongs){
                 b.xuatThanhVien();
             }
-        } else {
+        }
+        if(bckl.listTV.isEmpty()) {
             System.out.println("Chưa tạo hội đồng, hãy thêm thành viên hội đồng để chấm điểm");
         }
     }

@@ -204,7 +204,11 @@ public class DanhSachBaoCao {
                     tam.setTenGiangVien(BaoCao.s.nextLine());
                 }
                 case "7" -> {
-                    System.out.println("Nhập tỷ lệ đạo văn: ");
+                    System.out.print("Nhập điểm báo cáo: ");
+                    tam.setDiemBaoCao(BaoCao.s.nextDouble());
+                }
+                case "8" -> {
+                    System.out.print("Nhập đánh giá của doanh nghiệp: ");
                     tam.setThongTinDanhGia(BaoCao.s.nextLine());
                 }
             }

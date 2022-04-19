@@ -1,6 +1,7 @@
 import org.w3c.dom.css.Counter;
 
 import java.text.ParseException;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws ParseException {
@@ -11,6 +12,8 @@ public class Main {
         BaoCao bcda = new BaoCaoDoAn();
         BaoCao bckl = new BaoCaoKhoaLuan();
         BaoCao bctt = new BaoCaoThucTap();
+        SinhVien sv = new SinhVien();
+        DanhSachSinhVien svs = new DanhSachSinhVien();
 
         BaoCao b1 = new BaoCaoThucTap("TT001", "Thuc tap 01", "abc.com", "4-1-2002", "Nguyễn Đức Hưng", "Dương Hữu Thành", 8.5, "Amazing");
         BaoCao b2 = new BaoCaoThucTap("TT002", "Thuc tap 02", "def.com", "5-9-2002", "Nguyễn Hồ Long", "Dương Hữu Thành", 10, "Good jobs");
@@ -22,7 +25,11 @@ public class Main {
 //        TvHoiDong b8 = new TvHoiDong("Nguyễn Hồ Long", "Giáo sư", "Tiến sĩ", "Chủ tịch hội đồng");
 //        TvHoiDong b9 = new TvHoiDong("Nguyễn Văn Doanh", "acsac", "Thạc sĩ", "Thư ký");
 //        TvHoiDong b10 = new TvHoiDong("Hồ Thị Tuyết", "sdadasda", "Thạc sĩ", "Thư ký");
-
+        SinhVien b11 = new SinhVien("SV001", "Nguyễn Hồ Long", "CS02" , "Nam", 2002, "Khoa học máy tính" );
+        SinhVien b12 = new SinhVien("SV002", "Nguyễn Đức Hưng", "CS01" , "Nam", 2002, "Khoa học máy tính" );
+        SinhVien b13 = new SinhVien("SV003", "Mai Thanh Bình", "CS02" , "Nam", 2001, "Khoa học máy tính" );
+        SinhVien b14 = new SinhVien("SV004", "Lê Tiến Hưng", "IT01" , "Nam", 2002, "Công nghệ thông tin" );
+        SinhVien b15 = new SinhVien("SV005", "Lại Bắc Nam", "IT02" , "Nam", 2000, "Công nghệ thông tin" );
         baoCaos.themBaoCao(b1);
         baoCaos.themBaoCao(b2);
         baoCaos.themBaoCao(b3);
@@ -33,6 +40,13 @@ public class Main {
 //        hoiDongs.getHoiDongs().add(b8);
 //        hoiDongs.getHoiDongs().add(b9);
 //        hoiDongs.getHoiDongs().add(b10);
+        svs.getsVList().add(b11);
+        svs.getsVList().add(b12);
+        svs.getsVList().add(b13);
+        svs.getsVList().add(b14);
+        svs.getsVList().add(b15);
+
+
 
         int chon;
         do {
@@ -121,6 +135,10 @@ public class Main {
                     if (a != null) {
                         int n = 0;
                         double diemTong = 0, diemTongKet = 0, avg = 0;
+                        if (hoiDongs.getHoiDongs().isEmpty()) {
+                            System.out.println("Cần thành lập hội đồng trước khi chấm điểm");
+                            break;
+                        }
                         for (TvHoiDong b : hoiDongs.getHoiDongs()) {
                             System.out.printf("========== %s %s =========== ", b.nhiemVu, b.hoTen);
                             System.out.print("Nhập điểm: ");
@@ -176,6 +194,13 @@ public class Main {
                             break;
                     }
                 }
+                case 10 -> {
+                    System.out.println("Danh sách sinh viên");
+                    for (SinhVien x: svs.getsVList()) {
+                        sv.xuatSVList();
+                        sv.getMssv();
+                    }
+                }
             }
         } while (chon >= 1 && chon <= 12);
     }
@@ -191,6 +216,7 @@ public class Main {
         System.out.println("7. Chấm điểm báo cáo khóa luận");
         System.out.println("8. Sắp xếp danh sách báo cáo");
         System.out.println("9. Tìm kiếm");
+        System.out.println("10. Danh sách sinh viên");
     }
     static void showMenuBaoCao() {
         System.out.println("1. Thêm báo cáo Đồ Án");
