@@ -15,7 +15,9 @@ public class BaoCaoThucTap extends BaoCao {
     @Override
     public void nhap() throws ParseException {
         super.nhap();
-        System.out.print("Nhap thong tin danh gia: ");
+        System.out.print("Nhập điểm: ");
+        this.diemBaoCao = Double.parseDouble(s.nextLine());
+        System.out.print("Nhập thông tin đánh giá: ");
         this.thongTinDanhGia = s.nextLine();
     }
 

@@ -2,28 +2,21 @@ import java.text.ParseException;
 
 public class BaoCaoDoAn extends BaoCao {
     private double tyLeDaoVan;
-//    private String giangVienPhanBien;
 
     public BaoCaoDoAn() {
 
     }
 
-//    public BaoCaoDoAn(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien, double tyLeDaoVan) throws ParseException {
-//        this.tyLeDaoVan = tyLeDaoVan;
-//    }
-
     public BaoCaoDoAn(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien, double diem, double tyLeDaoVan) throws ParseException {
         super(maBaoCao, tenBaoCao, linkBaoCao, ngayBaoCao, dsSinhVien, tenGiangVien, diem);
         this.tyLeDaoVan = tyLeDaoVan;
     }
-//    public BaoCaoDoAn(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien, double diem, double tyLeDaoVan, String gvpb) throws ParseException {
-//        super(maBaoCao, tenBaoCao, linkBaoCao, ngayBaoCao, dsSinhVien, tenGiangVien, diem);
-//        this.tyLeDaoVan = tyLeDaoVan;
-//        this.giangVienPhanBien = gvpb;
-//    }
+
     @Override
     public void nhap() throws ParseException {
         super.nhap();
+        System.out.print("Nhập điểm: ");
+        this.diemBaoCao = Double.parseDouble(s.nextLine());
         System.out.print("Nhập tỷ lệ đạo văn: ");
         this.tyLeDaoVan = Double.parseDouble(s.nextLine());
     }

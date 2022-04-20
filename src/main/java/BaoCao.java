@@ -10,8 +10,8 @@ public abstract class BaoCao {
     private Date ngayBaoCao;
     private String dsSinhVien;
     private String tenGiangVien;
-    private double diemBaoCao ;
-    private SinhVien sv= new SinhVien();
+    protected double diemBaoCao ;
+//    private SinhVien sv= new SinhVien();
 
 //    DanhSachBaoCao dsbc = new DanhSachBaoCao();
 
@@ -32,30 +32,20 @@ public abstract class BaoCao {
         this.diemBaoCao = diemBaoCao;
     }
 
-//    public BaoCao(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien, double diem) throws ParseException {
-//        this.setMaBaoCao(maBaoCao);
-//        this.setTenBaoCao(tenBaoCao);
-//        this.setLinkBaoCao(linkBaoCao);
-//        this.setNgayBaoCao(F.parse(ngayBaoCao));
-//        this.setDsSinhVien(dsSinhVien);
-//        this.setTenGiangVien(tenGiangVien);
-//        this.setDiemBaoCao(diem);
-//    }
-
     // xuất báo cáo
     public void xuat() {
         if (this.diemBaoCao != 0) {
             System.out.printf("== == == == == ==  == == == == ==\nMã báo cáo: %s\nTên báo cáo: %s\nLink báo cáo: %s\nNgày báo cáo: %s\nDanh sách sinh viên: %s\nTên giảng viên: %s\nĐiểm: %.2f\n",
-                    this.maBaoCao, this.tenBaoCao, this.linkBaoCao,F.format(this.ngayBaoCao), this.dsSinhVien, this.tenGiangVien, this.diemBaoCao);
+                    this.maBaoCao, this.tenBaoCao, this.linkBaoCao, F.format(this.ngayBaoCao), this.dsSinhVien, this.tenGiangVien, this.diemBaoCao);
         } else {
             System.out.printf("== == == == == ==  == == == == ==\nMã báo cáo: %s\nTên báo cáo: %s\nLink báo cáo: %s\nNgày báo cáo: %s\nDanh sách sinh viên: %s\nTên giảng viên: %s\n",
-                    this.maBaoCao, this.tenBaoCao, this.linkBaoCao,F.format(this.ngayBaoCao), this.dsSinhVien, this.tenGiangVien);
+                    this.maBaoCao, this.tenBaoCao, this.linkBaoCao, F.format(this.ngayBaoCao), this.dsSinhVien, this.tenGiangVien);
         }
+
     }
 
     public void nhap() throws ParseException {
-        System.out.println("Mã báo cáo theo dạng gồm 5 chữ số, 2 chữ số đầu là tên loại báo cáo");
-        System.out.println("Ví dụ nhập báo cáo thực tập: \"TT001\"");
+        System.out.println("Mã báo cáo theo dạng gồm 5 chữ số, 2 chữ số đầu là tên loại báo cáo\nVí dụ nhập báo cáo thực tập: \"TT001\"");
         System.out.print("Nhập mã báo cáo: ");
         this.maBaoCao = s.nextLine().toUpperCase();
         System.out.print("Nhập tên báo cáo: ");
@@ -64,15 +54,10 @@ public abstract class BaoCao {
         this.linkBaoCao = s.nextLine();
         System.out.print("Nhập ngày báo cáo: ");
         this.ngayBaoCao = F.parse(s.nextLine());
-        System.out.println("Danh sách sinh viên: ");
-//        sv.read();
         System.out.print("Nhập danh sách sinh viên thực hiện: ");
         this.dsSinhVien = s.nextLine();
         System.out.print("Nhập tên giảng viên: ");
         this.tenGiangVien = s.nextLine();
-//        this.diemBaoCao = 0;
-//        System.out.print("Nhap diem bao cao: ");
-//        this.diemBaoCao = Double.parseDouble(s.nextLine());
     }
 
     public String getMaBaoCao() {

@@ -1,9 +1,11 @@
+import java.security.BasicPermission;
 import java.text.ParseException;
 import java.util.*;
 
 public class DanhSachBaoCao {
     private List<BaoCao> baoCaos = new ArrayList<>();
     private final DanhSachHoiDong  hoiDongs = new DanhSachHoiDong();
+
     public void themBaoCao(BaoCao b) {
         this.baoCaos.add(b);
     }
@@ -18,6 +20,10 @@ public class DanhSachBaoCao {
                 b.xuat();
             }
         }
+    }
+
+    public void showList2() {
+       this.baoCaos.forEach(b -> b.xuat());
     }
 
     public void xoaBaoCao() {
@@ -51,21 +57,6 @@ public class DanhSachBaoCao {
         }
         return check;
     }
-
-//    public void them() throws ParseException {
-//        int n;
-//        System.out.println("Nhập số báo cáo cần thêm: ");
-//        n = Integer.parseInt(input.nextLine());
-//        for (int i=0;i<n;i++) {
-//            System.out.printf("Nhap bao cao thu %d\n", i + 1);
-//            BaoCao b = new BaoCao();
-//            b.nhap();
-//            if (!getBaoCaos().contains(b.maBaoCao)) {
-//                getBaoCaos().add(b);
-//                System.out.println("Them thanh cong\n");
-//            }
-//        }
-//    }
 
     public void suaThongTinKhoaLuan() throws ParseException {
         BaoCaoKhoaLuan tam = null;
@@ -298,6 +289,20 @@ public class DanhSachBaoCao {
         });
     }
 
+    public void sortAndFilterByName() {
+        DanhSachBaoCao ds = new DanhSachBaoCao();
+        System.out.print("Chọn loại báo cáo để sắp xếp(DA - TT - KL): ");
+        String s = BaoCao.s.nextLine();
+        for (BaoCao b: this.getBaoCaos()) {
+            if(b.getMaBaoCao().startsWith(s)) {
+                ds.themBaoCao(b);
+            }
+        }
+        ds.sortByName();
+        System.out.println("Đã sắp xếp");
+        ds.showList2();
+    }
+
     public void sortByDate() {
         Collections.sort(baoCaos, new Comparator<BaoCao>() {
             @Override
@@ -305,6 +310,20 @@ public class DanhSachBaoCao {
                 return o1.getNgayBaoCao().compareTo(o2.getNgayBaoCao());
             }
         });
+    }
+
+    public void sortAndFilterByDate() {
+        DanhSachBaoCao ds = new DanhSachBaoCao();
+        System.out.print("Chọn loại báo cáo để sắp xếp(DA - TT - KL): ");
+        String s = BaoCao.s.nextLine();
+        for (BaoCao b: this.getBaoCaos()) {
+            if(b.getMaBaoCao().startsWith(s)) {
+                ds.themBaoCao(b);
+            }
+        }
+        ds.sortByDate();
+        System.out.println("Đã sắp xếp");
+        ds.showList2();
     }
 
     public List<BaoCao> getBaoCaos() {

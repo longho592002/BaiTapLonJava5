@@ -6,10 +6,6 @@ public class SinhVien {
     private int namSinh;
     private String chuyenNganh;
 
-    public SinhVien() {
-
-    }
-
     public SinhVien(int mssv, String hoTen, int khoaHoc, String gioiTinh, int namSinh, String chuyenNganh) {
         this.mssv = mssv;
         this.hoTen = hoTen;

@@ -8,7 +8,6 @@ public class Main {
 //        DiemCuaHoiDong diems = new DiemCuaHoiDong();
 //        HoiDong hoiDongs = new HoiDong();
         BaoCao bc;
-        SinhVien sv = new SinhVien();
         DanhSachSinhVien sinhViens = new DanhSachSinhVien();
 
         BaoCao b1 = new BaoCaoThucTap("TT001", "Thuc tap 01", "tt01.com", "4-1-2002", "Nguyễn Đức Hưng", "Dương Hữu Thành", 8.5, "Amazing");
@@ -160,13 +159,12 @@ public class Main {
                             baoCaos.sortByDate();
                             System.out.println("Đã sắp xếp");
                             break;
-//                        case 3:
-//                            showMenuDSBaoCao();
-//                            int aa = Integer.parseInt(BaoCao.s.nextLine());
-//                            switch (aa) {
-//                                case 1:
-//
-//                            }
+                        case 3:
+                            baoCaos.sortAndFilterByName();
+                            break;
+                        case 4:
+                            baoCaos.sortAndFilterByDate();
+                            break;
                     }
                 }
                 case 9 -> {
