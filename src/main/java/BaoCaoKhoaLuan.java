@@ -22,14 +22,14 @@ public class BaoCaoKhoaLuan extends BaoCao {
     @Override
     public void nhap() throws ParseException {
         super.nhap();
-        System.out.print("Nhập tỷ lệ đạo văn: ");
+        System.out.print("Nhập tỷ lệ đạo văn(vd: 0.5): ");
         this.tyLeDaoVan = Double.parseDouble(s.nextLine());
     }
 
     @Override
     public void xuat() {
         super.xuat();
-        System.out.printf("Tỷ lệ đạo văn: %.2f\n", this.tyLeDaoVan);
+        System.out.println("Tỷ lệ đạo văn: " + BaoCaoDoAn.decFormat.format(this.tyLeDaoVan));
         nhanXet.toArray();
         if(!nhanXet.isEmpty() && !ten.isEmpty() & !listTV.isEmpty()) {
             System.out.println("Danh sách hội đồng bảo vệ: ");

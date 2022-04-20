@@ -13,10 +13,10 @@ public class Main {
         BaoCao b1 = new BaoCaoThucTap("TT001", "Thuc tap 01", "tt01.com", "4-1-2002", "Nguyễn Đức Hưng", "Dương Hữu Thành", 8.5, "Amazing");
         BaoCao b2 = new BaoCaoThucTap("TT002", "Thuc tap 02", "tt02.com", "5-9-2002", "Nguyễn Hồ Long", "Dương Hữu Thành", 10, "Good jobs");
         BaoCao b3 = new BaoCaoThucTap("TT003", "Thuc tap 03", "tt03.com", "30-4-2022", "Mai Thanh Bình", "Dương Hữu Thành", 7.5, "Excellent");
-        BaoCao b4 = new BaoCaoDoAn("DA001", "Do an 01", "da01.com", "20-6-2022", "Nguyễn Trường Nguyên", "Dương Hữu Thành", 5, 10);
-        BaoCao b5 = new BaoCaoDoAn("DA002", "Do an 02", "da02.com", "9-4-2022", "Mai Thanh Bình", "Dương Hữu Thành", 9, 50);
-        BaoCao b6 = new BaoCaoKhoaLuan("KL001", "Khoa luan 01", "kl01.com", "11-3-2022", "Lê Tiến Hưng", "Dương Hữu Thành", 0, 30);
-        BaoCao b7 = new BaoCaoKhoaLuan("KL002", "Khoa luan 02", "kl02.com", "3-5-2020", "Nguyễn Văn An", "Dương Hữu Thành", 0, 15);
+        BaoCao b4 = new BaoCaoDoAn("DA001", "Do an 01", "da01.com", "20-6-2022", "Nguyễn Trường Nguyên", "Dương Hữu Thành", 5, 0.1);
+        BaoCao b5 = new BaoCaoDoAn("DA002", "Do an 02", "da02.com", "9-4-2022", "Mai Thanh Bình", "Dương Hữu Thành", 9, 0.5);
+        BaoCao b6 = new BaoCaoKhoaLuan("KL001", "Khoa luan 01", "kl01.com", "11-3-2022", "Lê Tiến Hưng", "Dương Hữu Thành", 0, 0.3);
+        BaoCao b7 = new BaoCaoKhoaLuan("KL002", "Khoa luan 02", "kl02.com", "3-5-2020", "Nguyễn Văn An", "Dương Hữu Thành", 0, 0.15);
 //        TvHoiDong b8 = new TvHoiDong("Nguyễn Hồ Long", "Giáo sư", "Tiến sĩ", "Chủ tịch hội đồng");
 //        TvHoiDong b9 = new TvHoiDong("Nguyễn Văn Doanh", "acsac", "Thạc sĩ", "Thư ký");
 //        TvHoiDong b10 = new TvHoiDong("Hồ Thị Tuyết", "sdadasda", "Thạc sĩ", "Thư ký");
