@@ -3,7 +3,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-public class BaoCao {
+public abstract class BaoCao {
     private String maBaoCao;
     private String tenBaoCao;
     private String linkBaoCao;

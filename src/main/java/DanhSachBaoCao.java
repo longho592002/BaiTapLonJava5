@@ -5,7 +5,7 @@ public class DanhSachBaoCao {
     private List<BaoCao> baoCaos = new ArrayList<>();
     private final DanhSachHoiDong  hoiDongs = new DanhSachHoiDong();
     public void themBaoCao(BaoCao b) {
-        this.getBaoCaos().add(b);
+        this.baoCaos.add(b);
     }
 
     public void showList() {

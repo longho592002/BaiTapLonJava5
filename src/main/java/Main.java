@@ -9,9 +9,7 @@ public class Main {
         DanhSachHoiDong hoiDongs = new DanhSachHoiDong();
 //        DiemCuaHoiDong diems = new DiemCuaHoiDong();
 //        HoiDong hoiDongs = new HoiDong();
-        BaoCao bcda = new BaoCaoDoAn();
-        BaoCao bckl = new BaoCaoKhoaLuan();
-        BaoCao bctt = new BaoCaoThucTap();
+        BaoCao bc;
         SinhVien sv = new SinhVien();
         DanhSachSinhVien svs = new DanhSachSinhVien();
 
@@ -62,9 +60,10 @@ public class Main {
                     switch (choose) {
                         case 1 -> {
                             System.out.println("=========== Thêm báo cáo Đồ Án ===========");
-                            bcda.nhap();
-                            if (baoCaos.checkMa(bcda.getMaBaoCao()) != 1 && bcda.getMaBaoCao().startsWith("DA")) {
-                                baoCaos.themBaoCao(bcda);
+                            bc = new BaoCaoDoAn();
+                            bc.nhap();
+                            if (baoCaos.checkMa(bc.getMaBaoCao()) != 1 && bc.getMaBaoCao().startsWith("DA")) {
+                                baoCaos.themBaoCao(bc);
                                 System.out.println("Thêm thành công");
                             } else {
                                 System.out.println("Bạn đã nhập trùng hoặc nhập không đúng mã báo cáo");
@@ -72,9 +71,10 @@ public class Main {
                         }
                         case 2 -> {
                             System.out.println("=========== Thêm báo cáo khóa luận ===========");
-                            bckl.nhap();
-                            if (baoCaos.checkMa(bckl.getMaBaoCao()) != 1 && bckl.getMaBaoCao().startsWith("KL")) {
-                                baoCaos.themBaoCao(bckl);
+                            bc = new BaoCaoKhoaLuan();
+                            bc.nhap();
+                            if (baoCaos.checkMa(bc.getMaBaoCao()) != 1 && bc.getMaBaoCao().startsWith("KL")) {
+                                baoCaos.themBaoCao(bc);
                                 System.out.println("Thêm thành công");
                             } else {
                                 System.out.println("Bạn đã nhập trùng hoặc nhập không đúng mã báo cáo");
@@ -82,9 +82,10 @@ public class Main {
                         }
                         case 3 -> {
                             System.out.println("=========== Thêm báo cáo thực tập ===========");
-                            bctt.nhap();
-                            if(baoCaos.checkMa(bctt.getMaBaoCao()) != 1 && bctt.getMaBaoCao().startsWith("TT")) {
-                                baoCaos.themBaoCao(bctt);
+                            bc = new BaoCaoThucTap();
+                            bc.nhap();
+                            if(baoCaos.checkMa(bc.getMaBaoCao()) != 1 && bc.getMaBaoCao().startsWith("TT")) {
+                                baoCaos.themBaoCao(bc);
                                 System.out.println("Thêm thành công");
                             } else {
                                 System.out.println("Bạn đã nhập trùng hoặc nhập không đúng mã báo cáo");
