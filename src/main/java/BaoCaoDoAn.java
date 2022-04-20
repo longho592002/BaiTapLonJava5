@@ -16,7 +16,7 @@ public class BaoCaoDoAn extends BaoCao {
     public void nhap() throws ParseException {
         super.nhap();
         System.out.print("Nhập điểm: ");
-        this.diemBaoCao = Double.parseDouble(s.nextLine());
+        this.setDiemBaoCao(Double.parseDouble(s.nextLine()));
         System.out.print("Nhập tỷ lệ đạo văn: ");
         this.tyLeDaoVan = Double.parseDouble(s.nextLine());
     }

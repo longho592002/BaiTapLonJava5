@@ -10,7 +10,7 @@ public abstract class BaoCao {
     private Date ngayBaoCao;
     private String dsSinhVien;
     private String tenGiangVien;
-    protected double diemBaoCao ;
+    private double diemBaoCao ;
 //    private SinhVien sv= new SinhVien();
 
 //    DanhSachBaoCao dsbc = new DanhSachBaoCao();

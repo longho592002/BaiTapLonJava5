@@ -1,8 +1,8 @@
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
-public class BaoCaoKhoaLuan extends BaoCaoDoAn {
+public class BaoCaoKhoaLuan extends BaoCao {
+    private double tyLeDaoVan;
     private String danhGiaGV;
     private double diem;
     private double diemTongKet;
@@ -15,17 +15,21 @@ public class BaoCaoKhoaLuan extends BaoCaoDoAn {
     }
 
     public BaoCaoKhoaLuan(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien,double diem, double tyLeDaoVan) throws ParseException {
-        super(maBaoCao, tenBaoCao, linkBaoCao, ngayBaoCao, dsSinhVien, tenGiangVien,diem, tyLeDaoVan);
+        super(maBaoCao, tenBaoCao, linkBaoCao, ngayBaoCao, dsSinhVien, tenGiangVien,diem);
+        this.tyLeDaoVan = tyLeDaoVan;
     }
 
     @Override
     public void nhap() throws ParseException {
         super.nhap();
+        System.out.print("Nhập tỷ lệ đạo văn: ");
+        this.tyLeDaoVan = Double.parseDouble(s.nextLine());
     }
 
     @Override
     public void xuat() {
         super.xuat();
+        System.out.printf("Tỷ lệ đạo văn: %.2f\n", this.tyLeDaoVan);
         nhanXet.toArray();
         if(!nhanXet.isEmpty() && !ten.isEmpty() & !listTV.isEmpty()) {
             System.out.println("Danh sách hội đồng bảo vệ: ");
@@ -106,5 +110,13 @@ public class BaoCaoKhoaLuan extends BaoCaoDoAn {
 
     public void setTen(ArrayList<String> ten) {
         this.ten = ten;
+    }
+
+    public double getTyLeDaoVan() {
+        return tyLeDaoVan;
+    }
+
+    public void setTyLeDaoVan(double tyLeDaoVan) {
+        this.tyLeDaoVan = tyLeDaoVan;
     }
 }
