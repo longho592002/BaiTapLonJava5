@@ -1,3 +1,0 @@
-1. Khi thêm loại báo cáo thì khi xem lại ko đc      ========> Done
-2. Sửa danh sách chưa làm xong =========> Done
-3. Chưa bắt được lỗi trùng mã báo cáo ngay khi nhập

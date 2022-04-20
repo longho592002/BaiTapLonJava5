@@ -1,33 +1,27 @@
-import org.w3c.dom.css.Counter;
-
+import java.io.FileNotFoundException;
 import java.text.ParseException;
-import java.util.List;
 
 public class Main {
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args) throws ParseException, FileNotFoundException {
         DanhSachBaoCao baoCaos = new DanhSachBaoCao();
         DanhSachHoiDong hoiDongs = new DanhSachHoiDong();
 //        DiemCuaHoiDong diems = new DiemCuaHoiDong();
 //        HoiDong hoiDongs = new HoiDong();
         BaoCao bc;
         SinhVien sv = new SinhVien();
-        DanhSachSinhVien svs = new DanhSachSinhVien();
+        DanhSachSinhVien sinhViens = new DanhSachSinhVien();
 
-        BaoCao b1 = new BaoCaoThucTap("TT001", "Thuc tap 01", "abc.com", "4-1-2002", "Nguyễn Đức Hưng", "Dương Hữu Thành", 8.5, "Amazing");
-        BaoCao b2 = new BaoCaoThucTap("TT002", "Thuc tap 02", "def.com", "5-9-2002", "Nguyễn Hồ Long", "Dương Hữu Thành", 10, "Good jobs");
-        BaoCao b3 = new BaoCaoThucTap("TT003", "Thuc tap 03", "ghc.com", "30-4-2022", "Mai Thanh Bình", "Dương Hữu Thành", 7.5, "Excellent");
-        BaoCao b4 = new BaoCaoDoAn("DA001", "Do an 01", "ccd.com", "20-6-2022", "Nguyễn Trường Nguyên", "Dương Hữu Thành", 5, 10);
-        BaoCao b5 = new BaoCaoDoAn("DA002", "Do an 02", "oop.com", "9-4-2022", "Mai Thanh Bình", "Dương Hữu Thành", 5, 50);
-        BaoCao b6 = new BaoCaoKhoaLuan("KL001", "Khoa luan 01", "uuu.com", "11-3-2022", "Lê Tiến Hưng", "Dương Hữu Thành", 0, 30);
-        BaoCao b7 = new BaoCaoKhoaLuan("KL002", "Khoa luan 03", "qqq.com", "3-5-2020", "Nguyễn Văn An", "Dương Hữu Thành", 0, 15);
+        BaoCao b1 = new BaoCaoThucTap("TT001", "Thuc tap 01", "tt01.com", "4-1-2002", "Nguyễn Đức Hưng", "Dương Hữu Thành", 8.5, "Amazing");
+        BaoCao b2 = new BaoCaoThucTap("TT002", "Thuc tap 02", "tt02.com", "5-9-2002", "Nguyễn Hồ Long", "Dương Hữu Thành", 10, "Good jobs");
+        BaoCao b3 = new BaoCaoThucTap("TT003", "Thuc tap 03", "tt03.com", "30-4-2022", "Mai Thanh Bình", "Dương Hữu Thành", 7.5, "Excellent");
+        BaoCao b4 = new BaoCaoDoAn("DA001", "Do an 01", "da01.com", "20-6-2022", "Nguyễn Trường Nguyên", "Dương Hữu Thành", 5, 10);
+        BaoCao b5 = new BaoCaoDoAn("DA002", "Do an 02", "da02.com", "9-4-2022", "Mai Thanh Bình", "Dương Hữu Thành", 5, 50);
+        BaoCao b6 = new BaoCaoKhoaLuan("KL001", "Khoa luan 01", "kl01.com", "11-3-2022", "Lê Tiến Hưng", "Dương Hữu Thành", 0, 30);
+        BaoCao b7 = new BaoCaoKhoaLuan("KL002", "Khoa luan 02", "kl02.com", "3-5-2020", "Nguyễn Văn An", "Dương Hữu Thành", 0, 15);
 //        TvHoiDong b8 = new TvHoiDong("Nguyễn Hồ Long", "Giáo sư", "Tiến sĩ", "Chủ tịch hội đồng");
 //        TvHoiDong b9 = new TvHoiDong("Nguyễn Văn Doanh", "acsac", "Thạc sĩ", "Thư ký");
 //        TvHoiDong b10 = new TvHoiDong("Hồ Thị Tuyết", "sdadasda", "Thạc sĩ", "Thư ký");
-        SinhVien b11 = new SinhVien("SV001", "Nguyễn Hồ Long", "CS02" , "Nam", 2002, "Khoa học máy tính" );
-        SinhVien b12 = new SinhVien("SV002", "Nguyễn Đức Hưng", "CS01" , "Nam", 2002, "Khoa học máy tính" );
-        SinhVien b13 = new SinhVien("SV003", "Mai Thanh Bình", "CS02" , "Nam", 2001, "Khoa học máy tính" );
-        SinhVien b14 = new SinhVien("SV004", "Lê Tiến Hưng", "IT01" , "Nam", 2002, "Công nghệ thông tin" );
-        SinhVien b15 = new SinhVien("SV005", "Lại Bắc Nam", "IT02" , "Nam", 2000, "Công nghệ thông tin" );
+
         baoCaos.themBaoCao(b1);
         baoCaos.themBaoCao(b2);
         baoCaos.themBaoCao(b3);
@@ -38,13 +32,6 @@ public class Main {
 //        hoiDongs.getHoiDongs().add(b8);
 //        hoiDongs.getHoiDongs().add(b9);
 //        hoiDongs.getHoiDongs().add(b10);
-        svs.getsVList().add(b11);
-        svs.getsVList().add(b12);
-        svs.getsVList().add(b13);
-        svs.getsVList().add(b14);
-        svs.getsVList().add(b15);
-
-
 
         int chon;
         do {
@@ -196,11 +183,8 @@ public class Main {
                     }
                 }
                 case 10 -> {
-                    System.out.println("Danh sách sinh viên");
-                    for (SinhVien x: svs.getsVList()) {
-                        sv.xuatSVList();
-                        sv.getMssv();
-                    }
+                    sinhViens.read();
+                    sinhViens.hienThi();
                 }
             }
         } while (chon >= 1 && chon <= 12);
