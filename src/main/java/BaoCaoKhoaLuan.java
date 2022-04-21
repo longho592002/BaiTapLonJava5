@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 import java.text.ParseException;
 import java.util.ArrayList;
 
@@ -14,13 +15,13 @@ public class BaoCaoKhoaLuan extends BaoCao {
 
     }
 
-    public BaoCaoKhoaLuan(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien,double diem, double tyLeDaoVan) throws ParseException {
+    public BaoCaoKhoaLuan(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, ArrayList dsSinhVien, String tenGiangVien,double diem, double tyLeDaoVan) throws ParseException {
         super(maBaoCao, tenBaoCao, linkBaoCao, ngayBaoCao, dsSinhVien, tenGiangVien,diem);
         this.tyLeDaoVan = tyLeDaoVan;
     }
 
     @Override
-    public void nhap() throws ParseException {
+    public void nhap() throws ParseException, FileNotFoundException {
         super.nhap();
         System.out.print("Nhập tỷ lệ đạo văn(vd: 0.5): ");
         this.tyLeDaoVan = Double.parseDouble(s.nextLine());

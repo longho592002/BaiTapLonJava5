@@ -1,22 +1,22 @@
-1
+SV001
 Nguyen Duc Hung
 2020
 Nam
 2002
 Khoa hoc may tinh
-2
+SV002
 Nguyen Ho Long
 2020
 Nam
 2002
-Khoa hoc may tinh
-3
+Cong nghe thong tin
+SV003
 Mai Thanh Binh
 2020
 Nam
 2002
-Khoa hoc may tinh
-4
+Cong nghe thong tin
+SV004
 Nguyen Truong Nguyen
 2020
 Nam

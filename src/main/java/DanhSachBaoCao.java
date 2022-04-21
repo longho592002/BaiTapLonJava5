@@ -88,7 +88,7 @@ public class DanhSachBaoCao {
                 }
                 case "5" -> {
                     System.out.print("Nhập danh sách sinh viên thực hiện báo cáo: ");
-                    tam.setDsSinhVien(BaoCao.s.nextLine());
+//                    tam.setDsSinhVien(BaoCao.s.nextLine());
                 }
                 case "6" -> {
                     System.out.print("Nhập tên giảng viên: ");
@@ -138,7 +138,7 @@ public class DanhSachBaoCao {
                 }
                 case "5" -> {
                     System.out.print("Nhập danh sách sinh viên thực hiện báo cáo: ");
-                    tam.setDsSinhVien(BaoCao.s.nextLine());
+//                    tam.setDsSinhVien(BaoCao.s.nextLine());
                 }
                 case "6" -> {
                     System.out.print("Nhập tên giảng viên: ");
@@ -188,7 +188,7 @@ public class DanhSachBaoCao {
                 }
                 case "5" -> {
                     System.out.print("Nhập danh sách sinh viên thực hiện báo cáo: ");
-                    tam.setDsSinhVien(BaoCao.s.nextLine());
+//                    tam.setDsSinhVien(BaoCao.s.nextLine());
                 }
                 case "6" -> {
                     System.out.print("Nhập tên giảng viên: ");

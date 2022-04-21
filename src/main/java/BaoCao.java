@@ -1,5 +1,8 @@
+import java.io.FileNotFoundException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -8,9 +11,10 @@ public abstract class BaoCao {
     private String tenBaoCao;
     private String linkBaoCao;
     private Date ngayBaoCao;
-    private String dsSinhVien;
+    private ArrayList<SinhVien> dsSinhVien = new ArrayList<>();
     private String tenGiangVien;
     private double diemBaoCao ;
+    DanhSachSinhVien svList = new DanhSachSinhVien();
 //    private SinhVien sv= new SinhVien();
 
 //    DanhSachBaoCao dsbc = new DanhSachBaoCao();
@@ -22,7 +26,7 @@ public abstract class BaoCao {
 
     }
 
-    public BaoCao(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien, double diemBaoCao) throws ParseException {
+    public BaoCao(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, ArrayList dsSinhVien, String tenGiangVien, double diemBaoCao) throws ParseException {
         this.maBaoCao = maBaoCao;
         this.tenBaoCao = tenBaoCao;
         this.linkBaoCao = linkBaoCao;
@@ -31,6 +35,7 @@ public abstract class BaoCao {
         this.tenGiangVien = tenGiangVien;
         this.diemBaoCao = diemBaoCao;
     }
+
 
     // xuất báo cáo
     public void xuat() {
@@ -44,7 +49,8 @@ public abstract class BaoCao {
 
     }
 
-    public void nhap() throws ParseException {
+    public void nhap() throws ParseException, FileNotFoundException {
+        int n ;
         System.out.println("Mã báo cáo theo dạng gồm 5 chữ số, 2 chữ số đầu là tên loại báo cáo\nVí dụ nhập báo cáo thực tập: \"TT001\"");
         System.out.print("Nhập mã báo cáo: ");
         this.maBaoCao = s.nextLine().toUpperCase();
@@ -54,8 +60,27 @@ public abstract class BaoCao {
         this.linkBaoCao = s.nextLine();
         System.out.print("Nhập ngày báo cáo: ");
         this.ngayBaoCao = F.parse(s.nextLine());
-        System.out.print("Nhập danh sách sinh viên thực hiện: ");
-        this.dsSinhVien = s.nextLine();
+//        System.out.println("Danh sách sinh viên: ");
+        svList.read();
+        System.out.print("Nhập số sinh viên tham gia(tối đa 2 sinh viên): ");
+        n = Integer.parseInt(s.nextLine());
+        if(n >=1 && n <= 2) {
+            System.out.println("danh sách tên sinh viên: ");
+            for (SinhVien sv: svList.getSinhViens()) {
+                System.out.println(sv + " ");
+            }
+            for(int i = 1; i <= n; i++) {
+                System.out.printf("Nhập tên sinh viên tham gia thứ %d: ", i );
+                String ten = s.nextLine();
+                for (SinhVien sv: svList.getSinhViens()) {
+                    if (sv.getHoTen().contains(ten)) {
+                        dsSinhVien.add(sv);
+                    }
+                }
+            }
+        }
+
+//        this.dsSinhVien = s.nextLine();
         System.out.print("Nhập tên giảng viên: ");
         this.tenGiangVien = s.nextLine();
     }
@@ -92,11 +117,11 @@ public abstract class BaoCao {
         this.ngayBaoCao = ngayBaoCao;
     }
 
-    public String getDsSinhVien() {
+    public ArrayList getDsSinhVien() {
         return dsSinhVien;
     }
 
-    public void setDsSinhVien(String dsSinhVien) {
+    public void setDsSinhVien(ArrayList dsSinhVien) {
         this.dsSinhVien = dsSinhVien;
     }
 

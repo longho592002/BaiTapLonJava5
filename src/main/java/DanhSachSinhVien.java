@@ -18,7 +18,7 @@ public class DanhSachSinhVien {
         File f = new File("src/main/resource/sinhvien.txt");
         try (Scanner s = new Scanner(f)) {
             while (s.hasNextLine()) {
-                int mssv = Integer.parseInt(s.nextLine());
+                String mssv = s.nextLine();
                 String hoTen = s.nextLine();
                 int khoaHoc = Integer.parseInt(s.nextLine());
                 String gioiTinh = s.nextLine();

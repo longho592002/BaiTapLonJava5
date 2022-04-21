@@ -1,12 +1,12 @@
 public class SinhVien {
-    private int mssv;
+    private String mssv;
     private String hoTen;
     private int khoaHoc;
     private String gioiTinh;
     private int namSinh;
     private String chuyenNganh;
 
-    public SinhVien(int mssv, String hoTen, int khoaHoc, String gioiTinh, int namSinh, String chuyenNganh) {
+    public SinhVien(String mssv, String hoTen, int khoaHoc, String gioiTinh, int namSinh, String chuyenNganh) {
         this.mssv = mssv;
         this.hoTen = hoTen;
         this.khoaHoc = khoaHoc;
@@ -16,14 +16,19 @@ public class SinhVien {
     }
 
     public void xuat() {
-        System.out.printf("MSSV: %d\nHọ tên: %s\nKhóa học: %d\nGiới tính: %s\nNăm sinh: %d\nChuyên ngành: %s\n", this.mssv, this.hoTen, this.khoaHoc, this.gioiTinh, this.namSinh, this.chuyenNganh);
+        System.out.printf("MSSV: %s\nHọ tên: %s\nKhóa học: %d\nGiới tính: %s\nNăm sinh: %d\nChuyên ngành: %s\n", this.mssv, this.hoTen, this.khoaHoc, this.gioiTinh, this.namSinh, this.chuyenNganh);
     }
 
-    public int getMssv() {
+    @Override
+    public String toString() {
+        return this.getHoTen();
+    }
+
+    public String getMssv() {
         return mssv;
     }
 
-    public void setMssv(int mssv) {
+    public void setMssv(String mssv) {
         this.mssv = mssv;
     }
 

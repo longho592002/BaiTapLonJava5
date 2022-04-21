@@ -32,6 +32,7 @@ public class DanhSachHoiDong {
                     break;
                 } else {
                     hoiDongs.add(e);
+                    bckl.listTV.add(e);
                     temp += 1;
                 }
             }

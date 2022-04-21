@@ -1,4 +1,6 @@
+import java.io.FileNotFoundException;
 import java.text.ParseException;
+import java.util.ArrayList;
 
 public class BaoCaoThucTap extends BaoCao {
     private String thongTinDanhGia;
@@ -7,13 +9,13 @@ public class BaoCaoThucTap extends BaoCao {
 
     }
 
-    public BaoCaoThucTap(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, String dsSinhVien, String tenGiangVien, double diem, String thongTinDanhGia) throws ParseException {
+    public BaoCaoThucTap(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, ArrayList dsSinhVien, String tenGiangVien, double diem, String thongTinDanhGia) throws ParseException {
         super(maBaoCao, tenBaoCao, linkBaoCao, ngayBaoCao, dsSinhVien, tenGiangVien, diem);
         this.thongTinDanhGia = thongTinDanhGia;
     }
 
     @Override
-    public void nhap() throws ParseException {
+    public void nhap() throws ParseException, FileNotFoundException {
         super.nhap();
         System.out.print("Nhập điểm: ");
         this.setDiemBaoCao(Double.parseDouble(s.nextLine()));
