@@ -11,7 +11,7 @@ public class BaoCaoDoAn extends BaoCao {
 
     }
 
-    public BaoCaoDoAn(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, ArrayList dsSinhVien, String tenGiangVien, double diem, double tyLeDaoVan) throws ParseException {
+    public BaoCaoDoAn(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, ArrayList<SinhVien> dsSinhVien, String tenGiangVien, double diem, double tyLeDaoVan) throws ParseException {
         super(maBaoCao, tenBaoCao, linkBaoCao, ngayBaoCao, dsSinhVien, tenGiangVien, diem);
         this.tyLeDaoVan = tyLeDaoVan;
     }

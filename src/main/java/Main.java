@@ -1,37 +1,37 @@
 import java.io.FileNotFoundException;
 import java.text.ParseException;
-import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) throws ParseException, FileNotFoundException {
         DanhSachBaoCao baoCaos = new DanhSachBaoCao();
         DanhSachHoiDong hoiDongs = new DanhSachHoiDong();
-//        DiemCuaHoiDong diems = new DiemCuaHoiDong();
-//        HoiDong hoiDongs = new HoiDong();
         BaoCao bc;
         DanhSachSinhVien sinhViens = new DanhSachSinhVien();
 
-//        BaoCao b1 = new BaoCaoThucTap("TT001", "Thuc tap 01", "tt01.com", "4-1-2002", "Nguyễn Đức Hưng", "Dương Hữu Thành", 8.5, "Amazing");
-//        BaoCao b2 = new BaoCaoThucTap("TT002", "Thuc tap 02", "tt02.com", "5-9-2002", "Nguyễn Hồ Long", "Dương Hữu Thành", 10, "Good jobs");
-//        BaoCao b3 = new BaoCaoThucTap("TT003", "Thuc tap 03", "tt03.com", "30-4-2022", "Maiơ Thanh Bình", "Dương Hữu Thành", 7.5, "Excellent");
+        BaoCao b1 = new BaoCaoThucTap("TT001", "Thuc tap 01", "tt01.com", "4-1-2002", null, "Dương Hữu Thành", 8.5, "Amazing");
+        BaoCao b2 = new BaoCaoThucTap("TT002", "Thuc tap 02", "tt02.com", "5-9-2002", null, "Dương Hữu Thành", 10, "Good jobs");
+        BaoCao b3 = new BaoCaoThucTap("TT003", "Thuc tap 03", "tt03.com", "30-4-2022", null, "Dương Hữu Thành", 7.5, "Excellent");
         BaoCao b4 = new BaoCaoDoAn("DA001", "Do an 01", "da01.com", "20-6-2022", null, "Dương Hữu Thành", 5, 0.1);
         BaoCao b5 = new BaoCaoDoAn("DA002", "Do an 02", "da02.com", "9-4-2022", null, "Dương Hữu Thành", 9, 0.5);
-//        BaoCao b6 = new BaoCaoKhoaLuan("KL001", "Khoa luan 01", "kl01.com", "11-3-2022", "Lê Tiến Hưng", "Dương Hữu Thành", 0, 0.3);
-//        BaoCao b7 = new BaoCaoKhoaLuan("KL002", "Khoa luan 02", "kl02.com", "3-5-2020", "Nguyễn Văn An", "Dương Hữu Thành", 0, 0.15);
-//        TvHoiDong b8 = new TvHoiDong("Nguyễn Hồ Long", "Giáo sư", "Tiến sĩ", "Chủ tịch hội đồng");
-//        TvHoiDong b9 = new TvHoiDong("Nguyễn Văn Doanh", "acsac", "Thạc sĩ", "Thư ký");
-//        TvHoiDong b10 = new TvHoiDong("Hồ Thị Tuyết", "sdadasda", "Thạc sĩ", "Thư ký");
+        BaoCao b6 = new BaoCaoKhoaLuan("KL001", "Khoa luan 01", "kl01.com", "11-3-2022", null, "Dương Hữu Thành", 0, 0.3);
+        BaoCao b7 = new BaoCaoKhoaLuan("KL002", "Khoa luan 02", "kl02.com", "3-5-2020", null, "Dương Hữu Thành", 0, 0.15);
+        TvHoiDong b8 = new TvHoiDong("Nguyễn Hồ Long", "Giáo sư", "Tiến sĩ", "Chủ tịch hội đồng");
+        TvHoiDong b9 = new TvHoiDong("Nguyễn Văn Doanh", "acsac", "Thạc sĩ", "Thư ký");
+        TvHoiDong b10 = new TvHoiDong("Hồ Thị Tuyết", "sdadasda", "Thạc sĩ", "Thư ký");
 
-//        baoCaos.themBaoCao(b1);
-//        baoCaos.themBaoCao(b2);
-//        baoCaos.themBaoCao(b3);
+        baoCaos.themBaoCao(b1);
+        baoCaos.themBaoCao(b2);
+        baoCaos.themBaoCao(b3);
         baoCaos.themBaoCao(b4);
         baoCaos.themBaoCao(b5);
-//        baoCaos.themBaoCao(b6);
-//        baoCaos.themBaoCao(b7);
-//        hoiDongs.getHoiDongs().add(b8);
-//        hoiDongs.getHoiDongs().add(b9);
-//        hoiDongs.getHoiDongs().add(b10);
+        baoCaos.themBaoCao(b6);
+        baoCaos.themBaoCao(b7);
+        hoiDongs.getHoiDongs().add(b8);
+        hoiDongs.getHoiDongs().add(b9);
+        hoiDongs.getHoiDongs().add(b10);
+        hoiDongs.bckl.listTV.add(b8);
+        hoiDongs.bckl.listTV.add(b9);
+        hoiDongs.bckl.listTV.add(b10);
 
         int chon;
         do {
@@ -93,15 +93,11 @@ public class Main {
                     System.out.print("Chọn loại báo cáo muốn sửa: ");
                     int a = Integer.parseInt(BaoCao.s.nextLine());
                     switch (a) {
-                        case 1 -> {
-                            baoCaos.suaThongTinDoAn();
-                        }
-                        case 2 -> {
-                            baoCaos.suaThongTinKhoaLuan();
-                        }
-                        case 3 -> {
-                            baoCaos.suaThongTinThucTap();
-                        }
+                        case 1 -> baoCaos.suaThongTinDoAn();
+
+                        case 2 -> baoCaos.suaThongTinKhoaLuan();
+
+                        case 3 -> baoCaos.suaThongTinThucTap();
                     }
                 }
                 case 5 -> {
@@ -118,11 +114,11 @@ public class Main {
                 }
                 case 7 -> {
                     System.out.println("=========== Chấm điểm cho báo cáo khóa luận ============");
-                    BaoCaoKhoaLuan a = null;
-                    a = (BaoCaoKhoaLuan) baoCaos.timBaoCao();
-                    if (a != null) {
+                    BaoCaoKhoaLuan x = null;
+                    x = (BaoCaoKhoaLuan) baoCaos.timBaoCao();
+                    if (x != null) {
                         int n = 0;
-                        double diemTong = 0, diemTongKet = 0, avg = 0;
+                        double diemTong = 0,  diemTongKet , avg ;
                         if (hoiDongs.getHoiDongs().isEmpty()) {
                             System.out.println("Cần thành lập hội đồng trước khi chấm điểm");
                             break;
@@ -134,14 +130,14 @@ public class Main {
                             String y = BaoCao.s.nextLine();
                             System.out.print("Nhập nhận xét: ");
                             b.nhanXet = BaoCao.s.nextLine();
-                            a.getNhanXet().add(b.nhanXet);
+                            x.getNhanXet().add(b.nhanXet);
                             n = n + 1;
                             diemTong += b.diem;
                             diemTongKet = diemTong / n;
                             avg = diemTongKet;
-                            a.setDiemBaoCao(avg);
-                            a.getTen().add(b.hoTen);
-                            a.getListTV().add(b);
+                            x.setDiemBaoCao(avg);
+                            x.getTen().add(b.hoTen);
+                            x.getListTV().add(b);
                         }
                     } else {
                         System.out.println("Không tìm thấy báo cáo để chấm điểm");

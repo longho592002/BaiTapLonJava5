@@ -1,10 +1,11 @@
-import java.security.BasicPermission;
 import java.text.ParseException;
 import java.util.*;
 
 public class DanhSachBaoCao {
     private List<BaoCao> baoCaos = new ArrayList<>();
     private final DanhSachHoiDong  hoiDongs = new DanhSachHoiDong();
+    DanhSachSinhVien svList = new DanhSachSinhVien();
+    public static Scanner s = new Scanner(System.in);
 
     public void themBaoCao(BaoCao b) {
         this.baoCaos.add(b);
@@ -23,7 +24,7 @@ public class DanhSachBaoCao {
     }
 
     public void showList2() {
-       this.baoCaos.forEach(b -> b.xuat());
+       this.baoCaos.forEach(BaoCao::xuat);
     }
 
     public void xoaBaoCao() {
@@ -87,8 +88,24 @@ public class DanhSachBaoCao {
                     tam.setNgayBaoCao(BaoCao.F.parse(BaoCao.s.nextLine()));
                 }
                 case "5" -> {
-                    System.out.print("Nhập danh sách sinh viên thực hiện báo cáo: ");
-//                    tam.setDsSinhVien(BaoCao.s.nextLine());
+                    int n;
+                    System.out.print("Nhập số sinh viên tham gia(tối đa 2 sinh viên): ");
+                    n = Integer.parseInt(s.nextLine());
+                    if(n >=1 && n <= 2) {
+                        System.out.println("danh sách tên sinh viên: ");
+                        for (SinhVien sv: svList.getSinhViens()) {
+                            System.out.println(sv + " ");
+                        }
+                        for(int i = 1; i <= n; i++) {
+                            System.out.printf("Nhập tên sinh viên tham gia thứ %d: ", i );
+                            String ten = s.nextLine();
+                            for (SinhVien sv: svList.getSinhViens()) {
+                                if (sv.getHoTen().contains(ten)) {
+                                    tam.getDsSinhVien().add(sv);
+                                }
+                            }
+                        }
+                    }
                 }
                 case "6" -> {
                     System.out.print("Nhập tên giảng viên: ");
@@ -137,8 +154,24 @@ public class DanhSachBaoCao {
                     tam.setNgayBaoCao(BaoCao.F.parse(BaoCao.s.nextLine()));
                 }
                 case "5" -> {
-                    System.out.print("Nhập danh sách sinh viên thực hiện báo cáo: ");
-//                    tam.setDsSinhVien(BaoCao.s.nextLine());
+                    int n;
+                    System.out.print("Nhập số sinh viên tham gia(tối đa 2 sinh viên): ");
+                    n = Integer.parseInt(s.nextLine());
+                    if(n >=1 && n <= 2) {
+                        System.out.println("danh sách tên sinh viên: ");
+                        for (SinhVien sv: svList.getSinhViens()) {
+                            System.out.println(sv + " ");
+                        }
+                        for(int i = 1; i <= n; i++) {
+                            System.out.printf("Nhập tên sinh viên tham gia thứ %d: ", i );
+                            String ten = s.nextLine();
+                            for (SinhVien sv: svList.getSinhViens()) {
+                                if (sv.getHoTen().contains(ten)) {
+                                    tam.getDsSinhVien().add(sv);
+                                }
+                            }
+                        }
+                    }
                 }
                 case "6" -> {
                     System.out.print("Nhập tên giảng viên: ");
@@ -187,8 +220,24 @@ public class DanhSachBaoCao {
                     tam.setNgayBaoCao(BaoCao.F.parse(BaoCao.s.nextLine()));
                 }
                 case "5" -> {
-                    System.out.print("Nhập danh sách sinh viên thực hiện báo cáo: ");
-//                    tam.setDsSinhVien(BaoCao.s.nextLine());
+                    int n;
+                    System.out.print("Nhập số sinh viên tham gia(tối đa 2 sinh viên): ");
+                    n = Integer.parseInt(s.nextLine());
+                    if(n >=1 && n <= 2) {
+                        System.out.println("danh sách tên sinh viên: ");
+                        for (SinhVien sv: svList.getSinhViens()) {
+                            System.out.println(sv + " ");
+                        }
+                        for(int i = 1; i <= n; i++) {
+                            System.out.printf("Nhập tên sinh viên tham gia thứ %d: ", i );
+                            String ten = s.nextLine();
+                            for (SinhVien sv: svList.getSinhViens()) {
+                                if (sv.getHoTen().contains(ten)) {
+                                    tam.getDsSinhVien().add(sv);
+                                }
+                            }
+                        }
+                    }
                 }
                 case "6" -> {
                     System.out.print("Nhập tên giảng viên: ");
@@ -279,7 +328,7 @@ public class DanhSachBaoCao {
                 String n2 = name2.substring(name2.lastIndexOf(" ") + 1);
                 int compareName = n1.compareTo(n2);
                 if(compareName == 0) {
-                    String l1 = name1.substring(0, name1.indexOf(" "));
+                        String l1 = name1.substring(0, name1.indexOf(" "));
                     String l2 = name2.substring(0, name2.indexOf(" "));
                     return l1.compareTo(l2);
                 } else {

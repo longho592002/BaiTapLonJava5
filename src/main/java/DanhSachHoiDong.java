@@ -15,7 +15,7 @@ public class DanhSachHoiDong {
         }
         int n = Integer.parseInt(String.valueOf(input.nextInt()));
         String a = "chủ tịch hội đồng", b = "thư ký", c ="giảng viên phản biện", d = "ủy viên hội đồng";
-        int a1=0, b1=0, c1=0, d1=0;
+        int a1=0, b1=0;
         int fails = 0;
         if (( (temp < 3) && (n>=3 && n<=5)) || ((temp >=3 && temp<=5) && (n<=(5-temp)))) {
             for (int i = 0; i < n; i++){

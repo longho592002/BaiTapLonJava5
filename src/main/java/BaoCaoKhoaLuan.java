@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class BaoCaoKhoaLuan extends BaoCao {
     private double tyLeDaoVan;
     private String danhGiaGV;
-    private double diem;
     private double diemTongKet;
     private ArrayList<String> nhanXet = new ArrayList<>();
     ArrayList<TvHoiDong> listTV = new ArrayList<>();
@@ -15,7 +14,7 @@ public class BaoCaoKhoaLuan extends BaoCao {
 
     }
 
-    public BaoCaoKhoaLuan(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, ArrayList dsSinhVien, String tenGiangVien,double diem, double tyLeDaoVan) throws ParseException {
+    public BaoCaoKhoaLuan(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, ArrayList<SinhVien> dsSinhVien, String tenGiangVien,double diem, double tyLeDaoVan) throws ParseException {
         super(maBaoCao, tenBaoCao, linkBaoCao, ngayBaoCao, dsSinhVien, tenGiangVien,diem);
         this.tyLeDaoVan = tyLeDaoVan;
     }
@@ -31,7 +30,7 @@ public class BaoCaoKhoaLuan extends BaoCao {
     public void xuat() {
         super.xuat();
         System.out.println("Tỷ lệ đạo văn: " + BaoCaoDoAn.decFormat.format(this.tyLeDaoVan));
-        nhanXet.toArray();
+//        nhanXet.toArray();
         if(!nhanXet.isEmpty() && !ten.isEmpty() & !listTV.isEmpty()) {
             System.out.println("Danh sách hội đồng bảo vệ: ");
             int i = 1;
@@ -54,32 +53,6 @@ public class BaoCaoKhoaLuan extends BaoCao {
     public void setDanhGiaGV(String danhGiaGV) {
         this.danhGiaGV = danhGiaGV;
     }
-
-//    public List<HoiDong> getDsTvHoiDong() {
-//        return dsTvHoiDong;
-//    }
-
-//    public void setDsTvHoiDong(HoiDong[] dsTvHoiDong) {
-//        this.dsTvHoiDong = Arrays.asList(dsTvHoiDong);
-//    }
-
-//    @Override
-//    public double getDiem() {
-//        return diem;
-//    }
-//
-//    @Override
-//    public void setDiem(double diem) {
-//        this.diem = diem;
-//    }
-
-//    public ArrayList<String> getNhanXet() {
-//        return nhanXet;
-//    }
-//
-//    public void setNhanXet(ArrayList<String> nhanXet) {
-//        this.nhanXet = nhanXet;
-//    }
 
     public double getDiemTongKet() {
         return diemTongKet;

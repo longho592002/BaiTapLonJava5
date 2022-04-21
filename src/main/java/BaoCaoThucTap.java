@@ -9,7 +9,7 @@ public class BaoCaoThucTap extends BaoCao {
 
     }
 
-    public BaoCaoThucTap(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, ArrayList dsSinhVien, String tenGiangVien, double diem, String thongTinDanhGia) throws ParseException {
+    public BaoCaoThucTap(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, ArrayList<SinhVien> dsSinhVien, String tenGiangVien, double diem, String thongTinDanhGia) throws ParseException {
         super(maBaoCao, tenBaoCao, linkBaoCao, ngayBaoCao, dsSinhVien, tenGiangVien, diem);
         this.thongTinDanhGia = thongTinDanhGia;
     }

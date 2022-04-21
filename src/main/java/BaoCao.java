@@ -14,19 +14,15 @@ public abstract class BaoCao {
     private ArrayList<SinhVien> dsSinhVien = new ArrayList<>();
     private String tenGiangVien;
     private double diemBaoCao ;
-    DanhSachSinhVien svList = new DanhSachSinhVien();
-//    private SinhVien sv= new SinhVien();
-
-//    DanhSachBaoCao dsbc = new DanhSachBaoCao();
-
     public static SimpleDateFormat F = new SimpleDateFormat("dd-MM-yyyy");
     public static Scanner s = new Scanner(System.in);
+    DanhSachSinhVien svList = new DanhSachSinhVien();
 
     public BaoCao() {
 
     }
 
-    public BaoCao(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, ArrayList dsSinhVien, String tenGiangVien, double diemBaoCao) throws ParseException {
+    public BaoCao(String maBaoCao, String tenBaoCao, String linkBaoCao, String ngayBaoCao, ArrayList<SinhVien> dsSinhVien, String tenGiangVien, double diemBaoCao) throws ParseException {
         this.maBaoCao = maBaoCao;
         this.tenBaoCao = tenBaoCao;
         this.linkBaoCao = linkBaoCao;
@@ -49,6 +45,7 @@ public abstract class BaoCao {
 
     }
 
+    // Nhập báo cáo
     public void nhap() throws ParseException, FileNotFoundException {
         int n ;
         System.out.println("Mã báo cáo theo dạng gồm 5 chữ số, 2 chữ số đầu là tên loại báo cáo\nVí dụ nhập báo cáo thực tập: \"TT001\"");
@@ -60,7 +57,6 @@ public abstract class BaoCao {
         this.linkBaoCao = s.nextLine();
         System.out.print("Nhập ngày báo cáo: ");
         this.ngayBaoCao = F.parse(s.nextLine());
-//        System.out.println("Danh sách sinh viên: ");
         svList.read();
         System.out.print("Nhập số sinh viên tham gia(tối đa 2 sinh viên): ");
         n = Integer.parseInt(s.nextLine());
@@ -79,8 +75,6 @@ public abstract class BaoCao {
                 }
             }
         }
-
-//        this.dsSinhVien = s.nextLine();
         System.out.print("Nhập tên giảng viên: ");
         this.tenGiangVien = s.nextLine();
     }
@@ -117,11 +111,11 @@ public abstract class BaoCao {
         this.ngayBaoCao = ngayBaoCao;
     }
 
-    public ArrayList getDsSinhVien() {
+    public ArrayList<SinhVien> getDsSinhVien() {
         return dsSinhVien;
     }
 
-    public void setDsSinhVien(ArrayList dsSinhVien) {
+    public void setDsSinhVien(ArrayList<SinhVien> dsSinhVien) {
         this.dsSinhVien = dsSinhVien;
     }
 
