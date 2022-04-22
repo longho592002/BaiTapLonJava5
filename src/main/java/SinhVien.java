@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public  class SinhVien {
+    private static int dem = 0;
     private String mssv;
     private String hoTen;
     private int khoaHoc;
@@ -9,11 +10,14 @@ public  class SinhVien {
     private String chuyenNganh;
     Scanner s = new Scanner(System.in);
 
+    {
+        mssv = String.format("SV%03d", ++dem);
+    }
+
     public SinhVien() {
 
     }
-    public SinhVien(String mssv, String hoTen, int khoaHoc, String gioiTinh, int namSinh, String chuyenNganh) {
-        this.mssv = mssv;
+    public SinhVien( String hoTen, int khoaHoc, String gioiTinh, int namSinh, String chuyenNganh) {
         this.hoTen = hoTen;
         this.khoaHoc = khoaHoc;
         this.gioiTinh = gioiTinh;
@@ -22,8 +26,8 @@ public  class SinhVien {
     }
 
     public void nhapSinhVien(){
-        System.out.print("Nhập mã số sinh viên: ");
-        this.mssv = s.nextLine();
+//        System.out.print("Nhập mã số sinh viên: ");
+//        this.mssv = s.nextLine();
         System.out.print("Nhập họ tên sinh viên: ");
         this.hoTen = s.nextLine();
         System.out.print("Nhập khóa học: ");

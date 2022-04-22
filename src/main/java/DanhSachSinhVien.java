@@ -18,13 +18,13 @@ public class DanhSachSinhVien {
         File f = new File("src/main/resource/sinhvien.txt");
         try (Scanner s = new Scanner(f)) {
             while (s.hasNextLine()) {
-                String mssv = s.nextLine();
+//                String mssv = s.nextLine();
                 String hoTen = s.nextLine();
                 int khoaHoc = Integer.parseInt(s.nextLine());
                 String gioiTinh = s.nextLine();
                 int namSinh = Integer.parseInt(s.nextLine());
                 String chuyenNganh = s.nextLine();
-                sinhViens.add(new SinhVien(mssv, hoTen, khoaHoc, gioiTinh, namSinh, chuyenNganh));
+                sinhViens.add(new SinhVien( hoTen, khoaHoc, gioiTinh, namSinh, chuyenNganh));
             }
         }
     }

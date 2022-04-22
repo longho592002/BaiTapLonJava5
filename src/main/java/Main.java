@@ -10,6 +10,7 @@ public class Main {
         BaoCao bc;
         SinhVien sv;
         DanhSachSinhVien  sinhViens = new DanhSachSinhVien();
+        sinhViens.read();
 
         Scanner scan = new Scanner(System.in);
 
@@ -19,12 +20,12 @@ public class Main {
         BaoCao b4 = new BaoCaoDoAn("DA001", "Do an 01", "da01.com", "20-6-2022", sinhViens.getSinhViens(), "Dương Hữu Thành", 5, 0.1);
         BaoCao b5 = new BaoCaoDoAn("DA002", "Do an 02", "da02.com", "9-4-2022", null, "Dương Hữu Thành", 9, 0.5);
         BaoCao b6 = new BaoCaoKhoaLuan("KL001", "Khoa luan 01", "kl01.com", "11-3-2022",   sinhViens.getSinhViens(), "Dương Hữu Thành", 0, 0.3);
-        BaoCao b7 = new BaoCaoKhoaLuan("KL002", "Khoa luan 02", "kl02.com", "3-5-2020", null, "Dương Hữu Thành", 0, 0.15);
+        BaoCao b7 = new BaoCaoKhoaLuan("KL002", "Khoa luan 02", "kl02.com", "3-5-2020",null , "Dương Hữu Thành", 0, 0.15);
         TvHoiDong b8 = new TvHoiDong("Nguyễn Hồ Long", "Giáo sư", "Tiến sĩ", "Chủ tịch hội đồng");
         TvHoiDong b9 = new TvHoiDong("Nguyễn Văn Doanh", "acsac", "Thạc sĩ", "Thư ký");
         TvHoiDong b10 = new TvHoiDong("Hồ Thị Tuyết", "sdadasda", "Thạc sĩ", "Thư ký");
-        SinhVien b11 = new SinhVien("SV005","Gia Bảo",2020, "nam", 2096, "CS" );
-        SinhVien b12 = new SinhVien("SV006","Gia Huy",1999, "nam", 3056, "IT" );
+        SinhVien b11 = new SinhVien("Gia Bảo",2020, "nam", 2096, "CS" );
+        SinhVien b12 = new SinhVien("Gia Huy",1999, "nam", 3056, "IT" );
 
 
         baoCaos.themBaoCao(b1);
@@ -40,7 +41,7 @@ public class Main {
         hoiDongs.bckl.listTV.add(b8);
         hoiDongs.bckl.listTV.add(b9);
         hoiDongs.bckl.listTV.add(b10);
-        sinhViens.read();
+
         sinhViens.themSinhVien(b11);
         sinhViens.themSinhVien(b12);
 

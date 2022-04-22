@@ -60,7 +60,7 @@ public abstract class BaoCao {
         System.out.print("Nhập số sinh viên tham gia(tối đa 2 sinh viên): ");
         n = Integer.parseInt(s.nextLine());
         if(n >=1 && n <= 2) {
-            System.out.println("danh sách tên sinh viên: ");
+            System.out.println("Danh sách tên sinh viên: ");
             for (SinhVien sv: sinhViens.getSinhViens()) {
                 System.out.println(sv.getHoTen() + " ");
             }
