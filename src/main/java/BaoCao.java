@@ -16,7 +16,7 @@ public abstract class BaoCao {
     private double diemBaoCao ;
     public static SimpleDateFormat F = new SimpleDateFormat("dd-MM-yyyy");
     public static Scanner s = new Scanner(System.in);
-    DanhSachSinhVien svList = new DanhSachSinhVien();
+    DanhSachSinhVien sinhViens = new DanhSachSinhVien();
 
     public BaoCao() {
 
@@ -57,18 +57,17 @@ public abstract class BaoCao {
         this.linkBaoCao = s.nextLine();
         System.out.print("Nhập ngày báo cáo: ");
         this.ngayBaoCao = F.parse(s.nextLine());
-        svList.read();
         System.out.print("Nhập số sinh viên tham gia(tối đa 2 sinh viên): ");
         n = Integer.parseInt(s.nextLine());
         if(n >=1 && n <= 2) {
             System.out.println("danh sách tên sinh viên: ");
-            for (SinhVien sv: svList.getSinhViens()) {
-                System.out.println(sv + " ");
+            for (SinhVien sv: sinhViens.getSinhViens()) {
+                System.out.println(sv.getHoTen() + " ");
             }
             for(int i = 1; i <= n; i++) {
                 System.out.printf("Nhập tên sinh viên tham gia thứ %d: ", i );
                 String ten = s.nextLine();
-                for (SinhVien sv: svList.getSinhViens()) {
+                for (SinhVien sv: sinhViens.getSinhViens()) {
                     if (sv.getHoTen().contains(ten)) {
                         dsSinhVien.add(sv);
                     }

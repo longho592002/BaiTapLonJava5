@@ -1,23 +1,31 @@
 import java.io.FileNotFoundException;
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws ParseException, FileNotFoundException {
         DanhSachBaoCao baoCaos = new DanhSachBaoCao();
         DanhSachHoiDong hoiDongs = new DanhSachHoiDong();
         BaoCao bc;
-        DanhSachSinhVien sinhViens = new DanhSachSinhVien();
+        SinhVien sv;
+        DanhSachSinhVien  sinhViens = new DanhSachSinhVien();
+
+        Scanner scan = new Scanner(System.in);
 
         BaoCao b1 = new BaoCaoThucTap("TT001", "Thuc tap 01", "tt01.com", "4-1-2002", null, "Dương Hữu Thành", 8.5, "Amazing");
         BaoCao b2 = new BaoCaoThucTap("TT002", "Thuc tap 02", "tt02.com", "5-9-2002", null, "Dương Hữu Thành", 10, "Good jobs");
         BaoCao b3 = new BaoCaoThucTap("TT003", "Thuc tap 03", "tt03.com", "30-4-2022", null, "Dương Hữu Thành", 7.5, "Excellent");
-        BaoCao b4 = new BaoCaoDoAn("DA001", "Do an 01", "da01.com", "20-6-2022", null, "Dương Hữu Thành", 5, 0.1);
+        BaoCao b4 = new BaoCaoDoAn("DA001", "Do an 01", "da01.com", "20-6-2022", sinhViens.getSinhViens(), "Dương Hữu Thành", 5, 0.1);
         BaoCao b5 = new BaoCaoDoAn("DA002", "Do an 02", "da02.com", "9-4-2022", null, "Dương Hữu Thành", 9, 0.5);
-        BaoCao b6 = new BaoCaoKhoaLuan("KL001", "Khoa luan 01", "kl01.com", "11-3-2022", null, "Dương Hữu Thành", 0, 0.3);
+        BaoCao b6 = new BaoCaoKhoaLuan("KL001", "Khoa luan 01", "kl01.com", "11-3-2022",   sinhViens.getSinhViens(), "Dương Hữu Thành", 0, 0.3);
         BaoCao b7 = new BaoCaoKhoaLuan("KL002", "Khoa luan 02", "kl02.com", "3-5-2020", null, "Dương Hữu Thành", 0, 0.15);
         TvHoiDong b8 = new TvHoiDong("Nguyễn Hồ Long", "Giáo sư", "Tiến sĩ", "Chủ tịch hội đồng");
         TvHoiDong b9 = new TvHoiDong("Nguyễn Văn Doanh", "acsac", "Thạc sĩ", "Thư ký");
         TvHoiDong b10 = new TvHoiDong("Hồ Thị Tuyết", "sdadasda", "Thạc sĩ", "Thư ký");
+        SinhVien b11 = new SinhVien("SV005","Gia Bảo",2020, "nam", 2096, "CS" );
+        SinhVien b12 = new SinhVien("SV006","Gia Huy",1999, "nam", 3056, "IT" );
+
 
         baoCaos.themBaoCao(b1);
         baoCaos.themBaoCao(b2);
@@ -32,6 +40,9 @@ public class Main {
         hoiDongs.bckl.listTV.add(b8);
         hoiDongs.bckl.listTV.add(b9);
         hoiDongs.bckl.listTV.add(b10);
+        sinhViens.read();
+        sinhViens.themSinhVien(b11);
+        sinhViens.themSinhVien(b12);
 
         int chon;
         do {
@@ -49,7 +60,7 @@ public class Main {
                             System.out.println("=========== Thêm báo cáo Đồ Án ===========");
                             bc = new BaoCaoDoAn();
                             bc.nhap();
-                            if (baoCaos.checkMa(bc.getMaBaoCao()) != 1 && bc.getMaBaoCao().startsWith("DA")) {
+                            if (baoCaos.checkMaBaoCao(bc.getMaBaoCao()) != 1 && bc.getMaBaoCao().startsWith("DA")) {
                                 baoCaos.themBaoCao(bc);
                                 System.out.println("Thêm thành công");
                             } else {
@@ -60,7 +71,7 @@ public class Main {
                             System.out.println("=========== Thêm báo cáo khóa luận ===========");
                             bc = new BaoCaoKhoaLuan();
                             bc.nhap();
-                            if (baoCaos.checkMa(bc.getMaBaoCao()) != 1 && bc.getMaBaoCao().startsWith("KL")) {
+                            if (baoCaos.checkMaBaoCao(bc.getMaBaoCao()) != 1 && bc.getMaBaoCao().startsWith("KL")) {
                                 baoCaos.themBaoCao(bc);
                                 System.out.println("Thêm thành công");
                             } else {
@@ -71,7 +82,7 @@ public class Main {
                             System.out.println("=========== Thêm báo cáo thực tập ===========");
                             bc = new BaoCaoThucTap();
                             bc.nhap();
-                            if(baoCaos.checkMa(bc.getMaBaoCao()) != 1 && bc.getMaBaoCao().startsWith("TT")) {
+                            if(baoCaos.checkMaBaoCao(bc.getMaBaoCao()) != 1 && bc.getMaBaoCao().startsWith("TT")) {
                                 baoCaos.themBaoCao(bc);
                                 System.out.println("Thêm thành công");
                             } else {
@@ -170,7 +181,25 @@ public class Main {
                     }
                 }
                 case 10 -> {
-                    sinhViens.read();
+                    System.out.println("===========Thêm sinh viên===========");
+                    System.out.print("Nhập số sinh viên muốn thêm: ");
+                    int num = Integer.parseInt(scan.nextLine());
+                    if (num > 0) {
+                        for (int i = 1 ;i <= num; i++) {
+                            System.out.printf("=======  Nhập sinh viên thứ %d\n", i);
+                            sv = new SinhVien();
+                            sv.nhapSinhVien();
+                            if(sinhViens.checkMaBaoCao(sv.getMssv()) != 1 && sv.getMssv().startsWith("SV")) {
+                                sinhViens.themSinhVien(sv);
+                                System.out.println("========== Thêm sinh viên thành công ==========");
+                            } else {
+                                System.out.println("Bạn đã nhập trùng mã hoặc không đúng mã sinh viên");
+                            }
+                        }
+                    }
+                }
+                case 11 -> {
+                    System.out.println("==============Danh sách sinh viên=================");
                     sinhViens.hienThi();
                 }
             }
@@ -188,7 +217,8 @@ public class Main {
         System.out.println("7. Chấm điểm báo cáo khóa luận");
         System.out.println("8. Sắp xếp danh sách báo cáo");
         System.out.println("9. Tìm kiếm");
-        System.out.println("10. Danh sách sinh viên");
+        System.out.println("10. Thêm sinh viên");
+        System.out.println("11. Xuất danh sách sinh viên");
     }
     static void showMenuBaoCao() {
         System.out.println("1. Thêm báo cáo Đồ Án");

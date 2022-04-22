@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public  class SinhVien {
     private String mssv;
     private String hoTen;
@@ -5,7 +7,11 @@ public  class SinhVien {
     private String gioiTinh;
     private int namSinh;
     private String chuyenNganh;
+    Scanner s = new Scanner(System.in);
 
+    public SinhVien() {
+
+    }
     public SinhVien(String mssv, String hoTen, int khoaHoc, String gioiTinh, int namSinh, String chuyenNganh) {
         this.mssv = mssv;
         this.hoTen = hoTen;
@@ -15,7 +21,23 @@ public  class SinhVien {
         this.chuyenNganh = chuyenNganh;
     }
 
+    public void nhapSinhVien(){
+        System.out.print("Nhập mã số sinh viên: ");
+        this.mssv = s.nextLine();
+        System.out.print("Nhập họ tên sinh viên: ");
+        this.hoTen = s.nextLine();
+        System.out.print("Nhập khóa học: ");
+        this.khoaHoc = Integer.parseInt(s.nextLine());
+        System.out.print("Nhập giới tính: ");
+        this.gioiTinh = s.nextLine();
+        System.out.print("Nhập năm sinh: ");
+        this.namSinh = Integer.parseInt(s.nextLine());
+        System.out.print("Nhập chuyên ngành: ");
+        this.chuyenNganh = s.nextLine();
+    }
+
     public void xuat() {
+        System.out.println("=====================================");
         System.out.printf("MSSV: %s\nHọ tên: %s\nKhóa học: %d\nGiới tính: %s\nNăm sinh: %d\nChuyên ngành: %s\n", this.mssv, this.hoTen, this.khoaHoc, this.gioiTinh, this.namSinh, this.chuyenNganh);
     }
 

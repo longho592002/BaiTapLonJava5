@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DanhSachSinhVien {
-    private ArrayList<SinhVien> sinhViens = new ArrayList<>();
+    private static ArrayList<SinhVien> sinhViens = new ArrayList<>();
 
     public void themSinhVien(SinhVien s) {
-        this.sinhViens.add(s);
+        sinhViens.add(s);
     }
 
     public void hienThi() {
-        this.sinhViens.forEach(s -> s.xuat());
+        sinhViens.forEach(SinhVien::xuat);
     }
 
     public void read() throws FileNotFoundException {
@@ -29,11 +29,26 @@ public class DanhSachSinhVien {
         }
     }
 
+    // Kiểm tra trùng lặp mã sinh viên
+    public int checkMaBaoCao(String a){
+        int check = 0;
+        for(SinhVien b: this.getSinhViens()){
+            String maSinhVien = b.getMssv();
+            if (maSinhVien.equalsIgnoreCase(a)) {
+                check = 1;
+                break;
+            } else {
+                check = 2;
+            }
+        }
+        return check;
+    }
+
     public ArrayList<SinhVien> getSinhViens() {
         return sinhViens;
     }
 
     public void setSinhViens(ArrayList<SinhVien> sinhViens) {
-        this.sinhViens = sinhViens;
+        DanhSachSinhVien.sinhViens = sinhViens;
     }
 }
