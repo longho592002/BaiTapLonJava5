@@ -8,7 +8,6 @@ public  class SinhVien {
     private String gioiTinh;
     private int namSinh;
     private String chuyenNganh;
-    Scanner s = new Scanner(System.in);
 
     {
         mssv = String.format("SV%03d", ++dem);
@@ -17,7 +16,8 @@ public  class SinhVien {
     public SinhVien() {
 
     }
-    public SinhVien( String hoTen, int khoaHoc, String gioiTinh, int namSinh, String chuyenNganh) {
+
+    public SinhVien(String hoTen, int khoaHoc, String gioiTinh, int namSinh, String chuyenNganh) {
         this.hoTen = hoTen;
         this.khoaHoc = khoaHoc;
         this.gioiTinh = gioiTinh;
@@ -25,19 +25,17 @@ public  class SinhVien {
         this.chuyenNganh = chuyenNganh;
     }
 
-    public void nhapSinhVien(){
-//        System.out.print("Nhập mã số sinh viên: ");
-//        this.mssv = s.nextLine();
+    public void nhap(){
         System.out.print("Nhập họ tên sinh viên: ");
-        this.hoTen = s.nextLine();
+        this.hoTen = BaoCao.s.nextLine();
         System.out.print("Nhập khóa học: ");
-        this.khoaHoc = Integer.parseInt(s.nextLine());
+        this.khoaHoc = Integer.parseInt(BaoCao.s.nextLine());
         System.out.print("Nhập giới tính: ");
-        this.gioiTinh = s.nextLine();
+        this.gioiTinh = BaoCao.s.nextLine();
         System.out.print("Nhập năm sinh: ");
-        this.namSinh = Integer.parseInt(s.nextLine());
+        this.namSinh = Integer.parseInt(BaoCao.s.nextLine());
         System.out.print("Nhập chuyên ngành: ");
-        this.chuyenNganh = s.nextLine();
+        this.chuyenNganh = BaoCao.s.nextLine();
     }
 
     public void xuat() {
