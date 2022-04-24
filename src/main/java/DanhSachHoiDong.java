@@ -68,7 +68,7 @@ public class DanhSachHoiDong {
             }
         }
         if(bckl.listTV.isEmpty()) {
-            System.out.println("Chưa tạo hội đồng, hãy thêm thành viên hội đồng để chấm điểm");
+            System.out.println("Chưa tạo hội đồng, hãy tạo hội đồng để chấm điểm");
         }
     }
 

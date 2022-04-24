@@ -3,10 +3,8 @@ import java.util.*;
 
 public class DanhSachBaoCao {
     private List<BaoCao> baoCaos = new ArrayList<>();
-    private final DanhSachHoiDong  hoiDongs = new DanhSachHoiDong();
+    DanhSachHoiDong  hoiDongs = new DanhSachHoiDong();
     DanhSachSinhVien sinhViens = new DanhSachSinhVien();
-    public static Scanner s = new Scanner(System.in);
-    SinhVien sv;
 
     public void themBaoCao(BaoCao b) {
         this.baoCaos.add(b);
@@ -91,7 +89,7 @@ public class DanhSachBaoCao {
                 case "5" -> {
                     tam.setDsSinhVien(new ArrayList<>());
                     System.out.print("Nhập số sinh viên tham gia(tối đa 2 sinh viên): ");
-                    int n = Integer.parseInt(s.nextLine());
+                    int n = Integer.parseInt(BaoCao.s.nextLine());
                     if(n >=1 && n <= 2) {
                         System.out.println("Danh sách tên sinh viên: ");
                         for (SinhVien sv: sinhViens.getSinhViens()) {
@@ -99,7 +97,7 @@ public class DanhSachBaoCao {
                         }
                         for(int i = 1; i <= n; i++) {
                             System.out.printf("Nhập tên sinh viên tham gia thứ %d: ", i );
-                            String ten = s.nextLine();
+                            String ten = BaoCao.s.nextLine();
                             for (SinhVien sv: sinhViens.getSinhViens()) {
                                 if (sv.getHoTen().contains(ten)) {
                                     tam.getDsSinhVien().add(sv);
@@ -157,7 +155,7 @@ public class DanhSachBaoCao {
                 case "5" -> {
                     tam.setDsSinhVien(new ArrayList<>());
                     System.out.print("Nhập số sinh viên tham gia(tối đa 2 sinh viên): ");
-                    int n = Integer.parseInt(s.nextLine());
+                    int n = Integer.parseInt(BaoCao.s.nextLine());
                     if(n >=1 && n <= 2) {
                         System.out.println("Danh sách tên sinh viên: ");
                         for (SinhVien sv: sinhViens.getSinhViens()) {
@@ -165,7 +163,7 @@ public class DanhSachBaoCao {
                         }
                         for(int i = 1; i <= n; i++) {
                             System.out.printf("Nhập tên sinh viên tham gia thứ %d: ", i );
-                            String ten = s.nextLine();
+                            String ten = BaoCao.s.nextLine();
                             for (SinhVien sv: sinhViens.getSinhViens()) {
                                 if (sv.getHoTen().contains(ten)) {
                                     tam.getDsSinhVien().add(sv);
@@ -223,7 +221,7 @@ public class DanhSachBaoCao {
                 case "5" -> {
                     tam.setDsSinhVien(new ArrayList<>());
                     System.out.print("Nhập số sinh viên tham gia(tối đa 2 sinh viên): ");
-                    int n = Integer.parseInt(s.nextLine());
+                    int n = Integer.parseInt(BaoCao.s.nextLine());
                     if(n >=1 && n <= 2) {
                         System.out.println("Danh sách tên sinh viên: ");
                         for (SinhVien sv: sinhViens.getSinhViens()) {
@@ -231,7 +229,7 @@ public class DanhSachBaoCao {
                         }
                         for(int i = 1; i <= n; i++) {
                             System.out.printf("Nhập tên sinh viên tham gia thứ %d: ", i );
-                            String ten = s.nextLine();
+                            String ten = BaoCao.s.nextLine();
                             for (SinhVien sv: sinhViens.getSinhViens()) {
                                 if (sv.getHoTen().contains(ten)) {
                                     tam.getDsSinhVien().add(sv);
@@ -273,50 +271,35 @@ public class DanhSachBaoCao {
         if (tim == null) {
             System.out.println("Nhập sai mã báo cáo");
         }
-//        if(tim!=null) {
-//            System.out.println("Báo cáo bạn cần tìm: ");
-//            tim.xuat();
-//        } else {
-//            System.out.println("Không tìm thấy báo cáo");
-//        }
         return tim;
     }
 
-    public void timTheoTen() {
+    public BaoCao timTheoTen() {
+        BaoCao bc = null;
         System.out.print("Nhập tên báo cáo cần tìm: ");
         String s = BaoCao.s.nextLine();
         for (BaoCao b: this.getBaoCaos()) {
             if (s.equals(b.getTenBaoCao())) {
-                String a = b.getMaBaoCao();
-                if(a.contains("KL")) {
-                    System.out.println("Đã tìm thấy báo cáo");
-                    b.xuat();
-                    hoiDongs.xuatThanhVienHoiDong();
-                } else {
-                    System.out.println("Đã tìm thấy báo cáo");
-                    b.xuat();
-                }
+                System.out.println("Đã tìm thấy báo cáo");
+                b.xuat();
+                bc = b;
             }
         }
+        return bc;
     }
 
-    public void timTheoNgay() throws ParseException {
+    public BaoCao timTheoNgay() throws ParseException {
+        BaoCao bc = null;
         System.out.print("Nhập ngày báo cáo cần tìm: ");
         Date d = BaoCao.F.parse(BaoCao.s.nextLine());
         for (BaoCao b: this.getBaoCaos()) {
             if (d.compareTo(b.getNgayBaoCao()) == 0) {
-                String a = b.getMaBaoCao();
-                System.out.println("Ma bao cao: " + a);
-                if (a.startsWith("KL")){
-                    System.out.println("Đã tìm thấy báo cáo");
-                    b.xuat();
-                    hoiDongs.xuatThanhVienHoiDong();
-                } else {
-                    System.out.println("Đã tìm thấy báo cáo");
-                    b.xuat();
-                }
+                System.out.println("Đã tìm thấy báo cáo");
+                b.xuat();
+                bc = b;
             }
         }
+        return bc;
     }
 
     public void sortByName() {

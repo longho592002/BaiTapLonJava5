@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TvHoiDong  implements  Cloneable{
@@ -21,14 +20,6 @@ public class TvHoiDong  implements  Cloneable{
         this.hocVi = hocVi;
         this.nhiemVu = nhiemVu;
     }
-    public TvHoiDong(String hoTen, String hocHam, String hocVi, String nhiemVu, double diem, String nhanXet){
-        this.hoTen = hoTen;
-        this.hocHam = hocHam;
-        this.hocVi = hocVi;
-        this.nhiemVu = nhiemVu;
-        this.diem = diem;
-        this.nhanXet = nhanXet;
-    }
     public void nhapThanhVien() {
         System.out.print("Nhập họ và tên: ");
         hoTen = S.nextLine();
@@ -38,8 +29,6 @@ public class TvHoiDong  implements  Cloneable{
         hocVi = S.nextLine();
         System.out.print("Nhập nhiệm vụ: ");
         nhiemVu = S.nextLine();
-//        System.out.print("Nhập điểm: ");
-//        diem = S.nextDouble();
     }
     public void  xuatThanhVien() {
         System.out.printf("Họ và tên: %s\n Học Hàm: %s\n Học Vị: %s\n Nhiệm vụ: %s\n",

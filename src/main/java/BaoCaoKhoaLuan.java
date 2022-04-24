@@ -7,7 +7,7 @@ public class BaoCaoKhoaLuan extends BaoCao {
     private String danhGiaGV;
     private double diemTongKet;
     private ArrayList<String> nhanXet = new ArrayList<>();
-    ArrayList<TvHoiDong> listTV = new ArrayList<>();
+     ArrayList<TvHoiDong> listTV = new ArrayList<>();
     private ArrayList<String> ten = new ArrayList<>();
 
     public BaoCaoKhoaLuan() {
@@ -30,7 +30,6 @@ public class BaoCaoKhoaLuan extends BaoCao {
     public void xuat() {
         super.xuat();
         System.out.println("Tỷ lệ đạo văn: " + BaoCaoDoAn.decFormat.format(this.tyLeDaoVan));
-//        nhanXet.toArray();
         if(!nhanXet.isEmpty() && !ten.isEmpty() & !listTV.isEmpty()) {
             System.out.println("Danh sách hội đồng bảo vệ: ");
             int i = 1;

@@ -169,8 +169,16 @@ public class Main {
                     System.out.print("Chọn kiểu tìm kiếm: ");
                     int a = Integer.parseInt(BaoCao.s.nextLine());
                     switch (a) {
-                        case 1 -> baoCaos.timTheoTen();
-                        case 2 -> baoCaos.timTheoNgay();
+                        case 1 -> {
+                            if (baoCaos.timTheoTen() instanceof BaoCaoKhoaLuan) {
+                                hoiDongs.xuatThanhVienHoiDong();
+                            }
+                        }
+                        case 2 -> {
+                            if (baoCaos.timTheoNgay() instanceof BaoCaoKhoaLuan) {
+                                hoiDongs.xuatThanhVienHoiDong();
+                            }
+                        }
                     }
                 }
                 case 10 -> {
