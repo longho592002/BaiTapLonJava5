@@ -1,4 +1,4 @@
-public  class SinhVien {
+public class SinhVien {
     private static int dem = 0;
     private String mssv;
     private String hoTen;
