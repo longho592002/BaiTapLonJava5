@@ -119,7 +119,7 @@ public class Main {
                 }
                 case 7 -> {
                     System.out.println("=========== Chấm điểm cho báo cáo khóa luận ============");
-                    BaoCaoKhoaLuan x = null;
+                    BaoCaoKhoaLuan x;
                     x = (BaoCaoKhoaLuan) baoCaos.timBaoCao();
                     if (x != null) {
                         int n = 0;
