@@ -2,7 +2,6 @@ import java.io.FileNotFoundException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -14,6 +13,7 @@ public abstract class BaoCao {
     private ArrayList<SinhVien> dsSinhVien = new ArrayList<>();
     private String tenGiangVien;
     private double diemBaoCao ;
+
     public static SimpleDateFormat F = new SimpleDateFormat("dd-MM-yyyy");
     public static Scanner s = new Scanner(System.in);
     DanhSachSinhVien sinhViens = new DanhSachSinhVien();
@@ -78,11 +78,11 @@ public abstract class BaoCao {
     }
 
     public String xuatDsSinhVien() {
-        String s = dsSinhVien.get(0).getHoTen();
+        StringBuilder s = new StringBuilder(dsSinhVien.get(0).getHoTen());
         for (int i = 1; i < dsSinhVien.size(); i++) {
-            s += (", " + dsSinhVien.get(i).getHoTen());
+            s.append(", ").append(dsSinhVien.get(i).getHoTen());
         }
-        return s;
+        return s.toString();
     }
 
     public String getMaBaoCao() {
