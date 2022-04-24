@@ -37,12 +37,11 @@ public abstract class BaoCao {
     public void xuat() {
         if (this.diemBaoCao != 0) {
             System.out.printf("== == == == == ==  == == == == ==\nMã báo cáo: %s\nTên báo cáo: %s\nLink báo cáo: %s\nNgày báo cáo: %s\nDanh sách sinh viên: %s\nTên giảng viên: %s\nĐiểm: %.2f\n",
-                    this.maBaoCao, this.tenBaoCao, this.linkBaoCao, F.format(this.ngayBaoCao), this.dsSinhVien, this.tenGiangVien, this.diemBaoCao);
+                    this.maBaoCao, this.tenBaoCao, this.linkBaoCao, F.format(this.ngayBaoCao), this.xuatDsSinhVien(), this.tenGiangVien, this.diemBaoCao);
         } else {
             System.out.printf("== == == == == ==  == == == == ==\nMã báo cáo: %s\nTên báo cáo: %s\nLink báo cáo: %s\nNgày báo cáo: %s\nDanh sách sinh viên: %s\nTên giảng viên: %s\n",
-                    this.maBaoCao, this.tenBaoCao, this.linkBaoCao, F.format(this.ngayBaoCao), this.dsSinhVien, this.tenGiangVien);
+                    this.maBaoCao, this.tenBaoCao, this.linkBaoCao, F.format(this.ngayBaoCao), this.xuatDsSinhVien(), this.tenGiangVien);
         }
-
     }
 
     // Nhập báo cáo
@@ -112,6 +111,14 @@ public abstract class BaoCao {
 
     public ArrayList<SinhVien> getDsSinhVien() {
         return dsSinhVien;
+    }
+
+    public String xuatDsSinhVien() {
+        String s = dsSinhVien.get(0).getHoTen();
+        for (int i = 1; i < dsSinhVien.size(); i++) {
+            s += (", " + dsSinhVien.get(i).getHoTen());
+        }
+        return s;
     }
 
     public void setDsSinhVien(ArrayList<SinhVien> dsSinhVien) {

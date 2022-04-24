@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public  class SinhVien {
     private static int dem = 0;
     private String mssv;
@@ -45,7 +43,7 @@ public  class SinhVien {
 
     @Override
     public String toString() {
-        return this.getHoTen();
+        return this.hoTen;
     }
 
     public String getMssv() {
