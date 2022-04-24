@@ -77,6 +77,14 @@ public abstract class BaoCao {
         this.tenGiangVien = s.nextLine();
     }
 
+    public String xuatDsSinhVien() {
+        String s = dsSinhVien.get(0).getHoTen();
+        for (int i = 1; i < dsSinhVien.size(); i++) {
+            s += (", " + dsSinhVien.get(i).getHoTen());
+        }
+        return s;
+    }
+
     public String getMaBaoCao() {
         return maBaoCao;
     }
@@ -111,14 +119,6 @@ public abstract class BaoCao {
 
     public ArrayList<SinhVien> getDsSinhVien() {
         return dsSinhVien;
-    }
-
-    public String xuatDsSinhVien() {
-        String s = dsSinhVien.get(0).getHoTen();
-        for (int i = 1; i < dsSinhVien.size(); i++) {
-            s += (", " + dsSinhVien.get(i).getHoTen());
-        }
-        return s;
     }
 
     public void setDsSinhVien(ArrayList<SinhVien> dsSinhVien) {
