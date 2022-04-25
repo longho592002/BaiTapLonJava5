@@ -29,7 +29,7 @@ public class DanhSachSinhVien {
     }
 
     // Kiểm tra trùng lặp mã sinh viên
-    public int checkMaBaoCao(String a){
+    public int checkMaSinhVien(String a){
         int check = 0;
         for(SinhVien b: this.getSinhViens()){
             String maSinhVien = b.getMssv();

@@ -14,7 +14,7 @@ public class DanhSachBaoCao {
         System.out.println("Hai chữ cái đầu tiên của mã báo cáo là viết tắt tên loại báo cáo");
         System.out.println("Ví dụ muốn xem danh sách đồ án ta nhập 2 chữ cái \"DA\"");
         System.out.print("Nhập loại báo cáo muốn xem(xem tất cả không nhập): ");
-        String s = BaoCao.s.nextLine();
+        String s = BaoCao.s.nextLine().toUpperCase();
         for (BaoCao b: this.getBaoCaos()) {
             if (b.getMaBaoCao().startsWith(s)){
                 b.xuat();
@@ -273,7 +273,6 @@ public class DanhSachBaoCao {
         }
         return tim;
     }
-
     public BaoCao timTheoTen() {
         BaoCao bc = null;
         System.out.print("Nhập tên báo cáo cần tìm: ");

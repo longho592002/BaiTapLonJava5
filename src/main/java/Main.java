@@ -16,7 +16,8 @@ public class Main {
         sinhViens.themSinhVien(b11);
         sinhViens.themSinhVien(b12);
         BaoCao b1 = new BaoCaoThucTap("TT001", "Thuc tap 01", "tt01.com", "4-1-2020", new ArrayList<>(sinhViens.getSinhViens().subList(1,2)), "Dương Hữu Thành", 8.5, "Amazing");
-        BaoCao b2 = new BaoCaoThucTap("TT002", "Thuc tap 02", "tt02.com", "5-9-2018", new ArrayList<>(sinhViens.getSinhViens().subList(2,3)), "Dương Hữu Thành", 10, "Good jobs");
+        BaoCao b2 = new BaoCaoThucTap("TT005", "Thuc tap 02", "tt02.com", "5-9-2018", new ArrayList<>(sinhViens.getSinhViens().subList(2,3)), "Dương Hữu Thành", 10, "Good jobs");
+        BaoCao b21 = new BaoCaoThucTap("TT005", "Thuc tap 02", "tt02.com", "5-9-2018", new ArrayList<>(sinhViens.getSinhViens().subList(2,3)), "Dương Hữu Thành", 10, "Good jobs");
         BaoCao b3 = new BaoCaoDoAn("DA001", "Do an 01", "da01.com", "20-6-2029", new ArrayList<>(sinhViens.getSinhViens().subList(3,4)), "Dương Hữu Thành", 5, 0.1);
         BaoCao b4 = new BaoCaoDoAn("DA002", "Do an 02", "da02.com", "9-4-2022", new ArrayList<>(sinhViens.getSinhViens().subList(4,5)), "Dương Hữu Thành", 9, 0.5);
         BaoCao b5 = new BaoCaoKhoaLuan("KL001", "Khoa luan 01", "kl01.com", "11-3-2015",new ArrayList<>(sinhViens.getSinhViens().subList(1,3)), "Dương Hữu Thành", 0, 0.3);
@@ -31,6 +32,7 @@ public class Main {
         baoCaos.themBaoCao(b4);
         baoCaos.themBaoCao(b5);
         baoCaos.themBaoCao(b6);
+        baoCaos.themBaoCao(b21);
         hoiDongs.getHoiDongs().add(b8);
         hoiDongs.getHoiDongs().add(b9);
         hoiDongs.getHoiDongs().add(b10);
@@ -198,7 +200,7 @@ public class Main {
                             System.out.printf("=======  Nhập sinh viên thứ %d\n", i);
                             sv = new SinhVien();
                             sv.nhap();
-                            if(sinhViens.checkMaBaoCao(sv.getMssv()) != 1 && sv.getMssv().startsWith("SV")) {
+                            if(sinhViens.checkMaSinhVien(sv.getMssv()) != 1 && sv.getMssv().startsWith("SV")) {
                                 sinhViens.themSinhVien(sv);
                                 System.out.println("========== Thêm sinh viên thành công ==========");
                             } else {

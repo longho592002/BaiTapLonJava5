@@ -40,7 +40,7 @@ public class BaoCaoKhoaLuan extends BaoCao {
                 System.out.println("\t\t Học vị: " + b.hocVi);
                 System.out.println("\t\t Nhiệm vụ: " + b.nhiemVu);
                 for (int q = j; q < getNhanXet().size(); ) {
-                    System.out.println("\t\tNhận xét : " + nhanXet.get(q));
+                    System.out.println("\t\t Nhận xét : " + nhanXet.get(q));
                     break;
                 }
                 j = j + 1;
