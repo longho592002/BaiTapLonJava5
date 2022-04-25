@@ -121,6 +121,8 @@ public class Main {
                     System.out.println("=========== Chấm điểm cho báo cáo khóa luận ============");
                     BaoCaoKhoaLuan x;
                     x = (BaoCaoKhoaLuan) baoCaos.timBaoCao();
+                    x.xuat();
+                    x.listTV.clear();
                     if (x != null) {
                         int n = 0;
                         double diemTong = 0,  diemTongKet , avg ;
@@ -128,7 +130,13 @@ public class Main {
                             System.out.println("Cần thành lập hội đồng trước khi chấm điểm");
                             break;
                         }
+                        if (!x.getNhanXet().isEmpty()) {
+                            x.getNhanXet().clear();
+                        }
                         for (TvHoiDong b : hoiDongs.getHoiDongs()) {
+                            if (x.listTV.contains(b)) {
+                                x.listTV.remove(b);
+                            }
                             System.out.printf("========== %s %s =========== ", b.nhiemVu, b.hoTen);
                             System.out.print("Nhập điểm: ");
                             b.diem = Double.parseDouble(BaoCao.s.nextLine());

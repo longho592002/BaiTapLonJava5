@@ -6,7 +6,7 @@ public class TvHoiDong  implements  Cloneable{
     protected String hocVi;
     protected String nhiemVu;
     protected double diem;
-    protected String nhanXet;
+    public  String nhanXet;
     Scanner S = new Scanner(System.in);
 
 

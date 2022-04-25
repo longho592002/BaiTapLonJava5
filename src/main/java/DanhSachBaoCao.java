@@ -112,7 +112,7 @@ public class DanhSachBaoCao {
                 }
                 case "7" -> {
                     System.out.print("Nhập điểm báo cáo: ");
-                    tam.setDiemBaoCao(BaoCao.s.nextDouble());
+                    tam.setDiemBaoCao(Double.parseDouble(BaoCao.s.nextLine()));
                 }
                 case "8" -> {
                     System.out.println("Nhập tỷ lệ đạo văn: ");

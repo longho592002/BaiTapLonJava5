@@ -6,8 +6,8 @@ public class BaoCaoKhoaLuan extends BaoCao {
     private double tyLeDaoVan;
     private String danhGiaGV;
     private double diemTongKet;
-    private ArrayList<String> nhanXet = new ArrayList<>();
-     ArrayList<TvHoiDong> listTV = new ArrayList<>();
+    private  ArrayList<String> nhanXet = new ArrayList<>();
+    protected ArrayList<TvHoiDong> listTV = new ArrayList<>();
     private ArrayList<String> ten = new ArrayList<>();
 
     public BaoCaoKhoaLuan() {
@@ -30,16 +30,20 @@ public class BaoCaoKhoaLuan extends BaoCao {
     public void xuat() {
         super.xuat();
         System.out.println("Tỷ lệ đạo văn: " + BaoCaoDoAn.decFormat.format(this.tyLeDaoVan));
-        if(!nhanXet.isEmpty() && !ten.isEmpty() & !listTV.isEmpty()) {
+        if(!ten.isEmpty() & !listTV.isEmpty()) {
             System.out.println("Danh sách hội đồng bảo vệ: ");
-            int i = 1;
+            int i = 1, j = 0;
             for (TvHoiDong b: this.listTV) {
                 System.out.println("_ Thành viên hội đồng thứ " + i);
                 System.out.println("\t\t Họ tên: " + b.hoTen);
                 System.out.println("\t\t Học hàm: " + b.hocHam);
                 System.out.println("\t\t Học vị: " + b.hocVi);
                 System.out.println("\t\t Nhiệm vụ: " + b.nhiemVu);
-                System.out.println("\t\t Nhận xét: " + b.nhanXet);
+                for (int q = j; q < getNhanXet().size(); ) {
+                    System.out.println("\t\tNhận xét : " + nhanXet.get(q));
+                    break;
+                }
+                j = j + 1;
                 i = i + 1;
             }
         }
