@@ -31,7 +31,7 @@ public class TvHoiDong  implements  Cloneable{
         nhiemVu = S.nextLine();
     }
     public void  xuatThanhVien() {
-        System.out.printf("Họ và tên: %s\n Học Hàm: %s\n Học Vị: %s\n Nhiệm vụ: %s\n",
+        System.out.printf(" Họ và tên: %s\n Học Hàm: %s\n Học Vị: %s\n Nhiệm vụ: %s\n",
                 this.hoTen, this.hocHam, this.hocVi, this.nhiemVu);
     }
 

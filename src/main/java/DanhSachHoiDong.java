@@ -63,8 +63,11 @@ public class DanhSachHoiDong {
 
     public void xuatThanhVienHoiDong(){
         if(!hoiDongs.isEmpty()) {
+            int i = 0;
             for(TvHoiDong b: this.hoiDongs){
+                System.out.println("============Thành viên hội đồng thứ "+ (i+1));
                 b.xuatThanhVien();
+                i = i + 1;
             }
         }
         if(bckl.listTV.isEmpty()) {

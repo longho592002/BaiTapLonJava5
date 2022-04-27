@@ -14,7 +14,7 @@ public class DanhSachBaoCao {
         System.out.println("Hai chữ cái đầu tiên của mã báo cáo là viết tắt tên loại báo cáo");
         System.out.println("Ví dụ muốn xem danh sách đồ án ta nhập 2 chữ cái \"DA\"");
         System.out.print("Nhập loại báo cáo muốn xem(xem tất cả không nhập): ");
-        String s = BaoCao.s.nextLine().toUpperCase();
+        String s = BaoCao.s.nextLine().toUpperCase().trim();
         for (BaoCao b: this.getBaoCaos()) {
             if (b.getMaBaoCao().startsWith(s)){
                 b.xuat();
@@ -104,7 +104,9 @@ public class DanhSachBaoCao {
                                 }
                             }
                         }
-                    }
+                        System.out.println("Mở lại báo cáo để xem kết quả");
+                    } else
+                        System.out.println("Nhập sai số sinh viên tham gia");
                 }
                 case "6" -> {
                     System.out.print("Nhập tên giảng viên: ");
@@ -118,6 +120,7 @@ public class DanhSachBaoCao {
                     System.out.println("Nhập tỷ lệ đạo văn: ");
                     tam.setTyLeDaoVan(Double.parseDouble(BaoCao.s.nextLine()));
                 }
+                default -> System.out.println("Nhập sai thông tin cần sửa");
             }
         } else {
             System.out.println("Không tìm thấy báo cáo để sửa");
@@ -170,7 +173,9 @@ public class DanhSachBaoCao {
                                 }
                             }
                         }
-                    }
+                        System.out.println("Mở lại báo cáo để xem kết quả");
+                    } else
+                        System.out.println("Nhập sai số sinh viên tham gia");
                 }
                 case "6" -> {
                     System.out.print("Nhập tên giảng viên: ");
@@ -184,6 +189,7 @@ public class DanhSachBaoCao {
                     System.out.println("Nhập tỷ lệ đạo văn: ");
                     tam.setTyLeDaoVan(Double.parseDouble(BaoCao.s.nextLine()));
                 }
+                default -> System.out.println("Nhập sai thông tin cần sửa");
             }
         } else {
             System.out.println("Không tìm thấy báo cáo để sửa");
@@ -236,7 +242,9 @@ public class DanhSachBaoCao {
                                 }
                             }
                         }
-                    }
+                        System.out.println("Mở lại báo cáo để xem kết quả");
+                    } else
+                        System.out.println("Nhập sai số sinh viên tham gia");
                 }
                 case "6" -> {
                     System.out.print("Nhập tên giảng viên: ");
@@ -250,6 +258,7 @@ public class DanhSachBaoCao {
                     System.out.print("Nhập đánh giá của doanh nghiệp: ");
                     tam.setThongTinDanhGia(BaoCao.s.nextLine());
                 }
+                default -> System.out.println("Nhập sai thông tin cần sửa");
             }
         } else {
             System.out.println("Không tìm thấy báo cáo để sửa");
@@ -260,7 +269,7 @@ public class DanhSachBaoCao {
 //    Tìm báo cáo
     public BaoCao timBaoCao(){
         System.out.print("Nhập mã báo cáo cần tìm: ");
-        String ma = BaoCao.s.nextLine().toUpperCase();
+        String ma = BaoCao.s.nextLine().toUpperCase().trim();
         BaoCao tim = null;
         for(BaoCao b: this.getBaoCaos()) {
             if(b.getMaBaoCao().contains(ma)){
